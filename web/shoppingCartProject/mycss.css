@@ -1,0 +1,95 @@
+
+body
+{
+    background: #EFEFEF;
+}
+
+#pageTitle
+{
+  /* background-color: yellow; */
+  padding: 0;
+  margin: 0;
+  margin-top: 20px;
+  margin-left: 20px;
+  font-size: 3em;
+}
+
+#pageSubTitle
+{
+  /* background-color: purple; */
+  margin: 0;
+  padding: 0;
+  /* margin-top: 20px; */
+  margin-left: 20px;
+  margin-bottom: 30px;
+}
+
+.navBar
+{
+  /* padding-top: 50px; */
+  /* margin-top: 1000px; */
+  display: inline;
+  /* position: absolute; */
+  /* display: block; */
+  justify-content: center;
+  align-items: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#navBarItem
+{
+  /* font-weight: bolder; */
+  margin: 0px;
+  padding: 0px;
+  padding: 10px;
+  height: inherit;
+  display: inline;
+  background-color: green;
+  font-size: 30px;
+
+}
+.navBackground
+{
+  padding: 20px;
+  background-color: yellow;
+  border-radius: 20px;
+  float: left;
+
+  width: 450px;
+}
+
+.imgSize
+{
+  height: 200px;
+  width: 200px;
+}
+
+
+.pageSubText
+{
+  font-size: 30px;
+  margin-left: 50px;
+}
+
+.browsingTopLine
+{
+  float: left;
+  /* background-color: black; */
+  display: inline;
+  margin-top: 10px;
+  margin-left: 50px;
+}
+.browsingBottomLine
+{
+  float: left;
+  /* background-color: black; */
+  display: inline;
+  margin-top: 10px;
+  margin-left: 50px;
+}
+
+.active {
+    font-weight: lighter;
+    background-color: blue;
+}

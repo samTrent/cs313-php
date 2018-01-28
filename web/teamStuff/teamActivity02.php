@@ -6,6 +6,12 @@
   </head>
   <body>
 
+    <?php
+
+    $myarray = array('computer IT', "Computer science", "web desgne and dev", "Comp Engineering");
+
+
+     ?>
 
 <!-- link to results.php -->
 <form class="" action="results.php" method="post">
@@ -13,12 +19,21 @@
   <br><br>
   Email: <input type="text" name="email" value="">
   <br><br>
-  Major:<br>
+  <!-- Major:<br>
    <input id="radio" type="radio" name="radio" value="Computer Science">Computer Science<br>
    <input id="radio" type="radio" name="radio" value="Web design and dev">Web design and dev<br>
    <input id="radio" type="radio" name="radio" value="computer IT">computer IT<br>
    <input id="radio" type="radio" name="radio" value="Computer Engineering">Computer Engineering<br>
-  <br><br>
+  <br><br> -->
+
+  <?php
+
+  foreach ($myarray as $value)
+  {
+    echo "<input id="radio" type="radio" name="radio" value="$value">$value<br>";
+  }
+
+   ?>
 
   <input type="checkbox" name="country[]" value="North America">North America<br>
   <input type="checkbox" name="country[]" value="South America">South America<br>
