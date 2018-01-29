@@ -1,8 +1,8 @@
 <?php
 session_start();
+// static $_SESSION['firstPageVisit'] = false;
+$_SESSION['myCart'];
 
-// $_SESSION['myCart'] = $cartArray;
-// <?php $_SESSION['myCart'][] = "iPhone X";
 include 'pageHeader.php'; ?>
 <!DOCTYPE html>
 <html>
