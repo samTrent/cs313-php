@@ -1,7 +1,10 @@
 <?php
 session_start();
-// static $_SESSION['firstPageVisit'] = false;
-$_SESSION['myCart'];
+$_SESSION['firstPageVisit'];
+if(!isset($_SESSION['firstPageVisit']))
+{
+  $_SESSION['myCart'] = array();
+}
 
 include 'pageHeader.php'; ?>
 <!DOCTYPE html>

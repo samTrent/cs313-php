@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+$_SESSION['firstPageVisit'] = true;
 //push an item onto an array
 array_push($_SESSION['myCart'], $_POST['item']);
 // $_SESSION['myCart'][] = $_post['item'];
