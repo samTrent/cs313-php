@@ -89,7 +89,28 @@ body
   margin-left: 50px;
 }
 
+.browseItem
+{
+  float: left;
+}
+
+.checkoutItem
+{
+  float: left;
+  margin: 2px;
+  padding: 5px;
+}
+
 .active {
     font-weight: lighter;
     background-color: blue;
+}
+
+.iPhoneXimg
+{
+  /* background-image: url('https://www.att.com/catalog/en/skus/images/apple-iphone%20x-space%20gray-450x350.png'); */
+    background-image: image(img/iphoneX.png);
+    /* background-image:url('img/iphoneX.png'); */
+    background-repeat:no-repeat;
+   background-position:left top;  padding-left:15px;
 }

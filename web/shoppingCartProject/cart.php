@@ -1,24 +1,13 @@
 <?php
 session_start();
 
- include 'pageHeader.php' ?>
+include 'pageHeader.php' ?>
 <!DOCTYPE html>
 <html>
   <head>
     <link rel="stylesheet" href="mycss.css">
     <meta charset="utf-8">
     <title></title>
-
-    <script type="text/javascript">
-
-      function clearCart()
-      {
-        <?php //$_SESSION['myCart'] = array();  ?>
-        document.getElementById('cartInfo').innerHTML = '';
-
-      }
-
-    </script>
   </head>
   <body style="background-color:blue;">
 
@@ -26,23 +15,28 @@ session_start();
 
 <h3 class="pageSubText">Your cart info:</h3>
 
-<div id="cartInfo" class="">
+<div id="cartInfo" class="browsingTopLine">
   <?php
-  // unset($_SESSION['myCart']);
-  echo count($_SESSION['myCart']);
 
   if(count($_SESSION['myCart']) > 0)
   {
-    foreach ($_SESSION['myCart'] as $key)
-    {
-      echo $key . "<br>";
-    }
-  }
+      foreach ($_SESSION['myCart'] as $key)
+      {
+        echo "<h3 class=\"checkoutItem\">" . $key . "</h3><br><br>";
+      }
+   }
+   else {
+     echo "<p class=\"pageSubText\">You have no items in your cart.</p>";
+   }
    ?>
 </div>
 
 
-     <br><br>
-     <button class="pageSubText" onclick="clearCart()" type="button" name="button">Clear Cart</button>
+     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+     <form class="" action="cartData.php" method="post">
+       <button type="submit" class="pageSubText" type="submit" name="clearData" value="true">Clear All Cart Items</button>
+       <!-- <input class="" type="submit" name="clearData" value="Clear Cart"> -->
+     </form>
+     <!-- <button class="pageSubText" onclick="clearCart()" type="button" name="button">Clear Cart</button> -->
   </body>
 </html>
