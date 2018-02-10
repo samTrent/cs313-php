@@ -37,21 +37,21 @@
     echo '</tr>';
 
     //duties
-  //   echo '<tr>';
-  //   foreach ($db->query('SELECT dutyname FROM duty;') as $row)
-  //   {
-  //     echo "<td>$row['dutyname']</td>";
-  //   }
-  //   echo '</tr>';
-  //
-  //   //Employee
-  //   echo '<tr>';
-  //   foreach ($db->query('SELECT name FROM employee;') as $row)
-  //   {
-  //     echo "<td>$row['name']</td>";
-  //   }
-  //   echo '</tr>';
-  //
+    echo '<tr>';
+    foreach ($db->query('SELECT dutyname FROM duty;') as $row)
+    {
+      echo '<td>' . $row['dutyname'] . '</td>';
+    }
+    echo '</tr>';
+
+    //Employee
+    echo '<tr>';
+    foreach ($db->query('SELECT name FROM employee;') as $row)
+    {
+      echo '<td>' . $row['name'] . '</td>';
+    }
+    echo '</tr>';
+
   echo '</table>';
      ?>
 
