@@ -30,10 +30,10 @@
 
     //Shifts
     echo '<tr>';
-    foreach ($db->query('SELECT shiftname FROM shift;') as $row)
-    {
-      echo '<td>$row['shiftname']</td>';
-    }
+    // foreach ($db->query('SELECT shiftname FROM shift;') as $row)
+    // {
+    //   echo '<td>$row['shiftname']</td>';
+    // }
     echo '</tr>';
 
     //duties
@@ -52,7 +52,7 @@
   //   }
   //   echo '</tr>';
   //
-  // echo '</table>';
+  echo '</table>';
      ?>
 
   </body>
