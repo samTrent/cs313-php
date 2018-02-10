@@ -17,6 +17,13 @@ catch (PDOException $ex) {
 
 
 
+foreach ($db->query('SELECT shiftname FROM shift;') as $row)
+{
+
+  echo 'ShiftName: ' . $row['shiftname'] . '<br>';
+}
+
+
 
 
 
