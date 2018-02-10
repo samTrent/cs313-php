@@ -25,7 +25,7 @@
     echo '<tr>';
     echo '<th>Shifts</th>';
     echo '<th>Duties</th>';
-    echo '<th>Employee\'s</th>';
+    echo '<th>Employee</th>';
     echo '</tr>';
 
     //Shifts
@@ -37,22 +37,22 @@
     echo '</tr>';
 
     //duties
-    echo '<tr>';
-    foreach ($db->query('SELECT dutyname FROM duty;') as $row)
-    {
-      echo "<td>$row['dutyname']</td>";
-    }
-    echo '</tr>';
-
-    //Employee
-    echo '<tr>';
-    foreach ($db->query('SELECT name FROM employee;') as $row)
-    {
-      echo "<td>$row['name']</td>";
-    }
-    echo '</tr>';
-
-  echo '</table>';
+  //   echo '<tr>';
+  //   foreach ($db->query('SELECT dutyname FROM duty;') as $row)
+  //   {
+  //     echo "<td>$row['dutyname']</td>";
+  //   }
+  //   echo '</tr>';
+  //
+  //   //Employee
+  //   echo '<tr>';
+  //   foreach ($db->query('SELECT name FROM employee;') as $row)
+  //   {
+  //     echo "<td>$row['name']</td>";
+  //   }
+  //   echo '</tr>';
+  //
+  // echo '</table>';
      ?>
 
   </body>
