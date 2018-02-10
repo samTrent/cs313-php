@@ -32,7 +32,7 @@
     echo '<tr>';
     foreach ($db->query('SELECT shiftname FROM shift;') as $row)
     {
-      echo "<td>$row['shiftname']</td>";
+      echo '<td>' . $row['shiftname'] . '</td>';
     }
     echo '</tr>';
 
