@@ -15,13 +15,37 @@ catch (PDOException $ex) {
  die();
 }
 
+echo '<table>';
+//table headers
+echo '<tr>';
+echo '<th>Shifts</th>';
+echo '<th>Duties</th>';
+echo '<th>Employee\'s</th>';
+echo '</tr>';
 
-
+//Shifts
+echo '<tr>';
 foreach ($db->query('SELECT shiftname FROM shift;') as $row)
 {
-
-  echo 'ShiftName: ' . $row['shiftname'] . '<br>';
+  echo "<td>$row['shiftname']</td>";
 }
+echo '</tr>';
+
+//duties
+echo '<tr>';
+foreach ($db->query('SELECT dutyname FROM duty;') as $row)
+{
+  echo "<td>$row['dutyname']</td>";
+}
+echo '</tr>';
+
+//Employee
+echo '<tr>';
+foreach ($db->query('SELECT name FROM employee;') as $row)
+{
+  echo "<td>$row['name']</td>";
+}
+echo '</tr>';
 
 
 
