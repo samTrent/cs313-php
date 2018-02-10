@@ -3,9 +3,28 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+
+    <style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
   </head>
   <body>
     <?php
+
     try {
       $host = "ec2-107-21-236-219.compute-1.amazonaws.com";
       $dbname = "dcupbm4rvpsqb2";
@@ -32,7 +51,7 @@
     echo '<tr>';
     foreach ($db->query('SELECT shiftname FROM shift;') as $row)
     {
-      echo '<td>' . $row['shiftname'] . '</td>';
+      echo '<td>' . $row['shiftname'] . '</td><br>';
     }
     echo '</tr>';
 
@@ -40,7 +59,7 @@
     echo '<tr>';
     foreach ($db->query('SELECT dutyname FROM duty;') as $row)
     {
-      echo '<td>' . $row['dutyname'] . '</td>';
+      echo '<td>' . $row['dutyname'] . '</td><br>';
     }
     echo '</tr>';
 
@@ -48,7 +67,7 @@
     echo '<tr>';
     foreach ($db->query('SELECT name FROM employee;') as $row)
     {
-      echo '<td>' . $row['name'] . '</td>';
+      echo '<td>' . $row['name'] . '</td><br>';
     }
     echo '</tr>';
 
