@@ -52,7 +52,7 @@ tr:nth-child(even) {
       INNER JOIN shift s ON s.shiftid = e.employeeid;') as $row)
     {
       echo '<tr>';
-      echo '<td>' . $row['name'] . $row['shift'] . $row['duty'] . '</td>';
+      echo '<td>' . $row['name'] . $row['shift'] . '</td>';
       echo '</tr>';
     }
 
