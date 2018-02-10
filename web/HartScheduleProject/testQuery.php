@@ -43,8 +43,6 @@ tr:nth-child(even) {
     //table headers
     echo '<tr>';
     echo '<th>Shifts</th>';
-    echo '<th>Duties</th>';
-    echo '<th>Employee</th>';
     echo '</tr>';
 
     //Shifts
@@ -56,6 +54,10 @@ tr:nth-child(even) {
       echo '</tr>';
     }
 
+    echo '<tr>';
+    echo '<th>Duties</th>';
+    echo '</tr>';
+
 
     //duties
 
@@ -66,6 +68,9 @@ tr:nth-child(even) {
       echo '</tr>';
     }
 
+    echo '<tr>';
+    echo '<th>Employee</th>';
+    echo '</tr>';
 
     //Employee
 
