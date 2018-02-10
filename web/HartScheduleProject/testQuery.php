@@ -48,28 +48,34 @@ tr:nth-child(even) {
     echo '</tr>';
 
     //Shifts
-    echo '<tr>';
+
     foreach ($db->query('SELECT shiftname FROM shift;') as $row)
     {
+      echo '<tr>';
       echo '<td>' . $row['shiftname'] . '</td>';
+      echo '</tr>';
     }
-  //  echo '</tr>';
+
 
     //duties
-  //  echo '<tr>';
+
     foreach ($db->query('SELECT dutyname FROM duty;') as $row)
     {
+      echo '<tr>';
       echo '<td>' . $row['dutyname'] . '</td>';
+      echo '</tr>';
     }
-  //  echo '</tr>';
+
 
     //Employee
-  //  echo '<tr>';
+
     foreach ($db->query('SELECT name FROM employee;') as $row)
     {
+       echo '<tr>';
       echo '<td>' . $row['name'] . '</td>';
+        echo '</tr>';
     }
-    echo '</tr>';
+
 
   echo '</table>';
      ?>
