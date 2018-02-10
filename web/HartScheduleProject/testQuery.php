@@ -42,43 +42,18 @@ tr:nth-child(even) {
     echo '<table>';
     //table headers
     echo '<tr>';
-    echo '<th>Shifts</th>';
+    echo '<th>Employee</th>';
+    echo '<th>Shift</th>';
+    //echo '<th>Duty</th>';
     echo '</tr>';
 
     //Shifts
-
-    foreach ($db->query('SELECT shiftname FROM shift;') as $row)
+    foreach ($db->query('SELECT e.name, s.shiftname FROM employee e
+      INNER JOIN shift s ON s.shiftid = e.employeeid;') as $row)
     {
       echo '<tr>';
-      echo '<td>' . $row['shiftname'] . '</td>';
+      echo '<td>' . $row['name'] . $row['shift'] . $row['duty'] . '</td>';
       echo '</tr>';
-    }
-
-    echo '<tr>';
-    echo '<th>Duties</th>';
-    echo '</tr>';
-
-
-    //duties
-
-    foreach ($db->query('SELECT dutyname FROM duty;') as $row)
-    {
-      echo '<tr>';
-      echo '<td>' . $row['dutyname'] . '</td>';
-      echo '</tr>';
-    }
-
-    echo '<tr>';
-    echo '<th>Employee</th>';
-    echo '</tr>';
-
-    //Employee
-
-    foreach ($db->query('SELECT name FROM employee;') as $row)
-    {
-       echo '<tr>';
-      echo '<td>' . $row['name'] . '</td>';
-        echo '</tr>';
     }
 
 
