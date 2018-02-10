@@ -53,7 +53,7 @@ tr:nth-child(even) {
     {
       echo '<tr>';
       echo '<td>' . $row['name'] . '</td>';
-      echo '<td>' . $row['shift'] . '</td>';
+      echo '<td>' . $row['shiftname'] . '</td>';
       echo '</tr>';
 
     }
