@@ -18,6 +18,13 @@ CREATE TABLE employee (
   duty       varchar(20) REFERENCES duty(dutyID)
 );
 
+CREATE TABLE schedule (
+  scheduleid serial PRIMARY KEY,
+  employee   varchar(100) NOT NULL REFERENCES employee(employeeid),
+  shift      varchar(20) NOT NULL REFERENCES shift(shiftID),
+  duty       varchar(20) NOT NULL REFERENCES duty(dutyID)
+);
+
 
 -- Adding data
 INSERT INTO shift (shiftName) VALUES ('5AM-9AM');
