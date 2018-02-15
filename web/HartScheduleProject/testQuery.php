@@ -76,31 +76,40 @@ tr:nth-child(even) {
 
 
     //Shifts
-    foreach($db->query('SELECT shiftname FROM shift') as $shiftrow)
-    {
-
-          //get dutys
-            //get employees
-        echo '<tr>';
-        echo '<td>' . $shiftrow['shiftname'];
-        foreach($db->query('SELECT dutyname FROM duty') as $dutyrow)
-        {
-          echo '<tr>' . <'th'> . $dutyrow['dutyname'] . '</th>' . '</tr>';
-        }
-        echo '</td></tr>';
-    }
-    // foreach ($db->query('SELECT e.firstname, sh.shiftname, d.dutyname FROM employee e
-    //    JOIN schedule s on e.employeeid = s.scheduleid
-    //    JOIN shift sh on sh.shiftid = s.scheduleid
-    //    JOIN duty d on d.dutyid = s.scheduleid') as $row)
+    // foreach($db->query('SELECT shiftname FROM shift') as $shiftrow)
     // {
-    //   echo '<tr>';
-    //   echo '<td>' . $row['firstname'] . '</td>';
-    //   echo '<td>' . $row['shiftname'] . '</td>';
-    //   echo '<td>' . $row['dutyname'] . '</td>';
-    //   echo '</tr>';
     //
+    //       //get dutys
+    //         //get employees
+    //     echo '<tr>';
+    //     echo '<td>' . $shiftrow['shiftname'];
+    //     foreach($db->query('SELECT dutyname FROM duty') as $dutyrow)
+    //     {
+    //       echo '<tr>' . <'th'> . $dutyrow['dutyname'] . '</th>' . '</tr>';
+    //     }
+    //     echo '</td></tr>';
     // }
+    foreach ($db->query('SELECT e.firstname, sh.shiftname, d.dutyname FROM employee e
+       JOIN schedule s on e.employeeid = s.scheduleid
+       JOIN shift sh on sh.shiftid = s.scheduleid
+       JOIN duty d on d.dutyid = s.scheduleid') as $row)
+    {
+      //start the massive rows...
+      echo '<tr>';
+      //get shift
+      echo '<td>' . $row['shiftname'] . '</td>';
+        //get duty names inside shift...
+        echo '<th>' . $row['dutyname'] . '</th>';
+      //end massive row
+      echo '</tr>';
+
+      // echo '<tr>';
+      // echo '<td>' . $row['firstname'] . '</td>';
+      // echo '<td>' . $row['shiftname'] . '</td>';
+      // echo '<td>' . $row['dutyname'] . '</td>';
+      // echo '</tr>';
+
+    }
 
 
     echo '</table>';
