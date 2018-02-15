@@ -99,7 +99,11 @@ tr:nth-child(even) {
       //get shift
       echo '<td>' . $row['shiftname'] . '</td>';
         //get duty names inside shift...
-        echo '<th>' . $row['dutyname'] . '</th>';
+        foreach($db->query('SELECT dutyname FROM duty') as $dutyrow)
+        {
+            echo '<th>' . $dutyrow['dutyname'] . '</th>';
+        }
+      //  echo '<th>' . $row['dutyname'] . '</th>';
       //end massive row
       echo '</tr>';
 
