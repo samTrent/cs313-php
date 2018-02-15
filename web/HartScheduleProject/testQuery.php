@@ -86,14 +86,15 @@ tr:nth-child(even) {
           echo '<td>' . $shiftrow['shiftname'] . '</td>';
           $shiftid = $shiftrow['shiftid'];
             //get duties...
-            echo '<tr>';
+
             foreach($db->query('SELECT dutyid, dutyname FROM duty') as $dutyrow)
             {
+              echo '<tr>';
               echo '<td>' . $dutyrow['dutyname'] . '</td>';
               $dutyid = $dutyrow['dutyid'];
 
               //get eployees
-              echo '<tr>';
+              //echo '<tr>';
                 foreach ($db->query('SELECT e.firstname, sh.shiftname, d.dutyname FROM employee e
                     JOIN schedule s on e.employeeid = s.scheduleid
                     JOIN shift sh on sh.shiftid = s.scheduleid
@@ -105,10 +106,11 @@ tr:nth-child(even) {
 
                   echo '<td>' . $row['firstname'] . '</td>';
 
+
                 }
                 echo '</tr>';
+
             }
-            echo '</tr>';
         //end massive row
         echo '</tr>';
     }
