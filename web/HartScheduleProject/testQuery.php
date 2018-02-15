@@ -65,7 +65,7 @@ tr:nth-child(even) {
     echo '<table>';
     //table headers
     echo '<tr>';
-    echo '<th rowspan="1">Shift</th>';
+    echo '<th rowspan="3">Shift</th>';
     foreach($db->query('SELECT theDate FROM schedule') as $row)
     {
       //get dates
