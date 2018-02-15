@@ -82,7 +82,7 @@ tr:nth-child(even) {
           //get dutys
             //get employees
         echo '<tr>';
-        echo '<td>' . $row['shiftname']
+        echo '<td>' . $row['shiftname'];
         foreach($db->query('SELECT dutyname FROM duty') as $row)
         {
           echo '<tr>' . <'th'> . $row['dutyname'] .'</th>' . '</tr>';
