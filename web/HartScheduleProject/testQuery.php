@@ -66,7 +66,7 @@ tr:nth-child(even) {
     //table headers
     echo '<tr>';
     echo '<th>Shift</th>';
-    foreach($db->query('SELECT theDate FROM schedule'))
+    foreach($db->query('SELECT theDate FROM schedule') as $row)
     {
       echo '<th>' . $row['theDate'] . '</th>';
     }// get all the days
@@ -74,22 +74,31 @@ tr:nth-child(even) {
     //echo '<th>Duty</th>';
     echo '</tr>';
 
+    echo '<tr>';
     //Shifts
-    foreach ($db->query('SELECT e.firstname, sh.shiftname, d.dutyname FROM employee e
-       JOIN schedule s on e.employeeid = s.scheduleid
-       JOIN shift sh on sh.shiftid = s.scheduleid
-       JOIN duty d on d.dutyid = s.scheduleid') as $row)
+    foreach($db->query('SELECT shiftname FROM shift') as $row)
     {
-      echo '<tr>';
-      echo '<td>' . $row['firstname'] . '</td>';
-      echo '<td>' . $row['shiftname'] . '</td>';
-      echo '<td>' . $row['dutyname'] . '</td>';
-      echo '</tr>';
 
+          //get dutys
+            //get employees
+
+        echo '<td>' . $row['shiftname'] . '</td>';
     }
+    // foreach ($db->query('SELECT e.firstname, sh.shiftname, d.dutyname FROM employee e
+    //    JOIN schedule s on e.employeeid = s.scheduleid
+    //    JOIN shift sh on sh.shiftid = s.scheduleid
+    //    JOIN duty d on d.dutyid = s.scheduleid') as $row)
+    // {
+    //   echo '<tr>';
+    //   echo '<td>' . $row['firstname'] . '</td>';
+    //   echo '<td>' . $row['shiftname'] . '</td>';
+    //   echo '<td>' . $row['dutyname'] . '</td>';
+    //   echo '</tr>';
+    //
+    // }
 
-
-  echo '</table>';
+    echo '</tr>';
+    echo '</table>';
      ?>
 
   </body>
