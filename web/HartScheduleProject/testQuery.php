@@ -76,44 +76,45 @@ tr:nth-child(even) {
 
 
     //Shifts
-    // foreach($db->query('SELECT shiftname FROM shift') as $shiftrow)
+    foreach($db->query('SELECT shiftname FROM shift') as $shiftrow)
+    {
+      //start massive row...
+      echo '<tr>';
+          //get shifts
+          echo '<td>' . $shiftrow['shiftname'] . '</td>';
+            //get duties...
+            foreach($db->query('SELECT dutyname FROM duty') as $dutyrow)
+            {
+              echo '<th>' . $dutyrow['dutyname'] . '</th>';
+            }
+      //end massive row
+        echo '</tr>';
+    }
+    // foreach ($db->query('SELECT e.firstname, sh.shiftname, d.dutyname FROM employee e
+    //    JOIN schedule s on e.employeeid = s.scheduleid
+    //    JOIN shift sh on sh.shiftid = s.scheduleid
+    //    JOIN duty d on d.dutyid = s.scheduleid') as $row)
     // {
-    //
-    //       //get dutys
-    //         //get employees
-    //     echo '<tr>';
-    //     echo '<td>' . $shiftrow['shiftname'];
+    //   //start the massive rows...
+    //   echo '<tr>';
+    //   //get shift
+    //   echo '<td>' . $row['shiftname'] . '</td>';
+    //     //get duty names inside shift...
     //     foreach($db->query('SELECT dutyname FROM duty') as $dutyrow)
     //     {
-    //       echo '<tr>' . <'th'> . $dutyrow['dutyname'] . '</th>' . '</tr>';
+    //         echo '<th>' . $dutyrow['dutyname'] . '</th>';
     //     }
-    //     echo '</td></tr>';
+    //   //  echo '<th>' . $row['dutyname'] . '</th>';
+    //   //end massive row
+    //   echo '</tr>';
+    //
+    //   // echo '<tr>';
+    //   // echo '<td>' . $row['firstname'] . '</td>';
+    //   // echo '<td>' . $row['shiftname'] . '</td>';
+    //   // echo '<td>' . $row['dutyname'] . '</td>';
+    //   // echo '</tr>';
+    //
     // }
-    foreach ($db->query('SELECT e.firstname, sh.shiftname, d.dutyname FROM employee e
-       JOIN schedule s on e.employeeid = s.scheduleid
-       JOIN shift sh on sh.shiftid = s.scheduleid
-       JOIN duty d on d.dutyid = s.scheduleid') as $row)
-    {
-      //start the massive rows...
-      echo '<tr>';
-      //get shift
-      echo '<td>' . $row['shiftname'] . '</td>';
-        //get duty names inside shift...
-        foreach($db->query('SELECT dutyname FROM duty') as $dutyrow)
-        {
-            echo '<th>' . $dutyrow['dutyname'] . '</th>';
-        }
-      //  echo '<th>' . $row['dutyname'] . '</th>';
-      //end massive row
-      echo '</tr>';
-
-      // echo '<tr>';
-      // echo '<td>' . $row['firstname'] . '</td>';
-      // echo '<td>' . $row['shiftname'] . '</td>';
-      // echo '<td>' . $row['dutyname'] . '</td>';
-      // echo '</tr>';
-
-    }
 
 
     echo '</table>';
