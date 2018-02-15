@@ -81,9 +81,9 @@ tr:nth-child(even) {
     foreach($db->query('SELECT shiftid, shiftname FROM shift') as $shiftrow)
     {
       //start massive row...
-      echo '<tr>';
+      echo '<tr colspan="3">';
           //get shifts
-          echo '<td rowspan="2" colspan="6">' . $shiftrow['shiftname'] . '</td>';
+          echo '<td rowspan="2">' . $shiftrow['shiftname'] . '</td>';
           $shiftid = $shiftrow['shiftid'];
             //get duties...
             // echo '<tr>';
