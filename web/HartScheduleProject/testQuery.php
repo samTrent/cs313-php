@@ -91,6 +91,8 @@ tr:nth-child(even) {
               echo '<th>' . $dutyrow['dutyname'] . '</th>';
               $dutyid = $dutyrow['dutyid'];
 
+              //get eployees
+              echo '<tr>';
                 foreach ($db->query('SELECT e.firstname, sh.shiftname, d.dutyname FROM employee e
                     JOIN schedule s on e.employeeid = s.scheduleid
                     JOIN shift sh on sh.shiftid = s.scheduleid
@@ -99,11 +101,11 @@ tr:nth-child(even) {
                     AND s.shift = $shiftid
                     AND s.duty = $dutyid') as $row)
                 {
-                  //get eployees
-                  echo '<tr>';
+
                   echo '<td>' . $row['firstname'] . '</td>';
-                  echo '</tr>';
+
                 }
+                echo '</tr>';
 
 
             }
