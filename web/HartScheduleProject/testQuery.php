@@ -39,11 +39,37 @@ tr:nth-child(even) {
      die();
     }
 
+    // echo '<table>';
+    // //table headers
+    // echo '<tr>';
+    // echo '<th>Employee</th>';
+    // echo '<th>Shift</th>';
+    // echo '<th>Duty</th>';
+    // //echo '<th>Duty</th>';
+    // echo '</tr>';
+    //
+    // //Shifts
+    // foreach ($db->query('SELECT e.firstname, sh.shiftname, d.dutyname FROM employee e
+    //    JOIN schedule s on e.employeeid = s.scheduleid
+    //    JOIN shift sh on sh.shiftid = s.scheduleid
+    //    JOIN duty d on d.dutyid = s.scheduleid') as $row)
+    // {
+    //   echo '<tr>';
+    //   echo '<td>' . $row['firstname'] . '</td>';
+    //   echo '<td>' . $row['shiftname'] . '</td>';
+    //   echo '<td>' . $row['dutyname'] . '</td>';
+    //   echo '</tr>';
+    //
+    // }
+
     echo '<table>';
     //table headers
     echo '<tr>';
-    echo '<th>Employee</th>';
     echo '<th>Shift</th>';
+    foreach($db->query('SELECT theDate FROM schedule'))
+    {
+      echo '<th>' . $row['theDate'] . '</th>';
+    }// get all the days
     echo '<th>Duty</th>';
     //echo '<th>Duty</th>';
     echo '</tr>';

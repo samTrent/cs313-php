@@ -53,3 +53,5 @@ INSERT INTO employee (firstname, lastname) VALUES ('Sam', 'Trent');
 
 --create a new schedule
 INSERT INTO schedule (eployee, shift, duty) VALUES (1, 2, 3);
+
+INSERT INTO schedule (theDate, employee, shift, duty) VALUES ('2/15/2018', 1, 2, 2);
