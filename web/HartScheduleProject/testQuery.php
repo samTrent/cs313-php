@@ -96,6 +96,7 @@ tr:nth-child(even) {
                     JOIN shift sh on sh.shiftid = s.scheduleid
                     JOIN duty d on d.dutyid = s.scheduleid
                     WHERE s.employee = e.employeeid
+                    AND s.shift = $shiftid
                     AND s.duty = $dutyid') as $row)
                 {
                   //get eployees
