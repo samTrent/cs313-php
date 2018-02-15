@@ -88,15 +88,15 @@ tr:nth-child(even) {
               echo '<th>' . $dutyrow['dutyname'] . '</th>';
 
                 //get eployees
-                echo '<tr>'
-                foreach($db->query('SELECT e.firstname, sh.shiftname, d.dutyname FROM employee e
+                echo '<tr>';
+                foreach ($db->query('SELECT e.firstname, sh.shiftname, d.dutyname FROM employee e
                     JOIN schedule s on e.employeeid = s.scheduleid
                     JOIN shift sh on sh.shiftid = s.scheduleid
-                    JOIN duty d on d.dutyid = s.scheduleid') as $employeerow)
+                    JOIN duty d on d.dutyid = s.scheduleid') as $row)
                 {
-                    echo '<td>' . $employeerow['firstname'] . '</td>';
+                    echo '<td>' . $row['firstname'] . '</td>';
                 }
-                echo '</tr>'
+                echo '</tr>';
 
             }
       //end massive row
