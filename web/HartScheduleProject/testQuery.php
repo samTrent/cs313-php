@@ -92,9 +92,7 @@ tr:nth-child(even) {
                     JOIN schedule s on e.employeeid = s.scheduleid
                     JOIN shift sh on sh.shiftid = s.scheduleid
                     JOIN duty d on d.dutyid = s.scheduleid
-                    WHERE s.employee = e.employeeid
-                    AND s.shiftid = $shiftrow[\'shiftid\']
-                    AND s.dutyid = $dutyrow[\'dutyid\']') as $row)
+                    WHERE s.employee = e.employeeid') as $row)
                 {
                   //get eployees
                   echo '<tr>';
