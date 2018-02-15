@@ -89,7 +89,7 @@ tr:nth-child(even) {
 
             foreach($db->query('SELECT dutyid, dutyname FROM duty') as $dutyrow)
             {
-              echo '<tr>';
+              //echo '<tr>';
               echo '<th>' . $dutyrow['dutyname'] . '</th>';
               $dutyid = $dutyrow['dutyid'];
 
@@ -103,12 +103,9 @@ tr:nth-child(even) {
                     AND s.shift = $shiftid
                     AND s.duty = $dutyid') as $row)
                 {
-
                   echo '<td>' . $row['firstname'] . '</td>';
-
-
                 }
-                echo '</tr>';
+              //  echo '</tr>';
 
             }
         //end massive row
