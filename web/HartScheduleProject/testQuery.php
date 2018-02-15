@@ -105,14 +105,15 @@ tr:nth-child(even) {
                 //     AND s.duty = $dutyid') as $row)
                 // echo '<tr>';
                 // echo '<table>';
-                echo '<tr>';
+
                 foreach ($db->query('SELECT firstname FROM employee e') as $row)
                 {
-
+                  echo '<tr>';
                   echo '<td>' . $row['firstname'] . '</td>';
+                  echo '</tr>';
                 //  echo '</tr>';
                 }
-                echo '</tr>';
+
                 // echo '<table>';
                 // echo '<tr>';
               //  echo '</tr>';
