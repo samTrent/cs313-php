@@ -95,8 +95,7 @@ tr:nth-child(even) {
                 foreach ($db->query('SELECT e.firstname, sh.shiftname, d.dutyname FROM employee e
                     JOIN schedule s on e.employeeid = s.scheduleid
                     JOIN shift sh on sh.shiftid = s.scheduleid
-                    JOIN duty d on d.dutyid = s.scheduleid
-                    WHERE s.employee = e.employeeid') as $row)
+                    JOIN duty d on d.dutyid = s.scheduleid') as $row)
                 {
                   //get eployees
                   echo '<tr>';
