@@ -84,18 +84,20 @@ tr:nth-child(even) {
       echo '<tr>';
           //get shifts
           echo '<td>' . $shiftrow['shiftname'] . '</td>';
-          $shiftid = $shiftrow['shiftid']
-
+          $shiftid = $shiftrow['shiftid'];
             //get duties...
             foreach($db->query('SELECT dutyid, dutyname FROM duty') as $dutyrow)
             {
               echo '<th>' . $dutyrow['dutyname'] . '</th>';
-              $dutyid = $dutyrow['dutyid']
+              $dutyid = $dutyrow['dutyid'];
 
                 foreach ($db->query('SELECT e.firstname, sh.shiftname, d.dutyname FROM employee e
                     JOIN schedule s on e.employeeid = s.scheduleid
                     JOIN shift sh on sh.shiftid = s.scheduleid
-                    JOIN duty d on d.dutyid = s.scheduleid') as $row)
+                    JOIN duty d on d.dutyid = s.scheduleid
+                    WHERE s.employee = e.employeeid
+                    AND s.shift = $shiftid
+                    AND s.duty = $dutyid') as $row)
                 {
                   //get eployees
                   echo '<tr>';
