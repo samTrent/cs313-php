@@ -87,38 +87,24 @@ tr:nth-child(even) {
           $shiftid = $shiftrow['shiftid'];
             //get duties...
             // echo '<tr>';
-            // foreach($db->query('SELECT dutyid, dutyname FROM duty') as $dutyrow)
-            // {
-            //   //make a new table head on the same row as our shiftname
-            //   echo '<th>' . $dutyrow['dutyname'] . '</th>';
-            //   $dutyid = $dutyrow['dutyid'];
-            //
-            //   //for each duty, get all the employee's who have been assigned to it...
-            //     foreach ($db->query('SELECT firstname FROM employee e') as $row)
-            //     {
-            //       echo '<tr>';
-            //       echo '<td>' . $row['firstname'] . '</td>';
-            //       echo '</tr>';
-            //     }
-            //   }
+            foreach($db->query('SELECT dutyid, dutyname FROM duty') as $dutyrow)
+            {
+              //make a new table head on the same row as our shiftname
+              echo '<th>' . $dutyrow['dutyname'] . '</th>';
+              $dutyid = $dutyrow['dutyid'];
+
+              //for each duty, get all the employee's who have been assigned to it...
+                foreach ($db->query('SELECT firstname FROM employee e') as $row)
+                {
+                  echo '<tr>';
+                  echo '<td>' . $row['firstname'] . '</td>';
+                  echo '</tr>';
+                }
+              }
         //end massive row
         echo '</tr>';
     }
 
-    foreach($db->query('SELECT dutyid, dutyname FROM duty') as $dutyrow)
-    {
-      //make a new table head on the same row as our shiftname
-      echo '<th>' . $dutyrow['dutyname'] . '</th>';
-      $dutyid = $dutyrow['dutyid'];
-
-      //for each duty, get all the employee's who have been assigned to it...
-        foreach ($db->query('SELECT firstname FROM employee e') as $row)
-        {
-          echo '<tr>';
-          echo '<td>' . $row['firstname'] . '</td>';
-          echo '</tr>';
-        }
-      }
     // foreach ($db->query('SELECT e.firstname, sh.shiftname, d.dutyname FROM employee e
     //    JOIN schedule s on e.employeeid = s.scheduleid
     //    JOIN shift sh on sh.shiftid = s.scheduleid
