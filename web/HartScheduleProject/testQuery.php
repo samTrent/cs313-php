@@ -55,9 +55,9 @@ tr:nth-child(even) {
        JOIN duty d on d.dutyid = s.scheduleid') as $row)
     {
       echo '<tr>';
-      echo '<td>' . $row['e.firstname'] . '</td>';
-      echo '<td>' . $row['sh.shiftname'] . '</td>';
-        echo '<td>' . $row['d.dutyname'] . '</td>';
+      echo '<td>' . $row['firstname'] . '</td>';
+      echo '<td>' . $row['shiftname'] . '</td>';
+      echo '<td>' . $row['dutyname'] . '</td>';
       echo '</tr>';
 
     }
