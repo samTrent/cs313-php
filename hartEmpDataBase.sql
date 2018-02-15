@@ -1,4 +1,4 @@
--- creating tables
+ -- creating tables
 
 CREATE TABLE duty (
   dutyID    serial PRIMARY KEY,
@@ -13,20 +13,24 @@ CREATE TABLE shift (
 
 CREATE TABLE employee (
   employeeID serial PRIMARY KEY,
-  name       varchar(100) NOT NULL,
-  shift      varchar(20) REFERENCES shift(shiftID),
-  duty       varchar(20) REFERENCES duty(dutyID)
+  firstname  varchar(100) NOT NULL,
+  lastname   varchar(100) NOT NULL
 );
 
 --?????
 CREATE TABLE schedule (
   scheduleid serial PRIMARY KEY,
   theDate    DATE,
-  employee   varchar(100) NOT NULL REFERENCES employee(employeeid),
-  shift      varchar(20) NOT NULL REFERENCES shift(shiftID),
-  duty       varchar(20) NOT NULL REFERENCES duty(dutyID)
+  employee   SMALLINT NOT NULL REFERENCES employee(employeeid),
+  shift      SMALLINT NOT NULL REFERENCES shift(shiftID),
+  duty       SMALLINT NOT NULL REFERENCES duty(dutyID)
 
 );
+
+
+
+
+
 
 
 -- Adding data
@@ -44,4 +48,8 @@ ALTER TABLE employee ALTER COLUMN shift SET NOT NULL,
 ALTER COLUMN duty SET NOT NULL;
 
 --testing adding a person
-INSERT INTO employee (name, shift, duty) VALUES ('Sam Trent', 3, 3);
+INSERT INTO employee (firstname, lastname) VALUES ('Sam', 'Trent');
+
+
+--create a new schedule
+INSERT INTO schedule (eployee, shift, duty) VALUES (1, 2, 3);

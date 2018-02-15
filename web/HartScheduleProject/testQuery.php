@@ -44,16 +44,20 @@ tr:nth-child(even) {
     echo '<tr>';
     echo '<th>Employee</th>';
     echo '<th>Shift</th>';
+    echo '<th>Duty</th>';
     //echo '<th>Duty</th>';
     echo '</tr>';
 
     //Shifts
-    foreach ($db->query('SELECT e.name, s.shiftname FROM employee e
-      INNER JOIN shift s ON s.shiftid = e.employeeid;') as $row)
+    foreach ($db->query('SELECT * FROM employee e
+       JOIN schedule s on e.employeeid = s.scheduleid
+       JOIN shift sh on sh.shiftid = s.scheduleid
+       JOIN duty d on d.dutyid = s.scheduleid') as $row)
     {
       echo '<tr>';
-      echo '<td>' . $row['name'] . '</td>';
-      echo '<td>' . $row['shiftname'] . '</td>';
+      echo '<td>' . $row['e.firstname'] . '</td>';
+      echo '<td>' . $row['sh.shiftname'] . '</td>';
+        echo '<td>' . $row['d.dutyname'] . '</td>';
       echo '</tr>';
 
     }
