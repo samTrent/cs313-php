@@ -82,11 +82,12 @@ tr:nth-child(even) {
           //get dutys
             //get employees
         echo '<tr>';
+        echo '<td>' . $row['shiftname']
         foreach($db->query('SELECT dutyname FROM duty') as $row)
         {
-          echo '<td>' . $row['shiftname'] . '<tr>' . <'th'> . $row['dutyname'] .'</th>' . '</tr>' . '</td>';
+          echo '<tr>' . <'th'> . $row['dutyname'] .'</th>' . '</tr>';
         }
-        echo '</tr>';
+        echo '</td></tr>';
     }
     // foreach ($db->query('SELECT e.firstname, sh.shiftname, d.dutyname FROM employee e
     //    JOIN schedule s on e.employeeid = s.scheduleid
