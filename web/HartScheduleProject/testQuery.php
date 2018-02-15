@@ -49,7 +49,7 @@ tr:nth-child(even) {
     echo '</tr>';
 
     //Shifts
-    foreach ($db->query('SELECT * FROM employee e
+    foreach ($db->query('SELECT e.firstname, sh.shiftname, d.dutyname FROM employee e
        JOIN schedule s on e.employeeid = s.scheduleid
        JOIN shift sh on sh.shiftid = s.scheduleid
        JOIN duty d on d.dutyid = s.scheduleid') as $row)
