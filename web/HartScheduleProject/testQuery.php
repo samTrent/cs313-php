@@ -65,7 +65,7 @@ tr:nth-child(even) {
     echo '<table>';
     //table headers
     echo '<tr>';
-    echo '<th rowspan="3">Shift</th>';
+    echo '<th>Shift</th>';
     foreach($db->query('SELECT theDate FROM schedule') as $row)
     {
       //get dates
@@ -83,7 +83,7 @@ tr:nth-child(even) {
       //start massive row...
       echo '<tr>';
           //get shifts
-          echo '<td>' . $shiftrow['shiftname'] . '</td>';
+          echo '<td rowspan="3">' . $shiftrow['shiftname'] . '</td>';
           $shiftid = $shiftrow['shiftid'];
             //get duties...
             // echo '<tr>';
