@@ -103,7 +103,9 @@ tr:nth-child(even) {
                     AND s.shift = $shiftid
                     AND s.duty = $dutyid') as $row)
                 {
+                  echo '<tr>';
                   echo '<td>' . $row['firstname'] . '</td>';
+                  echo '</tr>';
                 }
               //  echo '</tr>';
 
