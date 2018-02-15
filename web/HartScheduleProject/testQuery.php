@@ -76,16 +76,16 @@ tr:nth-child(even) {
 
 
     //Shifts
-    foreach($db->query('SELECT shiftname FROM shift') as $row)
+    foreach($db->query('SELECT shiftname FROM shift') as $shiftrow)
     {
 
           //get dutys
             //get employees
         echo '<tr>';
-        echo '<td>' . $row['shiftname'];
-        foreach($db->query('SELECT dutyname FROM duty') as $row)
+        echo '<td>' . $shiftrow['shiftname'];
+        foreach($db->query('SELECT dutyname FROM duty') as $dutyrow)
         {
-          echo '<tr>' . <'th'> . $row['dutyname'] .'</th>' . '</tr>';
+          echo '<tr>' . <'th'> . $dutyrow['dutyname'] . '</th>' . '</tr>';
         }
         echo '</td></tr>';
     }
