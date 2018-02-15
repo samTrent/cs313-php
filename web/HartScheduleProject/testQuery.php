@@ -81,16 +81,16 @@ tr:nth-child(even) {
     foreach($db->query('SELECT shiftid, shiftname FROM shift') as $shiftrow)
     {
       //start massive row...
-      echo '<tr>';
+      echo '<tr rowspan="2">';
           //get shifts
-          echo '<td rowspan="2">' . $shiftrow['shiftname'] . '</td>';
+          echo '<td>' . $shiftrow['shiftname'] . '</td>';
           $shiftid = $shiftrow['shiftid'];
             //get duties...
             // echo '<tr>';
             foreach($db->query('SELECT dutyid, dutyname FROM duty') as $dutyrow)
             {
             //  echo '<tr>';
-              echo '<th colpan="1">' . $dutyrow['dutyname'] . '</th>';
+              echo '<th>' . $dutyrow['dutyname'] . '</th>';
               $dutyid = $dutyrow['dutyid'];
 
 
