@@ -83,7 +83,7 @@ tr:nth-child(even) {
       //start massive row...
       echo '<tr>';
           //get shifts
-          echo '<td colspan="3" rowspan="2">' . $shiftrow['shiftname'] . '</td>';
+          echo '<td colspan="3" rowspan="6">' . $shiftrow['shiftname'] . '</td>';
           $shiftid = $shiftrow['shiftid'];
             //get duties...
             // echo '<tr>';
