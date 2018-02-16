@@ -145,7 +145,7 @@ tr:nth-child(even) {
                 {
                   echo '<tr>';
                   echo '<td>' . $row['firstname'] . '</td>';
-                  echo '</tr>';
+                  // echo '</tr>';
                 }
 
             }
