@@ -98,7 +98,7 @@ tr:nth-child(even) {
                 {
                   echo '<td>' . $ERrow['firstname'] .':ER</td>'; // IC
 
-                  break;
+                  // break;
                 }
                 echo '</tr>';
               }
