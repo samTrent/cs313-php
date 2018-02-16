@@ -1,3 +1,8 @@
+<?php session_start();
+
+$_SESSION['test'];
+
+ ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -40,10 +45,18 @@ tr:nth-child(even) {
     }
 
     // Read request parameters
-    $firstName= $_REQUEST["firstName"];
-    $lastName = $_REQUEST["lastName"];// Store values in an array
-    $returnValue = array("firstName"=>$firstName, "lastName"=>$lastName);// Send back request in JSON format
-    echo json_encode($returnValue);
+    $_SESSION['test'] = $_POST["firstName"];
+    // $lastName = $_REQUEST["lastName"];// Store values in an array
+    // $returnValue = array("firstName"=>$firstName, "lastName"=>$lastName);// Send back request in JSON format
+    // echo json_encode($returnValue);
+    if(isset($_SESSION['test']))
+    {
+      echo "SESSIONS IS: " . $_SESSION['test'] . '<br>';
+    }
+    else {
+      echo "SESSION was not set...";
+    }
+
 
 
     echo '<table>';
