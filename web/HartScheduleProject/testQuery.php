@@ -89,19 +89,23 @@ tr:nth-child(even) {
               // echo '<td>' . $row['firstname'] .'</td>'; // FC
               echo '</tr>';
             }
-            // foreach ($db->query('SELECT e.firstname, d.duty FROM employee e
-            // JOIN submittedschedule su ON e.employeeid = su.employee
-            // JOIN duty d ON d.dutyid = su.duty WHERE d.duty = \'ICenter\'') as $ICrow)
-            // {
-            //   echo '<td>' . $ICrow['firstname'] .'</td>'; // IC
-            // }
-            //
-            // foreach ($db->query('SELECT e.firstname, d.duty FROM employee e
-            // JOIN submittedschedule su ON e.employeeid = su.employee
-            // JOIN duty d ON d.dutyid = su.duty WHERE d.duty = \'Equipment Room\'') as $ERrow)
-            // {
-            //   echo '<td>' . $ERrow['firstname'] .'</td>'; // ER
-            // }
+            foreach ($db->query('SELECT e.firstname, d.duty FROM employee e
+            JOIN submittedschedule su ON e.employeeid = su.employee
+            JOIN duty d ON d.dutyid = su.duty WHERE d.duty = \'ICenter\'') as $ICrow)
+            {
+              echo '<tr>';
+              echo '<td>' . $ICrow['firstname'] .'</td>'; // IC
+              echo '</tr>';
+            }
+
+            foreach ($db->query('SELECT e.firstname, d.duty FROM employee e
+            JOIN submittedschedule su ON e.employeeid = su.employee
+            JOIN duty d ON d.dutyid = su.duty WHERE d.duty = \'Equipment Room\'') as $ERrow)
+            {
+              echo '<tr>';
+              echo '<td>' . $ERrow['firstname'] .'</td>'; // ER
+              echo '</tr>';
+            }
 
 
 
