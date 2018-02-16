@@ -81,25 +81,27 @@ tr:nth-child(even) {
             echo '<tr>';
             foreach ($db->query('SELECT e.firstname, d.duty FROM employee e
             JOIN submittedschedule su ON e.employeeid = su.employee
-            JOIN duty d ON d.dutyid = su.duty WHERE d.duty = \'Fitness Center\'') as $FCrow)
+            JOIN duty d ON d.dutyid = su.duty WHERE d.duty = \'Fitness Center\'') as $row)
             {
 
-              echo '<td>' . $FCrow['firstname'] .'</td>'; // FC
+              echo '<td>' . $row['firstname'] .'</td>'; // FC
+              echo '<td>' . $row['firstname'] .'</td>'; // FC
+              echo '<td>' . $row['firstname'] .'</td>'; // FC
 
             }
-            foreach ($db->query('SELECT e.firstname, d.duty FROM employee e
-            JOIN submittedschedule su ON e.employeeid = su.employee
-            JOIN duty d ON d.dutyid = su.duty WHERE d.duty = \'ICenter\'') as $ICrow)
-            {
-              echo '<td>' . $ICrow['firstname'] .'</td>'; // IC
-            }
-
-            foreach ($db->query('SELECT e.firstname, d.duty FROM employee e
-            JOIN submittedschedule su ON e.employeeid = su.employee
-            JOIN duty d ON d.dutyid = su.duty WHERE d.duty = \'Equipment Room\'') as $ERrow)
-            {
-              echo '<td>' . $ERrow['firstname'] .'</td>'; // ER
-            }
+            // foreach ($db->query('SELECT e.firstname, d.duty FROM employee e
+            // JOIN submittedschedule su ON e.employeeid = su.employee
+            // JOIN duty d ON d.dutyid = su.duty WHERE d.duty = \'ICenter\'') as $ICrow)
+            // {
+            //   echo '<td>' . $ICrow['firstname'] .'</td>'; // IC
+            // }
+            //
+            // foreach ($db->query('SELECT e.firstname, d.duty FROM employee e
+            // JOIN submittedschedule su ON e.employeeid = su.employee
+            // JOIN duty d ON d.dutyid = su.duty WHERE d.duty = \'Equipment Room\'') as $ERrow)
+            // {
+            //   echo '<td>' . $ERrow['firstname'] .'</td>'; // ER
+            // }
             echo '</tr>';
 
 
