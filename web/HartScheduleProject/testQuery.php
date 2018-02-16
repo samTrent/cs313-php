@@ -39,6 +39,13 @@ tr:nth-child(even) {
      die();
     }
 
+    // Read request parameters
+    $firstName= $_REQUEST["firstName"];
+    $lastName = $_REQUEST["lastName"];// Store values in an array
+    $returnValue = array("firstName"=>$firstName, "lastName"=>$lastName);// Send back request in JSON format
+    echo json_encode($returnValue);
+
+
     echo '<table>';
     //table headers
     echo '<tr>';
@@ -60,7 +67,7 @@ tr:nth-child(even) {
       //start massive row...
       echo '<tr>';
           //get shifts
-          echo '<td rowspan="5">' . $shiftrow['shiftname'] . '</td>';
+          echo '<td rowspan="4">' . $shiftrow['shiftname'] . '</td>';
           $shiftid = $shiftrow['shiftid'];
             //get duties...
 
@@ -75,10 +82,10 @@ tr:nth-child(even) {
             //fitness center
             foreach ($db->query('SELECT firstname FROM employee e') as $row)
             {
-              echo '<tr>'; //fitness Center     ICenter             Equipment Room
-              echo '<td>' . $row['firstname'] .'</td>';
-              echo '<td>' . $row['firstname'] .'</td>';
-              echo '<td>' . $row['firstname'] .'</td>';
+              echo '<tr>';
+              echo '<td>' . $row['firstname'] .'</td>'; // FC
+              echo '<td>' . $row['firstname'] .'</td>'; // IC
+              echo '<td>' . $row['firstname'] .'</td>'; // ER
               echo '</tr>';
             }
 

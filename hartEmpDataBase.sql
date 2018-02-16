@@ -17,14 +17,18 @@ CREATE TABLE employee (
   lastname   varchar(100) NOT NULL
 );
 
+CREATE TABLE dutyset (
+  dutysetid SERIAL PRIMARY KEY,
+  employees SMALLINT[] ELEMENT REFERENCES employee,
+  duty      SMALLINT REFERENCES duty(dutyid)
+);
+
 --?????
 CREATE TABLE schedule (
   scheduleid serial PRIMARY KEY,
-  theDate    DATE,
-  employee   SMALLINT NOT NULL REFERENCES employee(employeeid),
-  shift      SMALLINT NOT NULL REFERENCES shift(shiftID),
-  duty       SMALLINT NOT NULL REFERENCES duty(dutyID)
-
+  thedate    DATE NOT NULL,
+  dutysets   SMALLINT[],
+  shift      SMALLINT NOT NULL REFERENCES shift(shiftID)
 );
 
 
