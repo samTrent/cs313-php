@@ -129,7 +129,7 @@ tr:nth-child(even) {
       //start massive row...
       echo '<tr>';
           //get shifts
-          echo '<td>' . $shiftrow['shiftname'] . '</td>';
+          echo '<td rowspan="6">' . $shiftrow['shiftname'] . '</td>';
           $shiftid = $shiftrow['shiftid'];
             //get duties...
 
@@ -142,14 +142,20 @@ tr:nth-child(even) {
 
               //for each duty, get all the employee's who have been assigned to it...
               //  echo '<tr>';
-                foreach ($db->query('SELECT firstname FROM employee e') as $row)
-                {
-                  // echo '<tr>';
+                // foreach ($db->query('SELECT firstname FROM employee e') as $row)
+                // {
+                //   // echo '<tr>';
                 //  echo '<td>' . $row['firstname'] . '</td>';
-                  // echo '</tr>';
-                }
+                //   // echo '</tr>';
+                // }
               //  echo '</tr>';
 
+            }
+            foreach ($db->query('SELECT firstname FROM employee e') as $row)
+            {
+              echo '<tr>';
+             echo '<td>' . $row['firstname'] . '</td>';
+              echo '</tr>';
             }
 
 
