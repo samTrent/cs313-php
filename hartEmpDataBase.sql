@@ -2,12 +2,17 @@
 
 CREATE TABLE duty (
   dutyID    serial PRIMARY KEY,
-  dutyName  varchar(20) NOT NULL
+  dutyName  varchar(20) NOT NULL,
+  shifts    SMALLINT REFERENCES shift(shiftid),
+  employee  SMALLINT REFERENCES employee(employeeid)
 );
 
 CREATE TABLE shift (
   shiftID   serial PRIMARY KEY,
-  shiftName varchar(20) NOT NULL
+  shiftName varchar(20) NOT NULL,
+  --duty      SMALLINT REFERENCES duty(dutyid),
+  weekday   SMALLINT REFERENCES weekday(weekdayid)
+
 );
 
 
@@ -17,23 +22,12 @@ CREATE TABLE employee (
   lastname   varchar(100) NOT NULL
 );
 
-CREATE TABLE dutyset (
-  dutysetid SERIAL PRIMARY KEY,
-  employees SMALLINT[] ELEMENT REFERENCES employee,
-  duty      SMALLINT REFERENCES duty(dutyid)
-);
 
 --?????
-CREATE TABLE schedule (
-  scheduleid serial PRIMARY KEY,
-  thedate    DATE NOT NULL,
-  dutysets   SMALLINT[],
-  shift      SMALLINT NOT NULL REFERENCES shift(shiftID)
+CREATE TABLE weekday (
+  weekdayid serial PRIMARY KEY,
+  weekdaydate DATE NOT NULL
 );
-
-
-
-
 
 
 
