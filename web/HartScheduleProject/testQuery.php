@@ -137,7 +137,7 @@ tr:nth-child(even) {
             {
 
               //make a new table head on the same row as our shiftname
-              echo '<th colspan="3">' . $dutyrow['dutyname'] . '</th>';
+              echo '<th>' . $dutyrow['dutyname'] . '</th>';
               $dutyid = $dutyrow['dutyid'];
 
               //for each duty, get all the employee's who have been assigned to it...
@@ -154,22 +154,8 @@ tr:nth-child(even) {
             //fitness center
             foreach ($db->query('SELECT firstname FROM employee e') as $row)
             {
-              echo '<tr>';
-              echo '<td>' . $row['firstname'] . '</td>';
-              echo '</tr>';
-            }
-            //ICenter
-            foreach ($db->query('SELECT firstname FROM employee e') as $row)
-            {
-              echo '<tr>';
-              echo '<td>' . $row['firstname'] . '</td>';
-              echo '</tr>';
-            }
-            //Equipment Room
-            foreach ($db->query('SELECT firstname FROM employee e') as $row)
-            {
-              echo '<tr>';
-              echo '<td>' . $row['firstname'] . '</td>';
+              echo '<tr>'; //fitness Center     ICenter             Equipment Room
+              echo '<td>' . $row['firstname'] . $row['firstname']. $row['firstname'] .'</td>';
               echo '</tr>';
             }
 
