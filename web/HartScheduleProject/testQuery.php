@@ -151,10 +151,25 @@ tr:nth-child(even) {
               //  echo '</tr>';
 
             }
+            //fitness center
             foreach ($db->query('SELECT firstname FROM employee e') as $row)
             {
               echo '<tr>';
-             echo '<td>' . $row['firstname'] . '</td>';
+              echo '<td>' . $row['firstname'] . '</td>';
+              echo '</tr>';
+            }
+            //ICenter
+            foreach ($db->query('SELECT firstname FROM employee e') as $row)
+            {
+              echo '<tr>';
+              echo '<td>' . $row['firstname'] . '</td>';
+              echo '</tr>';
+            }
+            //Equipment Room
+            foreach ($db->query('SELECT firstname FROM employee e') as $row)
+            {
+              echo '<tr>';
+              echo '<td>' . $row['firstname'] . '</td>';
               echo '</tr>';
             }
 
