@@ -65,7 +65,7 @@ tr:nth-child(even) {
       //start massive row...
       echo '<tr>';
           //get shifts default should be 4 for rowspan
-          echo '<td rowspan="10">' . $shiftrow['shift'] . '</td>';
+          echo '<td rowspan="4">' . $shiftrow['shift'] . '</td>';
           $shiftid = $shiftrow['shiftid'];
             //get duties...
 
@@ -78,12 +78,14 @@ tr:nth-child(even) {
 
             }
             //fitness center
-            foreach ($db->query('SELECT firstname FROM employee e') as $row)
+            foreach ($db->query('SELECT e.firstname, d.duty FROM employee e
+            JOIN submittedschedule su ON e.employeeid = su.employee
+            JOIN duty d ON d.dutyid = su.duty WHERE d.duty = 'ICenter';') as $row)
             {
               echo '<tr>';
-              echo '<td>' . $row['firstname'] .'</td>'; // FC
-              echo '<td>' . $row['firstname'] .'</td>'; // IC
-              echo '<td>' . $row['firstname'] .'</td>'; // ER
+              echo '<td>' . $row['e.firstname'] .'</td>'; // FC
+              echo '<td>' . $row['e.firstname'] .'</td>'; // IC
+              echo '<td>' . $row['e.firstname'] .'</td>'; // ER
               echo '</tr>';
             }
 
