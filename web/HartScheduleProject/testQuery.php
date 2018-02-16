@@ -77,17 +77,17 @@ tr:nth-child(even) {
               $dutyid = $dutyrow['dutyid'];
 
             }
-            //fitness center
-            echo '<tr>';
+
             foreach ($db->query('SELECT e.firstname, d.duty FROM employee e
             JOIN submittedschedule su ON e.employeeid = su.employee
             JOIN duty d ON d.dutyid = su.duty WHERE d.duty = \'Fitness Center\'') as $row)
             {
-
+              //fitness center
+              echo '<tr>';
               echo '<td>' . $row['firstname'] .'</td>'; // FC
               echo '<td>' . $row['firstname'] .'</td>'; // FC
               echo '<td>' . $row['firstname'] .'</td>'; // FC
-
+              echo '</tr>';
             }
             // foreach ($db->query('SELECT e.firstname, d.duty FROM employee e
             // JOIN submittedschedule su ON e.employeeid = su.employee
@@ -102,7 +102,7 @@ tr:nth-child(even) {
             // {
             //   echo '<td>' . $ERrow['firstname'] .'</td>'; // ER
             // }
-            echo '</tr>';
+
 
 
             //end massive row
