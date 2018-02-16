@@ -90,7 +90,7 @@ tr:nth-child(even) {
             foreach($db->query('SELECT dutyid, dutyname FROM duty') as $dutyrow)
             {
               //make a new table head on the same row as our shiftname
-              echo '<tr>' . $dutyrow['dutyname'] . '</tr>';
+              echo '<td>' . $dutyrow['dutyname'] . '</td>';
               $dutyid = $dutyrow['dutyid'];
 
               //for each duty, get all the employee's who have been assigned to it...
