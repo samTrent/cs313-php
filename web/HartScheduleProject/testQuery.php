@@ -45,17 +45,13 @@ tr:nth-child(even) {
     }
 
     // Read request parameters
-    $_SESSION['test'] = $_POST["firstName"];
+    $_SESSION['test'] = $_POST['firstName'];
     // $lastName = $_REQUEST["lastName"];// Store values in an array
     // $returnValue = array("firstName"=>$firstName, "lastName"=>$lastName);// Send back request in JSON format
     // echo json_encode($returnValue);
-    if(isset($_SESSION['test']))
-    {
+
       echo "SESSIONS IS: " . $_SESSION['test'] . '<br>';
-    }
-    else {
-      echo "SESSION was not set...";
-    }
+    
 
 
 
