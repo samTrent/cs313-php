@@ -115,7 +115,7 @@ tr:nth-child(even) {
     foreach($db->query('SELECT theDate FROM schedule') as $row)
     {
       //get dates
-      echo '<th>' . $row['theDate'] . '</th>';
+      echo '<th colspan="3">' . $row['theDate'] . '</th>';
     }
     //echo '<th>Duty</th>';
     echo '</tr>';
@@ -135,17 +135,17 @@ tr:nth-child(even) {
             echo '<table>';
             foreach($db->query('SELECT dutyid, dutyname FROM duty') as $dutyrow)
             {
-              echo '<tr>';
+
               //make a new table head on the same row as our shiftname
-              echo '<th>' . $dutyrow['dutyname'] . '</th>';
+              echo '<th >' . $dutyrow['dutyname'] . '</th>';
               $dutyid = $dutyrow['dutyid'];
-              echo '</tr>';
+
               //for each duty, get all the employee's who have been assigned to it...
                 foreach ($db->query('SELECT firstname FROM employee e') as $row)
                 {
-                  echo '<tr>';
+                  //echo '<tr>';
                   echo '<td>' . $row['firstname'] . '</td>';
-                  echo '</tr>';
+                  //echo '</tr>';
                 }
 
             }
