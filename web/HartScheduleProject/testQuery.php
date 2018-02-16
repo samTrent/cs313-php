@@ -1,7 +1,7 @@
 <?php session_start();
 
-$_SESSION['test'] = $_GET['firstName'];
-echo "THIS IS POST: " . $_GET['firstName'] . '<br>';
+$_SESSION['test'] = $_POST['firstName'];
+echo "THIS IS POST: " . $_POST['firstName'] . '<br>';
  ?>
 <!DOCTYPE html>
 <html>
