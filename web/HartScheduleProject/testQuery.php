@@ -69,7 +69,7 @@ tr:nth-child(even) {
     foreach($db->query('SELECT theDate FROM schedule') as $row)
     {
       //get dates
-      echo '<th colspan="3">' . $row['theDate'] . '</th>';
+      echo '<th>' . $row['theDate'] . '</th>';
     }
     //echo '<th>Duty</th>';
     echo '</tr>';
@@ -81,16 +81,17 @@ tr:nth-child(even) {
     foreach($db->query('SELECT shiftid, shiftname FROM shift') as $shiftrow)
     {
       //start massive row...
-      echo '<tr colspan="3">';
+      echo '<tr>';
           //get shifts
-          echo '<td rowspan="2">' . $shiftrow['shiftname'] . '</td>';
+          echo '<td rowspan="6">' . $shiftrow['shiftname'] . '</td>';
           $shiftid = $shiftrow['shiftid'];
             //get duties...
-            // echo '<tr>';
+
             foreach($db->query('SELECT dutyid, dutyname FROM duty') as $dutyrow)
             {
+              echo '<tr>';
               //make a new table head on the same row as our shiftname
-              echo '<td>' . $dutyrow['dutyname'] . '</td>';
+              echo '<th>' . $dutyrow['dutyname'] . '</th>';
               $dutyid = $dutyrow['dutyid'];
 
               //for each duty, get all the employee's who have been assigned to it...
@@ -100,6 +101,7 @@ tr:nth-child(even) {
                   echo '<td>' . $row['firstname'] . '</td>';
                   echo '</tr>';
                 }
+                echo '<tr>';
               }
 
         //end massive row
