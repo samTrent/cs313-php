@@ -1,6 +1,5 @@
-<?php session_start();
+<?php
 
-$_SESSION['test'] = $_POST['appVar'];
 
  ?>
 <!DOCTYPE html>
@@ -44,25 +43,15 @@ tr:nth-child(even) {
      die();
     }
 
-    // Read request parameters
-
-    // $lastName = $_REQUEST["lastName"];// Store values in an array
-    // $returnValue = array("firstName"=>$firstName, "lastName"=>$lastName);// Send back request in JSON format
-    // echo json_encode($returnValue);
-    echo "THIS IS POST: " . $_POST['appVar'] . '<br>';
-    echo "SESSIONS IS: " . $_SESSION['test'] . '<br>';
-
-
-
 
     echo '<table>';
     //table headers
     echo '<tr>';
     echo '<th>Shift</th>';
-    foreach($db->query('SELECT thedate FROM schedule') as $row)
+    foreach($db->query('SELECT date FROM submittedschedule') as $row)
     {
       //get dates
-      echo '<th colspan="3">' . $row['thedate'] . '</th>';
+      echo '<th colspan="3">' . $row['date'] . '</th>';
     }
     //echo '<th>Duty</th>';
     echo '</tr>';
@@ -71,7 +60,7 @@ tr:nth-child(even) {
     $dutyid;
 
     //Shifts
-    foreach($db->query('SELECT shiftid, shiftname FROM shift') as $shiftrow)
+    foreach($db->query('SELECT shiftid, shift FROM shift') as $shiftrow)
     {
       //start massive row...
       echo '<tr>';
@@ -80,7 +69,7 @@ tr:nth-child(even) {
           $shiftid = $shiftrow['shiftid'];
             //get duties...
 
-            foreach($db->query('SELECT dutyid, dutyname FROM duty') as $dutyrow)
+            foreach($db->query('SELECT dutyid, duty FROM duty') as $dutyrow)
             {
 
               //make a new table head on the same row as our shiftname
