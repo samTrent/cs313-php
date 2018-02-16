@@ -84,8 +84,8 @@ tr:nth-child(even) {
               //fitness center
               echo '<tr>';
               echo '<td>' . $row['firstname'] .':FC</td>'; // FC
-              echo '<td>' . $row['firstname'] .':IC</td>'; // IC
-              echo '<td>' . $row['firstname'] .':ER</td>'; // ER
+              // echo '<td>' . $row['firstname'] .':IC</td>'; // IC
+              // echo '<td>' . $row['firstname'] .':ER</td>'; // ER
               echo '</tr>';
             }
 
