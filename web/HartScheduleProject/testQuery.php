@@ -97,10 +97,11 @@ tr:nth-child(even) {
                 JOIN duty d ON d.dutyid = su.duty WHERE d.duty = \'Equipment Room\'') as $ERrow)
                 {
                   echo '<td>' . $ERrow['firstname'] .':ER</td>'; // IC
+                  echo '</tr>';
                 }
               }
 
-              echo '</tr>';
+
             }
 
             //end massive row
