@@ -77,21 +77,42 @@ tr:nth-child(even) {
               $dutyid = $dutyrow['dutyid'];
 
             }
+            echo '<tr>';
             foreach ($db->query('SELECT e.firstname, d.duty FROM employee e
             JOIN submittedschedule su ON e.employeeid = su.employee
             JOIN duty d ON d.dutyid = su.duty WHERE d.duty = \'Fitness Center\'') as $row)
             {
               //fitness center
-              echo '<tr>';
+              // echo '<tr>';
               echo '<td>' . $row['firstname'] .':FC</td>'; // FC
-              echo '<td>' . $row['firstname'] .':IC</td>'; // IC
-              echo '<td>' . $row['firstname'] .':ER</td>'; // ER
-              echo '</tr>';
-
-
-
+              // echo '<td>' . $row['firstname'] .':IC</td>'; // IC
+              // echo '<td>' . $row['firstname'] .':ER</td>'; // ER
+              // echo '</tr>';
+            }
+            foreach ($db->query('SELECT e.firstname, d.duty FROM employee e
+            JOIN submittedschedule su ON e.employeeid = su.employee
+            JOIN duty d ON d.dutyid = su.duty WHERE d.duty = \'ICenter\'') as $row)
+            {
+              //fitness center
+              // echo '<tr>';
+              echo '<td>' . $row['firstname'] .':FC</td>'; // FC
+              // echo '<td>' . $row['firstname'] .':IC</td>'; // IC
+              // echo '<td>' . $row['firstname'] .':ER</td>'; // ER
+              // echo '</tr>';
+            }
+            foreach ($db->query('SELECT e.firstname, d.duty FROM employee e
+            JOIN submittedschedule su ON e.employeeid = su.employee
+            JOIN duty d ON d.dutyid = su.duty WHERE d.duty = \'Equipment Room\'') as $row)
+            {
+              //fitness center
+              // echo '<tr>';
+              echo '<td>' . $row['firstname'] .':FC</td>'; // FC
+              // echo '<td>' . $row['firstname'] .':IC</td>'; // IC
+              // echo '<td>' . $row['firstname'] .':ER</td>'; // ER
+              // echo '</tr>';
             }
 
+            echo '</tr>';
             //end massive row
             echo '</tr>';
         }

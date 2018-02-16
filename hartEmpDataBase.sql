@@ -100,4 +100,4 @@ WITH FCemps AS (
   JOIN submittedschedule su ON e.employeeid = su.employee
   JOIN duty d ON d.dutyid = su.duty WHERE d.duty = 'Equipment Room'
 )
-SELECT * FROM submittedschedule;
+SELECT employee AS fcemps FROM submittedschedule;
