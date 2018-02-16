@@ -48,7 +48,7 @@ tr:nth-child(even) {
     //table headers
     echo '<tr>';
     echo '<th>Shift</th>';
-    foreach($db->query('SELECT date FROM submittedschedule WHERE submittedschedulid = 1') as $row)
+    foreach($db->query('SELECT date FROM submittedschedule WHERE submittedscheduleid = 1') as $row)
     {
       //get dates
       echo '<th colspan="3">' . $row['date'] . '</th>';
@@ -83,9 +83,9 @@ tr:nth-child(even) {
             JOIN duty d ON d.dutyid = su.duty WHERE d.duty = 'ICenter';') as $row)
             {
               echo '<tr>';
-              echo '<td>' . $row['e.firstname'] .'</td>'; // FC
-              echo '<td>' . $row['e.firstname'] .'</td>'; // IC
-              echo '<td>' . $row['e.firstname'] .'</td>'; // ER
+              echo '<td>' . $row['firstname'] .'</td>'; // FC
+              echo '<td>' . $row['firstname'] .'</td>'; // IC
+              echo '<td>' . $row['firstname'] .'</td>'; // ER
               echo '</tr>';
             }
 
