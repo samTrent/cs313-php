@@ -1,7 +1,7 @@
 <?php session_start();
 
-$_SESSION['test'] = $_POST['a'];
-echo "<p>THIS IS POST: " . $_POST['a'] . '</p><br>';
+$_SESSION['test'] = $_POST['appVar'];
+
  ?>
 <!DOCTYPE html>
 <html>
@@ -49,8 +49,8 @@ tr:nth-child(even) {
     // $lastName = $_REQUEST["lastName"];// Store values in an array
     // $returnValue = array("firstName"=>$firstName, "lastName"=>$lastName);// Send back request in JSON format
     // echo json_encode($returnValue);
-
-      echo "SESSIONS IS: " . $_SESSION['test'] . '<br>';
+    echo "THIS IS POST: " . $_POST['appVar'] . '<br>';
+    echo "SESSIONS IS: " . $_SESSION['test'] . '<br>';
 
 
 
