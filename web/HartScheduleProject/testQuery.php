@@ -69,7 +69,7 @@ tr:nth-child(even) {
     foreach($db->query('SELECT theDate FROM schedule') as $row)
     {
       //get dates
-      echo '<th colspan="6">' . $row['theDate'] . '</th>';
+      echo '<th>' . $row['theDate'] . '</th>';
     }
     //echo '<th>Duty</th>';
     echo '</tr>';
@@ -83,7 +83,7 @@ tr:nth-child(even) {
       //start massive row...
       echo '<tr>';
           //get shifts
-          echo '<td rowspan="6">' . $shiftrow['shiftname'] . '</td>';
+          echo '<td>' . $shiftrow['shiftname'] . '</td>';
           $shiftid = $shiftrow['shiftid'];
             //get duties...
 
@@ -91,7 +91,7 @@ tr:nth-child(even) {
             {
               // echo '<tr>';
               //make a new table head on the same row as our shiftname
-              echo '<th>' . $dutyrow['dutyname'] . '</th>';
+              echo '<th colspan="3">' . $dutyrow['dutyname'] . '</th>';
               $dutyid = $dutyrow['dutyid'];
 
               //for each duty, get all the employee's who have been assigned to it...
