@@ -112,10 +112,10 @@ tr:nth-child(even) {
     //table headers
     echo '<tr>';
     echo '<th>Shift</th>';
-    foreach($db->query('SELECT theDate FROM schedule') as $row)
+    foreach($db->query('SELECT thedate FROM schedule') as $row)
     {
       //get dates
-      echo '<th colspan="3">' . $row['theDate'] . '</th>';
+      echo '<th colspan="3">' . $row['thedate'] . '</th>';
     }
     //echo '<th>Duty</th>';
     echo '</tr>';
