@@ -84,3 +84,20 @@ JOIN duty d ON d.dutyid = su.duty WHERE su.date = '02-17-2018';
 SELECT e.firstname, d.duty FROM employee e
 JOIN submittedschedule su ON e.employeeid = su.employee
 JOIN duty d ON d.dutyid = su.duty WHERE d.duty = 'ICenter';
+
+
+--test
+WITH FCemps AS (
+  SELECT e.firstname, d.duty FROM employee e
+  JOIN submittedschedule su ON e.employeeid = su.employee
+  JOIN duty d ON d.dutyid = su.duty WHERE d.duty = 'Fitness Center'
+), ICemps AS (
+  SELECT e.firstname, d.duty FROM employee e
+  JOIN submittedschedule su ON e.employeeid = su.employee
+  JOIN duty d ON d.dutyid = su.duty WHERE d.duty = 'ICenter'
+), ERemps AS (
+  SELECT e.firstname, d.duty FROM employee e
+  JOIN submittedschedule su ON e.employeeid = su.employee
+  JOIN duty d ON d.dutyid = su.duty WHERE d.duty = 'Equipment Room'
+)
+SELECT * FROM submittedschedule;
