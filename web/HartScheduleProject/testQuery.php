@@ -141,12 +141,14 @@ tr:nth-child(even) {
               $dutyid = $dutyrow['dutyid'];
 
               //for each duty, get all the employee's who have been assigned to it...
+                echo '<tr>';
                 foreach ($db->query('SELECT firstname FROM employee e') as $row)
                 {
-                  echo '<tr>';
+
                   echo '<td>' . $row['firstname'] . '</td>';
                   // echo '</tr>';
                 }
+                echo '</tr>';
 
             }
 
