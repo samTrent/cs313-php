@@ -18,7 +18,7 @@ $deletestmt->bindValue(":submitteddate", $_POST['date'], PDO::PARAM_STR);
 $deletestmt->bindValue(":shiftid", $_POST['shift'], PDO::PARAM_INT);
 if ($deletestmt->execute())
 {
-  echo "SUECCES DELETING DATA!<br>";
+  echo "SUECCES DELETING DATA! AYA<br>";
 }
 else
 {
