@@ -125,9 +125,9 @@ tr:nth-child(even) {
           echo '<td rowspan="4">' . $shiftrow['shift'] . '</td>';
           $shiftid = $shiftrow['shiftid'];
             //get duties...
-            // getFitnessCenterEmps($shiftid);
-            // getICenterEmps($shiftid);
-            // getEquipmentEmps($shiftid);
+            getFitnessCenterEmps($shiftid);
+            getICenterEmps($shiftid);
+            getEquipmentEmps($shiftid);
 
 
             foreach($db->query('SELECT dutyid, duty FROM duty') as $dutyrow)
@@ -144,9 +144,9 @@ tr:nth-child(even) {
               {
                 //fitness center
                 echo '<tr>';
-                echo '<td>' . 'N/A' .'</td>'; // FC
-                echo '<td>' . 'N/A' .'</td>'; // IC
-                echo '<td>' . 'N/A' .'</td>'; // ER
+                echo '<td>' . $FCempArray[$i] .'</td>'; // FC
+                echo '<td>' . $ICempArray[$i] .'</td>'; // IC
+                echo '<td>' . $ERempArray[$i] .'</td>'; // ER
                 echo '</tr>';
               }
             }
@@ -156,9 +156,9 @@ tr:nth-child(even) {
               {
                 //fitness center
                 echo '<tr>';
-                echo '<td>' . 'N/A' .'</td>'; // FC
-                echo '<td>' . 'N/A' .'</td>'; // IC
-                echo '<td>' . 'N/A' .'</td>'; // ER
+                echo '<td>' . $FCempArray[$i] .'</td>'; // FC
+                echo '<td>' . $ICempArray[$i] .'</td>'; // IC
+                echo '<td>' . $ERempArray[$i] .'</td>'; // ER
                 echo '</tr>';
               }
             }
@@ -183,13 +183,13 @@ tr:nth-child(even) {
               {
                 //fitness center
                 echo '<tr>';
-                echo '<td>' . 'N/A' .'</td>'; // FC
-                echo '<td>' . 'N/A' .'</td>'; // IC
-                echo '<td>' . 'N/A' .'</td>'; // ER
+                echo '<td>' . $FCempArray[$i] .'</td>'; // FC
+                echo '<td>' . $ICempArray[$i] .'</td>'; // IC
+                echo '<td>' . $ERempArray[$i] .'</td>'; // ER
                 echo '</tr>';
               }
             }
-            //clearAllArrays();
+            clearAllArrays();
             //end massive row
             echo '</tr>';
         }
