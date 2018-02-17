@@ -156,11 +156,11 @@ tr:nth-child(even) {
             {
               for ($i=0; $i < 3; $i++)
               {
-                //fitness center
+                //out put employees (left to right)
                 echo '<tr>';
-                echo '<td>' . $FCempArray[$i] .'</td>'; // FC
                 echo '<td>' . $ICempArray[$i] .'</td>'; // IC
                 echo '<td>' . $ERempArray[$i] .'</td>'; // ER
+                echo '<td>' . $FCempArray[$i] .'</td>'; // FC
                 echo '</tr>';
               }
             }
@@ -168,11 +168,11 @@ tr:nth-child(even) {
             {
               for ($i=0; $i < 3; $i++)
               {
-                //fitness center
+                  //out put employees (left to right)
                 echo '<tr>';
-                echo '<td>' . $FCempArray[$i] .'</td>'; // FC
                 echo '<td>' . $ICempArray[$i] .'</td>'; // IC
                 echo '<td>' . $ERempArray[$i] .'</td>'; // ER
+                echo '<td>' . $FCempArray[$i] .'</td>'; // FC
                 echo '</tr>';
               }
             }
@@ -180,11 +180,11 @@ tr:nth-child(even) {
             {
               for ($i=0; $i < 3; $i++)
               {
-                //fitness center
+                  //out put employees (left to right)
                 echo '<tr>';
-                echo '<td>' . $FCempArray[$i] .'</td>'; // FC
                 echo '<td>' . $ICempArray[$i] .'</td>'; // IC
                 echo '<td>' . $ERempArray[$i] .'</td>'; // ER
+                echo '<td>' . $FCempArray[$i] .'</td>'; // FC
                 echo '</tr>';
               }
             }
@@ -192,11 +192,11 @@ tr:nth-child(even) {
             {
               for ($i=0; $i < 3; $i++)
               {
-                //fitness center
+                //out put employees (left to right)
                 echo '<tr>';
-                echo '<td>' . $FCempArray[$i] .'</td>'; // FC
                 echo '<td>' . $ICempArray[$i] .'</td>'; // IC
                 echo '<td>' . $ERempArray[$i] .'</td>'; // ER
+                echo '<td>' . $FCempArray[$i] .'</td>'; // FC
                 echo '</tr>';
               }
             }
