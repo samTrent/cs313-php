@@ -131,7 +131,7 @@ tr:nth-child(even) {
     $datestamp;
 
     //first lets check to see if there is anything in our table...
-    $stmt = $myDatabase ->prepare("SELECT COUNT(*) FROM submittedschedule");
+    $stmt = $db->prepare("SELECT COUNT(*) FROM submittedschedule");
     $count = $stmt->fetch(PDO::FETCH_ASSOC);
     echo "<p>count is:: " . $count . "</p>";
 
