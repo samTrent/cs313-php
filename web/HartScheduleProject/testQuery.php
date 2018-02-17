@@ -186,7 +186,7 @@ tr:nth-child(even) {
                 echo '</tr>';
               }
             }
-            clearAllArrays();
+            //clearAllArrays();
             //end massive row
             echo '</tr>';
         }
