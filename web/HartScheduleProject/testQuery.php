@@ -50,7 +50,7 @@ tr:nth-child(even) {
         JOIN submittedschedule su ON e.employeeid = su.employee
         JOIN duty d ON d.dutyid = su.duty
         JOIN shift s ON s.shiftid = su.shift
-        WHERE d.duty = \'Fitness Center\' AND s.shiftid = $shitid AND su.date = \'02-17-2018\'') as $row)
+        WHERE d.duty = \'Fitness Center\' AND su.date = \'02-17-2018\'') as $row)
         {
           //fitness center
           array_push($FCempArray, $row['firstname']);
@@ -62,13 +62,13 @@ tr:nth-child(even) {
 
       function getICenterEmps($db, $shiftid)
       {
-        echo "FUNCTION getICenterEmps has shiftifid " . $shiftid;
+        //echo "FUNCTION getICenterEmps has shiftifid " . $shiftid;
         //echo '<p>IC EMPS</p>';
         foreach ($db->query('SELECT e.firstname, d.duty, s.shift FROM employee e
         JOIN submittedschedule su ON e.employeeid = su.employee
         JOIN duty d ON d.dutyid = su.duty
         JOIN shift s ON s.shiftid = su.shift
-        WHERE d.duty = \'ICenter\' AND s.shiftid = $shftid AND su.date = \'02-17-2018\'') as $row)
+        WHERE d.duty = \'ICenter\' AND su.date = \'02-17-2018\'') as $row)
         {
           //fitness center
           array_push($ICempArray, $row['firstname']);
@@ -78,13 +78,13 @@ tr:nth-child(even) {
 
       function getEquipmentEmps($db, $shiftid)
       {
-        echo "FUNCTION getEquipmentEmps has shiftifid " . $shiftid;
+        //echo "FUNCTION getEquipmentEmps has shiftifid " . $shiftid;
         //echo '<p>ER EMPS</p>';
         foreach ($db->query('SELECT e.firstname, d.duty, s.shift FROM employee e
         JOIN submittedschedule su ON e.employeeid = su.employee
         JOIN duty d ON d.dutyid = su.duty
         JOIN shift s ON s.shiftid = su.shift
-        WHERE d.duty = \'Equipment Room\' AND s.shiftid = $shifid AND su.date = \'02-17-2018\'') as $row)
+        WHERE d.duty = \'Equipment Room\' AND su.date = \'02-17-2018\'') as $row)
         {
           //fitness center
           array_push($ERempArray, $row['firstname']);
