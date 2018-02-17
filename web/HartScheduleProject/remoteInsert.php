@@ -23,10 +23,12 @@ try {
   $dutyID = $stmt->fetch(PDO::FETCH_NUM);
   echo 'The dutyID for '. $_POST['duty'] . ' is :: ' . $dutyID[0] . '<br>';
 
+  echo 'The date is: ' . $_POST['date'] . '<br>'
+  echo 'The shift is: ' . $_POST['shift'] . '<br>'
 
-  $stmt = $db ->prepare("INSERT INTO submittedschedule (date, employee, shift, duty) VALUES (:date, :firstname, :shift, :duty)");
+  $stmt = $db ->prepare("INSERT INTO submittedschedule (date, employee, shift, duty) VALUES (:thedate, :firstname, :shift, :duty)");
 
-  $stmt->bindValue(':date', $_POST['date'], PDO::PARAM_STR);
+  $stmt->bindValue(':thedate', $_POST['date'], PDO::PARAM_STR);
   $stmt->bindValue(':firstname', $employeeID, PDO::PARAM_STR);
   $stmt->bindValue(':shift', $_POST['shift'], PDO::PARAM_INT);
   $stmt->bindValue(':duty', $dutyID, PDO::PARAM_INT);
