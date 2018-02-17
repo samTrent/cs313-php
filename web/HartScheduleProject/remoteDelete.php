@@ -9,8 +9,9 @@ try {
 
   $db = new PDO("pgsql:host=$host;port=$port;dbname=$dbname", $user, $password);
 
-echo "<p>THIS IS SHIFT " . $_POST['shift'] . " </p>" ;
+
 echo "<p>THIS IS DATE " . $_POST['date'] . " </p>" ;
+echo "<p>THIS IS SHIFT " . $_POST['shift'] . " </p>" ;
 
 //Clear out old data...
 $deletestmt = $db ->prepare('DELETE FROM submittedschedule WHERE submitteddate = :submitteddate AND shift = :shiftid');
