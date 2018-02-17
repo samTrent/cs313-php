@@ -91,7 +91,7 @@ tr:nth-child(even) {
     //table headers
     echo '<tr>';
     echo '<th>Shift</th>';
-    foreach($db->query('SELECT date FROM submittedschedule WHERE submittedscheduleid = 1 AND submittedscheduleid = 2') as $row)
+    foreach($db->query('SELECT date FROM submittedschedule WHERE submittedscheduleid = 2') as $row)
     {
       //get dates
       echo '<th colspan="3">' . $row['date'] . '</th>';
