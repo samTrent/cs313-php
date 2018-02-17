@@ -18,6 +18,12 @@ try {
   echo "<p>POST LASTNAME = " . $_POST['lastname'] . '</p>';
 
   $stmt->execute();
+}
+catch (PDOException $ex)
+ {
+ print "<p>error: $ex </p>\n\n";
+ die();
+}
 
  ?>
  <!DOCTYPE html>
