@@ -4,41 +4,6 @@ $FCempArray = array();
 $ICempArray = array();
 $ERempArray = array();
 
-//echo '<p>FC EMPS</p>';
-foreach ($db->query('SELECT e.firstname, d.duty, s.shift FROM employee e
-JOIN submittedschedule su ON e.employeeid = su.employee
-JOIN duty d ON d.dutyid = su.duty
-JOIN shift s ON s.shiftid = su.shift
-WHERE d.duty = \'Fitness Center\' AND s.shift = \'2PM-7PM\'') as $row)
-{
-  //fitness center
-  array_push($FCempArray, $row['firstname']);
-  //echo '<p>' . $row['firstname'] . '</p>'; // FC
-}
-
-//echo '<p>IC EMPS</p>';
-foreach ($db->query('SELECT e.firstname, d.duty, s.shift FROM employee e
-JOIN submittedschedule su ON e.employeeid = su.employee
-JOIN duty d ON d.dutyid = su.duty
-JOIN shift s ON s.shiftid = su.shift
-WHERE d.duty = \'ICenter\' AND s.shift = \'2PM-7PM\'') as $row)
-{
-  //fitness center
-  array_push($ICempArray, $row['firstname']);
-  //echo '<p>' . $row['firstname'] . '</p>'; // FC
-}
-
-//echo '<p>ER EMPS</p>';
-foreach ($db->query('SELECT e.firstname, d.duty, s.shift FROM employee e
-JOIN submittedschedule su ON e.employeeid = su.employee
-JOIN duty d ON d.dutyid = su.duty
-JOIN shift s ON s.shiftid = su.shift
-WHERE d.duty = \'Fitness Center\' AND s.shift = \'2PM-7PM\'') as $row)
-{
-  //fitness center
-  array_push($ERempArray, $row['firstname']);
-  //echo '<p>' . $row['firstname'] . '</p>'; // FC
-}
 
  ?>
 <!DOCTYPE html>
@@ -76,6 +41,45 @@ tr:nth-child(even) {
       $port = "5432";
 
       $db = new PDO("pgsql:host=$host;port=$port;dbname=$dbname", $user, $password);
+
+
+
+      //echo '<p>FC EMPS</p>';
+      foreach ($db->query('SELECT e.firstname, d.duty, s.shift FROM employee e
+      JOIN submittedschedule su ON e.employeeid = su.employee
+      JOIN duty d ON d.dutyid = su.duty
+      JOIN shift s ON s.shiftid = su.shift
+      WHERE d.duty = \'Fitness Center\' AND s.shift = \'2PM-7PM\'') as $row)
+      {
+        //fitness center
+        array_push($FCempArray, $row['firstname']);
+        //echo '<p>' . $row['firstname'] . '</p>'; // FC
+      }
+
+      //echo '<p>IC EMPS</p>';
+      foreach ($db->query('SELECT e.firstname, d.duty, s.shift FROM employee e
+      JOIN submittedschedule su ON e.employeeid = su.employee
+      JOIN duty d ON d.dutyid = su.duty
+      JOIN shift s ON s.shiftid = su.shift
+      WHERE d.duty = \'ICenter\' AND s.shift = \'2PM-7PM\'') as $row)
+      {
+        //fitness center
+        array_push($ICempArray, $row['firstname']);
+        //echo '<p>' . $row['firstname'] . '</p>'; // FC
+      }
+
+      //echo '<p>ER EMPS</p>';
+      foreach ($db->query('SELECT e.firstname, d.duty, s.shift FROM employee e
+      JOIN submittedschedule su ON e.employeeid = su.employee
+      JOIN duty d ON d.dutyid = su.duty
+      JOIN shift s ON s.shiftid = su.shift
+      WHERE d.duty = \'Fitness Center\' AND s.shift = \'2PM-7PM\'') as $row)
+      {
+        //fitness center
+        array_push($ERempArray, $row['firstname']);
+        //echo '<p>' . $row['firstname'] . '</p>'; // FC
+      }
+
     }
     catch (PDOException $ex) {
      print "<p>error: $ex </p>\n\n";
