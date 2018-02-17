@@ -27,7 +27,8 @@ try {
 
   }
 }
-catch (PDOException $ex) {
+catch (PDOException $ex)
+{
  print "<p>error: $ex </p>\n\n";
  die();
 }
