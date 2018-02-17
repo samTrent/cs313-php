@@ -120,14 +120,17 @@ tr:nth-child(even) {
               $dutyid = $dutyrow['dutyid'];
 
             }
-            for ($i=0; $i < 3; $i++)
+            if($shiftid == 3)
             {
-              //fitness center
-              echo '<tr>';
-              echo '<td>' . $FCempArray[$i] .'</td>'; // FC
-              echo '<td>' . $ICempArray[$i] .'</td>'; // IC
-              echo '<td>' . $ERempArray[$i] .'</td>'; // ER
-              echo '</tr>';
+              for ($i=0; $i < 3; $i++)
+              {
+                //fitness center
+                echo '<tr>';
+                echo '<td>' . $FCempArray[$i] .'</td>'; // FC
+                echo '<td>' . $ICempArray[$i] .'</td>'; // IC
+                echo '<td>' . $ERempArray[$i] .'</td>'; // ER
+                echo '</tr>';
+              }
             }
 
             //end massive row
