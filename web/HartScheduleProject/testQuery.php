@@ -67,7 +67,7 @@ tr:nth-child(even) {
 
         $querystmt->bindValue(":datestamp", $datestamp, PDO::PARAM_STR);
         $querystmt->bindValue(":shiftid", $shiftid, PDO::PARAM_INT);
-        $querystmt ->execute();
+        $querystmt->execute();
         $rows = $querystmt->fetchAll(PDO::FETCH_ASSOC);
 
         foreach ($rows as $row)
