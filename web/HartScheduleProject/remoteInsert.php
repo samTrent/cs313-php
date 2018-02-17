@@ -8,8 +8,7 @@ try {
 
   $db = new PDO("pgsql:host=$host;port=$port;dbname=$dbname", $user, $password);
 
-
-  $stmt = $myDatabase ->prepare("INSERT INTO employee (firstname, lastname) VALUES (:firstname, :lastname)");
+  $stmt = $db ->prepare("INSERT INTO employee (firstname, lastname) VALUES (:firstname, :lastname)");
 
   $stmt->bindValue(':firstname', $_POST['firstname'], PDO::PARAM_STR);
   $stmt->bindValue(':lastname', $_POST['lastname'], PDO::PARAM_STR);
