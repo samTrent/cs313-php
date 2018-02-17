@@ -107,12 +107,13 @@ tr:nth-child(even) {
     $shiftid;
     $dutyid;
 
-    echo '<table>';
+    // echo '<table>';
     //table headers
     // echo '<tr>';
     // echo '<th>Shift</th>';
     foreach($db->query('SELECT distinct date FROM submittedschedule') as $row)
     {
+      echo '<table>';
       echo '<tr>';
       echo '<th>Shift</th>';
       //get dates
@@ -199,11 +200,13 @@ tr:nth-child(even) {
             //end massive row
             // echo '</tr>';
         }
-      }
-      //echo '<th>Duty</th>';
-      echo '</tr><br><br><br>';
+        //echo '<th>Duty</th>';
+        echo '</tr>';
 
-    echo '</table>';
+      echo '</table>';
+      echo '<br>';
+      }
+
 
 
 
