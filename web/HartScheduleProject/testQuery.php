@@ -92,7 +92,7 @@ tr:nth-child(even) {
         }
       }
 
-      function clearAllArrays()
+      function clearAllArrays(&$FCempArray, &$ICempArray, &$ERempArray)
       {
         $FCempArray = array();
         $ICempArray = array();
@@ -192,7 +192,7 @@ tr:nth-child(even) {
                 echo '</tr>';
               }
             }
-           clearAllArrays();
+           clearAllArrays($FCempArray, $ICempArray, $ERempArray);
             //end massive row
             echo '</tr>';
         }
