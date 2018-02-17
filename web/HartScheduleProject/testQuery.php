@@ -138,9 +138,9 @@ tr:nth-child(even) {
           echo '<td rowspan="4">' . $shiftrow['shift'] . '</td>';
           $shiftid = $shiftrow['shiftid'];
             //get duties...
-            getFitnessCenterEmps($db, $shiftid, $FCempArray, $datestamp);
             getICenterEmps($db,$shiftid, $ICempArray, $datestamp);
             getEquipmentEmps($db,$shiftid, $ERempArray, $datestamp);
+            getFitnessCenterEmps($db, $shiftid, $FCempArray, $datestamp);
 
             //Get the three duties
             foreach($db->query('SELECT dutyid, duty FROM duty') as $dutyrow)
