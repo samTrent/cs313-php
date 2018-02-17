@@ -120,13 +120,13 @@ tr:nth-child(even) {
               $dutyid = $dutyrow['dutyid'];
 
             }
-            for ($i=0; $i < 9; $i++)
+            for ($i=0; $i < 3; $i++)
             {
               //fitness center
               echo '<tr>';
-              echo '<td>' . $FCempArray[i] .':FC</td>'; // FC
-              echo '<td>' . $ICempArray[i] .':IC</td>'; // IC
-              echo '<td>' . $ERempArray[i] .':ER</td>'; // ER
+              echo '<td>' . $FCempArray[$i] .':FC</td>'; // FC
+              echo '<td>' . $ICempArray[$i] .':IC</td>'; // IC
+              echo '<td>' . $ERempArray[$i] .':ER</td>'; // ER
               echo '</tr>';
             }
 
