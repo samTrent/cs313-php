@@ -69,6 +69,7 @@ tr:nth-child(even) {
 
         foreach ($rows as $row)
         {
+          echo '<p>The row is ' . $row['firstname'] . '</p>';
           array_push($ICempArray, $row['firstname']);
         }
 
