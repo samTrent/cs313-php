@@ -17,13 +17,17 @@ try {
 
   foreach ($db->query('SELECT username, password FROM users') as $row)
   {
-    if($_POST['username'] == $row['username'] && $_POST['password'])
+    if($_POST['username'] == $row['username'] && $_POST['password'] == $row['password'])
     {
       header("Location: testQuery.php");
     }
     else {
       header("Location: loginPage.php");
     }
+
+
+
+
   }
 }
 catch (PDOException $ex)
