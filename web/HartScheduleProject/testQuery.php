@@ -201,7 +201,7 @@ tr:nth-child(even) {
         }
       }
       //echo '<th>Duty</th>';
-      echo '</tr>';
+      echo '</tr><br><br><br>';
 
     echo '</table>';
 
