@@ -46,7 +46,7 @@ tr:nth-child(even) {
       function createDeleteButtonForSchedule($datestamp)
       {
         echo '<form action="deleteScheduleForDate.php" method="POST">';
-        echo "<input  hidden="true" type="text" name="date" value="$datestamp">";
+        echo '<input  hidden="true" type="text" name="date" value="'. $datestamp .'">';
         echo '<input type="submit" name="" value="">';
         echo '</form>';
       }
