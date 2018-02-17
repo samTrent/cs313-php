@@ -26,34 +26,26 @@ try {
   echo 'The date is: ' . $_POST['date'] . ' <br>';
   echo 'The shift is: ' . $_POST['shift'] . ' <br>';
 
-  //$finalstmt = $db ->prepare('INSERT INTO submittedschedule (submitteddate, employee, shift, duty) VALUES (:submitteddate, :firstname, :shift, :duty)');
-  $finalstmt = 'INSERT INTO submittedschedule (submitteddate, employee, shift, duty) VALUES ('. $_POST['date'] .', '. $employeeID .', '. $_POST['shift'] .', '. $dutyID .')';
+  $finalstmt = $db ->prepare('INSERT INTO submittedschedule (submitteddate, employee, shift, duty) VALUES (:submitteddate, :firstname, :shift, :duty)');
+  //$finalstmt = 'INSERT INTO submittedschedule (submitteddate, employee, shift, duty) VALUES (' . $_POST['date'] . ', ' . $employeeID . ', ' . $_POST['shift'] . ', '. $dutyID .')';
 
   // $finalstmt = $db ->prepare('LOLOLOLOLOLOL');
 
+  $finalstmt->bindValue(":submitteddate", $_POST['date'], PDO::PARAM_STR);
+  $finalstmt->bindValue(":firstname", $employeeID, PDO::PARAM_INT);
+  $finalstmt->bindValue(":shift", $_POST['shift'], PDO::PARAM_INT);
+  $finalstmt->bindValue(":duty", $dutyID, PDO::PARAM_INT);
+  echo 'submitting schedule....<br>';
 
-  // $finalstmt->bindValue(':submitteddate', $_POST['date'], PDO::PARAM_STR);
-  // $finalstmt->bindValue(':firstname', $employeeID, PDO::PARAM_INT);
-  // $finalstmt->bindValue(':shift', $_POST['shift'], PDO::PARAM_INT);
-  // $finalstmt->bindValue(':duty', $dutyID, PDO::PARAM_INT);
-  // echo 'submitting schedule....<br>';
-  // $finalstmt->execute();
+  $finalstmt->execute();
 
-  if (pg_query($db,$finalstmt)) {
-            echo "Data entered successfully. ";
-        }
-        else {
-            echo "Data entry unsuccessful. ";
-        }
-
-
-  if (!$finalstmt)
+  if ($finalstmt->execute())
   {
-    echo "\nPDO::errorInfo():\n";
-    print_r($db->errorInfo());
+    echo "SUECCES!<br>";
   }
-  else {
-    echo 'SUCCESS!';
+  else
+  {
+    echo "INSERT FAILED!<br>";
   }
 
 
