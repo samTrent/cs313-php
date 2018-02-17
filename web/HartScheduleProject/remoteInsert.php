@@ -13,8 +13,8 @@ try {
   $stmt = $db ->prepare("SELECT employeeid FROM employee WHERE firstname = :firstname");
   $stmt->bindValue(':firstname', $_POST['firstname'], PDO::PARAM_STR);
   $stmt->execute();
-  $employeeID = $stmt->fetchAll(PDO::FETCH_ASSOC);
-  echo 'The employeeID for '. $_POST['firstname'] . ' is :: ' . $employeeID['employeeid'] . '<br>';
+  $employeeID = $stmt->fetchAll(PDO::FETCH_NUM);
+  echo 'The employeeID for '. $_POST['firstname'] . ' is :: ' . $employeeID[0] . '<br>';
   // $stmt = $db ->prepare("INSERT INTO submittedschedule (date, employee, shift, duty) VALUES (:date, :firstname, :shift, :duty)");
 
 
