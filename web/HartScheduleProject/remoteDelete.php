@@ -8,10 +8,11 @@ try {
   $port = "5432";
 
   $db = new PDO("pgsql:host=$host;port=$port;dbname=$dbname", $user, $password);
-  
+
 //Clear out old data...
-$deletestmt = $db ->prepare('DELETE FROM submittedschedule WHERE submitteddate = :submitteddate');
+$deletestmt = $db ->prepare('DELETE FROM submittedschedule WHERE submitteddate = :submitteddate AND shift = :shiftid');
 $deletestmt->bindValue(":submitteddate", $_POST['date'], PDO::PARAM_STR);
+$deletestmt->bindValue(":submitteddate", $_POST['shift'], PDO::PARAM_INT);
 if ($deletestmt->execute())
 {
   echo "SUECCES DELETING DATA!<br>";
