@@ -136,13 +136,13 @@ tr:nth-child(even) {
     {
       $count += 1;
     }
-
-    echo "<p>count is:: " . $count . "</p>";
+    if($count == 0)
+    {
+      echo "<h1>There are currently no recorded schedules</h1>";
+    }
 
 
     //CREATE TABLES
-
-
     foreach($db->query('SELECT distinct submitteddate FROM submittedschedule') as $row)
     {
       echo '<table>';
