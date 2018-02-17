@@ -127,37 +127,29 @@ tr:nth-child(even) {
     echo '</table>';
 
     echo '<p>FC EMPS</p>';
-    foreach ($db->query('SELECT e.firstname, d.duty, s.shift FROM employee e
+    foreach ($db->query('SELECT e.firstname, d.duty FROM employee e
     JOIN submittedschedule su ON e.employeeid = su.employee
-    JOIN duty d ON d.dutyid = su.duty
-    JOIN shift d ON s.shiftid = su.shift
-    WHERE d.duty = \'Fitness Center\'') as $row)
+    JOIN duty d ON d.dutyid = su.duty WHERE d.duty = \'Fitness Center\'') as $row)
     {
       //fitness center
       echo '<p>' . $row['firstname'] . '</p>'; // FC
     }
 
     echo '<p>IC EMPS</p>';
-    foreach ($db->query('SELECT e.firstname, d.duty, s.shift FROM employee e
+    foreach ($db->query('SELECT e.firstname, d.duty FROM employee e
     JOIN submittedschedule su ON e.employeeid = su.employee
-    JOIN duty d ON d.dutyid = su.duty
-    JOIN shift d ON s.shiftid = su.shift
-    WHERE d.duty = \'ICenter\'') as $row)
+    JOIN duty d ON d.dutyid = su.duty WHERE d.duty = \'ICenter\'') as $row)
     {
       //fitness center
-
       echo '<p>' . $row['firstname'] . '</p>'; // FC
     }
 
     echo '<p>ER EMPS</p>';
-    foreach ($db->query('SELECT e.firstname, d.duty, s.shift FROM employee e
+    foreach ($db->query('SELECT e.firstname, d.duty FROM employee e
     JOIN submittedschedule su ON e.employeeid = su.employee
-    JOIN duty d ON d.dutyid = su.duty
-    JOIN shift d ON s.shiftid = su.shift
-    WHERE d.duty = \'Equipment Room\'') as $row)
+    JOIN duty d ON d.dutyid = su.duty WHERE d.duty = \'Equipment Room\'') as $row)
     {
       //fitness center
-
       echo '<p>' . $row['firstname'] . '</p>'; // FC
     }
 
