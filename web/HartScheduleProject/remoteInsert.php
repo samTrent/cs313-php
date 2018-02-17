@@ -28,10 +28,7 @@ try {
 
   $finalstmt = $db ->prepare('INSERT INTO submittedschedule (submitteddate, employee, shift, duty) VALUES (:submitteddate, :firstname, :shift, :duty)');
 
-  if (!$finalstmt) {
-    echo "\nPDO::errorInfo():\n";
-    print_r($db->errorInfo());
-}
+
 
   $finalstmt->bindValue(':submitteddate', $_POST['date'], PDO::PARAM_STR);
   $finalstmt->bindValue(':firstname', $employeeID, PDO::PARAM_INT);
@@ -40,7 +37,16 @@ try {
   echo 'submitting schedule....<br>';
   $finalstmt->execute();
 
-  echo 'SUCCESS!';
+  if (!$finalstmt)
+  {
+    echo "\nPDO::errorInfo():\n";
+    print_r($db->errorInfo());
+  }
+  else {
+    echo 'SUCCESS!';
+  }
+
+
 
 
   // $stmt = $db ->prepare("INSERT INTO employee (firstname, lastname) VALUES (:firstname, :lastname)");
