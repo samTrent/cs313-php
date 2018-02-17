@@ -131,8 +131,10 @@ tr:nth-child(even) {
     $datestamp;
 
     //first lets check to see if there is anything in our table...
-    $stmt = $db->prepare("SELECT COUNT(*) FROM submittedschedule");
-    $count = $stmt->fetch(PDO::FETCH_ASSOC);
+    // $stmt = $db->prepare("SELECT COUNT(*) FROM submittedschedule");
+    // $count = $stmt->fetch(PDO::FETCH_ASSOC);
+    $result = pg_query($db, "SELECT COUNT(*) FROM submittedschedule");
+    $rows = pg_num_rows($result);
     echo "<p>count is:: " . $count . "</p>";
 
 
