@@ -73,7 +73,7 @@ tr:nth-child(even) {
       JOIN submittedschedule su ON e.employeeid = su.employee
       JOIN duty d ON d.dutyid = su.duty
       JOIN shift s ON s.shiftid = su.shift
-      WHERE d.duty = \'Fitness Center\' AND s.shift = \'2PM-7PM\'') as $row)
+      WHERE d.duty = \'Equipment Room\' AND s.shift = \'2PM-7PM\'') as $row)
       {
         //fitness center
         array_push($ERempArray, $row['firstname']);
@@ -124,9 +124,9 @@ tr:nth-child(even) {
             {
               //fitness center
               echo '<tr>';
-              echo '<td>' . $FCempArray[$i] .':FC</td>'; // FC
-              echo '<td>' . $ICempArray[$i] .':IC</td>'; // IC
-              echo '<td>' . $ERempArray[$i] .':ER</td>'; // ER
+              echo '<td>' . $FCempArray[$i] .'</td>'; // FC
+              echo '<td>' . $ICempArray[$i] .'</td>'; // IC
+              echo '<td>' . $ERempArray[$i] .'</td>'; // ER
               echo '</tr>';
             }
 
