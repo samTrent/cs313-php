@@ -38,6 +38,10 @@ try {
   echo 'submitting schedule....<br>';
   $finalstmt->execute();
 
+  $notice = pg_last_notice($db);
+
+  echo 'NOTICE:::' . $notice . '<br>';
+
   if (!$finalstmt)
   {
     echo "\nPDO::errorInfo():\n";
