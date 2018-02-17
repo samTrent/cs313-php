@@ -126,8 +126,8 @@ tr:nth-child(even) {
       echo '<tr>';
       echo '<th>Shift</th>';
       //get dates
-      echo '<th colspan="3">' . $row['date'] . '</th>';
-      $datestamp = $row['date'];
+      echo '<th colspan="3">' . $row['submitteddate'] . '</th>';
+      $datestamp = $row['submitteddate'];
 
     //Shifts
     foreach($db->query('SELECT shiftid, shift FROM shift') as $shiftrow)
