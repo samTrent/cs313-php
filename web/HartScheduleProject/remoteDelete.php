@@ -15,7 +15,7 @@ echo "<p>THIS IS DATE " . $_POST['date'] . " </p>" ;
 //Clear out old data...
 $deletestmt = $db ->prepare('DELETE FROM submittedschedule WHERE submitteddate = :submitteddate AND shift = :shiftid');
 $deletestmt->bindValue(":submitteddate", $_POST['date'], PDO::PARAM_STR);
-$deletestmt->bindValue(":submitteddate", $_POST['shift'], PDO::PARAM_INT);
+$deletestmt->bindValue(":shiftid", $_POST['shift'], PDO::PARAM_INT);
 if ($deletestmt->execute())
 {
   echo "SUECCES DELETING DATA!<br>";
