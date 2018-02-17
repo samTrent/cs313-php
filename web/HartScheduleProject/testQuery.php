@@ -42,7 +42,7 @@ tr:nth-child(even) {
 
       $db = new PDO("pgsql:host=$host;port=$port;dbname=$dbname", $user, $password);
 
-      function getFitnessCenterEmps()
+      function getFitnessCenterEmps($db)
       {
         echo "FUNCTION getFitnessCenterEmps BEING CALLED";
         //echo '<p>FC EMPS</p>';
@@ -56,9 +56,11 @@ tr:nth-child(even) {
           array_push($FCempArray, $row['firstname']);
           //echo '<p>' . $row['firstname'] . '</p>'; // FC
         }
+
+        echo "FUNCTION getFitnessCenterEmps BEING CALLED";
       }
 
-      function getICenterEmps()
+      function getICenterEmps($db)
       {
         echo "FUNCTION getICenterEmps BEING CALLED";
         //echo '<p>IC EMPS</p>';
@@ -74,7 +76,7 @@ tr:nth-child(even) {
         }
       }
 
-      function getEquipmentEmps()
+      function getEquipmentEmps($db)
       {
         echo "FUNCTION getEquipmentEmps BEING CALLED";
         //echo '<p>ER EMPS</p>';
@@ -119,9 +121,9 @@ tr:nth-child(even) {
     $shiftid;
     $dutyid;
 
-    getFitnessCenterEmps();
-    getICenterEmps();
-    getEquipmentEmps();
+    getFitnessCenterEmps($db);
+    getICenterEmps($db);
+    getEquipmentEmps($db);
     //Shifts
     foreach($db->query('SELECT shiftid, shift FROM shift') as $shiftrow)
     {
