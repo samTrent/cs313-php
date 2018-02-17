@@ -109,14 +109,16 @@ tr:nth-child(even) {
 
     echo '<table>';
     //table headers
-    echo '<tr>';
-    echo '<th>Shift</th>';
+    // echo '<tr>';
+    // echo '<th>Shift</th>';
     foreach($db->query('SELECT distinct date FROM submittedschedule') as $row)
     {
+      echo '<tr>';
+      echo '<th>Shift</th>';
       //get dates
       echo '<th colspan="3">' . $row['date'] . '</th>';
     // }
-    // //echo '<th>Duty</th>';
+    //echo '<th>Duty</th>';
     // echo '</tr>';
 
 
@@ -199,7 +201,7 @@ tr:nth-child(even) {
         }
       }
       //echo '<th>Duty</th>';
-      // echo '</tr>';
+      echo '</tr>';
 
     echo '</table>';
 
