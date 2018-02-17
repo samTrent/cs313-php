@@ -120,6 +120,30 @@ tr:nth-child(even) {
               $dutyid = $dutyrow['dutyid'];
 
             }
+            if($shiftid == 1)
+            {
+              for ($i=0; $i < 3; $i++)
+              {
+                //fitness center
+                echo '<tr>';
+                echo '<td>' . 'N/A' .'</td>'; // FC
+                echo '<td>' . 'N/A' .'</td>'; // IC
+                echo '<td>' . 'N/A' .'</td>'; // ER
+                echo '</tr>';
+              }
+            }
+            if($shiftid == 2)
+            {
+              for ($i=0; $i < 3; $i++)
+              {
+                //fitness center
+                echo '<tr>';
+                echo '<td>' . 'N/A' .'</td>'; // FC
+                echo '<td>' . 'N/A' .'</td>'; // IC
+                echo '<td>' . 'N/A' .'</td>'; // ER
+                echo '</tr>';
+              }
+            }
             if($shiftid == 3)
             {
               for ($i=0; $i < 3; $i++)
@@ -129,6 +153,18 @@ tr:nth-child(even) {
                 echo '<td>' . $FCempArray[$i] .'</td>'; // FC
                 echo '<td>' . $ICempArray[$i] .'</td>'; // IC
                 echo '<td>' . $ERempArray[$i] .'</td>'; // ER
+                echo '</tr>';
+              }
+            }
+            if($shiftid == 4)
+            {
+              for ($i=0; $i < 3; $i++)
+              {
+                //fitness center
+                echo '<tr>';
+                echo '<td>' . 'N/A' .'</td>'; // FC
+                echo '<td>' . 'N/A' .'</td>'; // IC
+                echo '<td>' . 'N/A' .'</td>'; // ER
                 echo '</tr>';
               }
             }
