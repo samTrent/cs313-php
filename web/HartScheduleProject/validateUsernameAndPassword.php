@@ -23,10 +23,10 @@ try {
     if($_POST['username'] == $row['username'])
     {
       //check the password
-      if($_POST['password'] == $row['password']))
+      if($_POST['password'] == $row['password'])
       {
         header("Location: testQuery.php");
-        break;
+        
       }
       else
       {
