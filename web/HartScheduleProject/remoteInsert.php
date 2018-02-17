@@ -29,7 +29,7 @@ try {
   $stmt = $db ->prepare("INSERT INTO submittedschedule (date, employee, shift, duty) VALUES (:thedate, :firstname, :shift, :duty)");
 
   $stmt->bindValue(':thedate', $_POST['date'], PDO::PARAM_STR);
-  $stmt->bindValue(':firstname', $employeeID, PDO::PARAM_STR);
+  $stmt->bindValue(':firstname', $employeeID, PDO::PARAM_INT);
   $stmt->bindValue(':shift', $_POST['shift'], PDO::PARAM_INT);
   $stmt->bindValue(':duty', $dutyID, PDO::PARAM_INT);
 
