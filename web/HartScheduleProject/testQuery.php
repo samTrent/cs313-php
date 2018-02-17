@@ -63,9 +63,10 @@ tr:nth-child(even) {
         JOIN submittedschedule su ON e.employeeid = su.employee
         JOIN duty d ON d.dutyid = su.duty
         JOIN shift s ON s.shiftid = su.shift
-        WHERE d.duty = \'ICenter\' AND s.shiftid = '. $shiftid .' AND su.date = :datestamp';
+        WHERE d.duty = \'ICenter\' AND s.shiftid = ' . $shiftid . ' AND su.date = :datestamp';
 
         $querystmt->bindValue(':datestamp', $datestamp, PDO::PARAM_STR);
+        
         foreach ($db->query($querystmt) as $row)
         {
           array_push($ICempArray, $row['firstname']);
