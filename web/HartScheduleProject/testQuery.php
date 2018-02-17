@@ -68,8 +68,10 @@ tr:nth-child(even) {
         $querystmt->execute();
         $rows = $querystmt->fetchAll(PDO::FETCH_ASSOC);
         echo '<p>just before foreach</p>';
+
         foreach ($rows as $row)
         {
+            echo '<p>IN foreach</p>';
           echo '<p>The row is ' . $row['firstname'] . '</p>';
           array_push($ICempArray, $row['firstname']);
         }
