@@ -54,7 +54,7 @@ tr:nth-child(even) {
         {
           //fitness center
           array_push($FCempArray, $row['firstname']);
-          echo '<p>' . $row['firstname'] . '</p>'; // FC
+          // echo '<p>' . $row['firstname'] . '</p>'; // FC
         }
 
       //  echo "FUNCTION getFitnessCenterEmps BEING CALLED";
@@ -72,7 +72,7 @@ tr:nth-child(even) {
         {
           //fitness center
           array_push($ICempArray, $row['firstname']);
-          echo '<p>' . $row['firstname'] . '</p>'; // FC
+          // echo '<p>' . $row['firstname'] . '</p>'; // FC
         }
       }
 
@@ -88,16 +88,16 @@ tr:nth-child(even) {
         {
           //fitness center
           array_push($ERempArray, $row['firstname']);
-          echo '<p>' . $row['firstname'] . '</p>'; // FC
+          // echo '<p>' . $row['firstname'] . '</p>'; // FC
         }
       }
 
-      // function clearAllArrays()
-      // {
-      //   $FCempArray = array();
-      //   $ICempArray = array();
-      //   $ERempArray = array();
-      // }
+      function clearAllArrays()
+      {
+        $FCempArray = array();
+        $ICempArray = array();
+        $ERempArray = array();
+      }
 
     }
     catch (PDOException $ex) {
@@ -192,7 +192,7 @@ tr:nth-child(even) {
                 echo '</tr>';
               }
             }
-           // clearAllArrays();
+           clearAllArrays();
             //end massive row
             echo '</tr>';
         }
