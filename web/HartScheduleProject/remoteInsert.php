@@ -8,15 +8,31 @@ try {
 
   $db = new PDO("pgsql:host=$host;port=$port;dbname=$dbname", $user, $password);
 
-  $stmt = $db ->prepare("INSERT INTO employee (firstname, lastname) VALUES (:firstname, :lastname)");
+  // $fromAppFirstname = $_POST['firstname'];
 
+  $stmt = $db ->prepare("SELECT employeeid FROM employee WHERE firstname = :firstname");
   $stmt->bindValue(':firstname', $_POST['firstname'], PDO::PARAM_STR);
-  $stmt->bindValue(':lastname', $_POST['lastname'], PDO::PARAM_STR);
-
-  echo "<p>POST FIRSTNAME = " . $_POST['firstname'] . '</p>';
-  echo "<p>POST LASTNAME = " . $_POST['lastname'] . '</p>';
-
   $stmt->execute();
+  $employeeID = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  echo 'The employeeID for '. $_POST['firstname'] . ' is :: ' . $fromAppFirstname . '<br>';
+  // $stmt = $db ->prepare("INSERT INTO submittedschedule (date, employee, shift, duty) VALUES (:date, :firstname, :shift, :duty)");
+
+
+
+  // $stmt->bindValue(':date', $_POST['date'], PDO::PARAM_STR);
+  // $stmt->bindValue(':firstname', $_POST['firstname'], PDO::PARAM_STR);
+  // $stmt->bindValue(':shift', $_POST['shift'], PDO::PARAM_STR);
+  // $stmt->bindValue(':duty', $_POST['duty'], PDO::PARAM_STR);
+
+  // $stmt = $db ->prepare("INSERT INTO employee (firstname, lastname) VALUES (:firstname, :lastname)");
+
+  // $stmt->bindValue(':firstname', $_POST['firstname'], PDO::PARAM_STR);
+  // $stmt->bindValue(':lastname', $_POST['lastname'], PDO::PARAM_STR);
+
+  // echo "<p>POST FIRSTNAME = " . $_POST['firstname'] . '</p>';
+  // echo "<p>POST LASTNAME = " . $_POST['lastname'] . '</p>';
+
+  // $stmt->execute();
 }
 catch (PDOException $ex)
  {
