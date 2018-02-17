@@ -42,7 +42,7 @@ tr:nth-child(even) {
 
       $db = new PDO("pgsql:host=$host;port=$port;dbname=$dbname", $user, $password);
 
-      function getFitnessCenterEmps($shiftid)
+      function getFitnessCenterEmps()
       {
         //echo '<p>FC EMPS</p>';
         foreach ($db->query('SELECT e.firstname, d.duty, s.shift FROM employee e
@@ -57,7 +57,7 @@ tr:nth-child(even) {
         }
       }
 
-      function getICenterEmps($shiftid)
+      function getICenterEmps()
       {
         //echo '<p>IC EMPS</p>';
         foreach ($db->query('SELECT e.firstname, d.duty, s.shift FROM employee e
@@ -72,7 +72,7 @@ tr:nth-child(even) {
         }
       }
 
-      function getEquipmentEmps($shiftid)
+      function getEquipmentEmps()
       {
         //echo '<p>ER EMPS</p>';
         foreach ($db->query('SELECT e.firstname, d.duty, s.shift FROM employee e
@@ -105,7 +105,7 @@ tr:nth-child(even) {
     //table headers
     echo '<tr>';
     echo '<th>Shift</th>';
-    foreach($db->query('SELECT date FROM submittedschedule WHERE submittedschedule = 1') as $row)
+    foreach($db->query('SELECT date FROM submittedschedule WHERE submittedscheduleid = 1') as $row)
     {
       //get dates
       echo '<th colspan="3">' . $row['date'] . '</th>';
@@ -125,9 +125,9 @@ tr:nth-child(even) {
           echo '<td rowspan="4">' . $shiftrow['shift'] . '</td>';
           $shiftid = $shiftrow['shiftid'];
             //get duties...
-            getFitnessCenterEmps($shiftid);
-            getICenterEmps($shiftid);
-            getEquipmentEmps($shiftid);
+            getFitnessCenterEmps();
+            getICenterEmps();
+            getEquipmentEmps();
 
 
             foreach($db->query('SELECT dutyid, duty FROM duty') as $dutyrow)
@@ -189,7 +189,7 @@ tr:nth-child(even) {
                 echo '</tr>';
               }
             }
-            // clearAllArrays();
+            clearAllArrays();
             //end massive row
             echo '</tr>';
         }
