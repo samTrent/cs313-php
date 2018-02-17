@@ -15,16 +15,10 @@ try {
   $validUser = false;
   $validPass = false;
 
-  $stmt = $db ->prepare("SELECT username, password FROM users");
-
-  $stmt->execute();
-  $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-  foreach ($row as $rows)
+  foreach ($db->query('SELECT username, password FROM users') as $row)
   {
     echo '<p> USER: ' . $row['username'] . '</p>';
     echo '<p> PASS: ' . $row['password'] . '</p>';
-
   }
 }
 catch (PDOException $ex)
