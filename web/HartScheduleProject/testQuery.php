@@ -42,8 +42,8 @@ tr:nth-child(even) {
 
       $db = new PDO("pgsql:host=$host;port=$port;dbname=$dbname", $user, $password);
 
-      // function getFitnessCenterEmps()
-      // {
+      function getFitnessCenterEmps()
+      {
         //echo '<p>FC EMPS</p>';
         foreach ($db->query('SELECT e.firstname, d.duty, s.shift FROM employee e
         JOIN submittedschedule su ON e.employeeid = su.employee
@@ -55,10 +55,10 @@ tr:nth-child(even) {
           array_push($FCempArray, $row['firstname']);
           //echo '<p>' . $row['firstname'] . '</p>'; // FC
         }
-      //}
+      }
 
-      // function getICenterEmps()
-      // {
+      function getICenterEmps()
+      {
         //echo '<p>IC EMPS</p>';
         foreach ($db->query('SELECT e.firstname, d.duty, s.shift FROM employee e
         JOIN submittedschedule su ON e.employeeid = su.employee
@@ -70,10 +70,10 @@ tr:nth-child(even) {
           array_push($ICempArray, $row['firstname']);
           //echo '<p>' . $row['firstname'] . '</p>'; // FC
         }
-      //}
+      }
 
-      // function getEquipmentEmps()
-      // {
+      function getEquipmentEmps()
+      {
         //echo '<p>ER EMPS</p>';
         foreach ($db->query('SELECT e.firstname, d.duty, s.shift FROM employee e
         JOIN submittedschedule su ON e.employeeid = su.employee
@@ -85,7 +85,7 @@ tr:nth-child(even) {
           array_push($ERempArray, $row['firstname']);
           //echo '<p>' . $row['firstname'] . '</p>'; // FC
         }
-    //  }
+      }
 
       function clearAllArrays()
       {
@@ -116,6 +116,9 @@ tr:nth-child(even) {
     $shiftid;
     $dutyid;
 
+    getFitnessCenterEmps();
+    getICenterEmps();
+    getEquipmentEmps();
     //Shifts
     foreach($db->query('SELECT shiftid, shift FROM shift') as $shiftrow)
     {
