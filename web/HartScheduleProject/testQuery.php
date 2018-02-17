@@ -110,7 +110,7 @@ tr:nth-child(even) {
     //table headers
     echo '<tr>';
     echo '<th>Shift</th>';
-    foreach($db->query('SELECT date FROM submittedschedule WHERE submittedscheduleid = 1 AND submittedscheduleid = 2') as $row)
+    foreach($db->query('SELECT date FROM submittedschedule') as $row)
     {
       //get dates
       echo '<th colspan="3">' . $row['date'] . '</th>';
@@ -135,7 +135,7 @@ tr:nth-child(even) {
             getICenterEmps($db,$shiftid, $ICempArray);
             getEquipmentEmps($db,$shiftid, $ERempArray);
 
-
+            //Get the three duties
             foreach($db->query('SELECT dutyid, duty FROM duty') as $dutyrow)
             {
 
@@ -144,6 +144,7 @@ tr:nth-child(even) {
               $dutyid = $dutyrow['dutyid'];
 
             }
+            //get all employees for each shift id.
             if($shiftid == 1)
             {
               for ($i=0; $i < 3; $i++)
