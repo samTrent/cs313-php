@@ -44,7 +44,7 @@ tr:nth-child(even) {
 
       function getFitnessCenterEmps($db, $shiftid)
       {
-        echo "FUNCTION getFitnessCenterEmps BEING CALLED";
+        echo "FUNCTION getFitnessCenterEmps has shiftifid " . $shiftid;
         //echo '<p>FC EMPS</p>';
         foreach ($db->query('SELECT e.firstname, d.duty, s.shift FROM employee e
         JOIN submittedschedule su ON e.employeeid = su.employee
@@ -57,12 +57,12 @@ tr:nth-child(even) {
           //echo '<p>' . $row['firstname'] . '</p>'; // FC
         }
 
-        echo "FUNCTION getFitnessCenterEmps BEING CALLED";
+      //  echo "FUNCTION getFitnessCenterEmps BEING CALLED";
       }
 
       function getICenterEmps($db, $shiftid)
       {
-        echo "FUNCTION getICenterEmps BEING CALLED";
+        echo "FUNCTION getICenterEmps has shiftifid " . $shiftid;
         //echo '<p>IC EMPS</p>';
         foreach ($db->query('SELECT e.firstname, d.duty, s.shift FROM employee e
         JOIN submittedschedule su ON e.employeeid = su.employee
@@ -78,7 +78,7 @@ tr:nth-child(even) {
 
       function getEquipmentEmps($db, $shiftid)
       {
-        echo "FUNCTION getEquipmentEmps BEING CALLED";
+        echo "FUNCTION getEquipmentEmps has shiftifid " . $shiftid;
         //echo '<p>ER EMPS</p>';
         foreach ($db->query('SELECT e.firstname, d.duty, s.shift FROM employee e
         JOIN submittedschedule su ON e.employeeid = su.employee
