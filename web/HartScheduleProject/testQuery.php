@@ -42,7 +42,7 @@ tr:nth-child(even) {
 
       $db = new PDO("pgsql:host=$host;port=$port;dbname=$dbname", $user, $password);
 
-
+      //creates a button the user can press to delete a schedule...
       function createDeleteButtonForSchedule($datestamp)
       {
         echo '<form action="deleteScheduleForDate.php" method="POST">';
@@ -129,6 +129,15 @@ tr:nth-child(even) {
     $shiftid;
     $dutyid;
     $datestamp;
+
+    //first lets check to see if there is anything in our table...
+    $stmt = $myDatabase ->prepare("SELECT COUNT(*) FROM submittedschedule");
+    $count = $stmt->fetch(PDO::FETCH_ASSOC);
+    echo "<p>count is:: " . $count . "</p>";
+
+
+    //CREATE TABLES
+
 
     foreach($db->query('SELECT distinct submitteddate FROM submittedschedule') as $row)
     {
