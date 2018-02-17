@@ -32,8 +32,9 @@ try {
   $finalstmt->bindValue(':firstname', $employeeID, PDO::PARAM_INT);
   $finalstmt->bindValue(':shift', $_POST['shift'], PDO::PARAM_INT);
   $finalstmt->bindValue(':duty', $dutyID, PDO::PARAM_INT);
-  echo 'submitting schedule....';
+  echo 'submitting schedule....<br>';
   $finalstmt->execute();
+  echo 'SUCCESS!';
 
   // $stmt = $db ->prepare("INSERT INTO employee (firstname, lastname) VALUES (:firstname, :lastname)");
 
