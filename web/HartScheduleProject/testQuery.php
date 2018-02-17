@@ -42,42 +42,56 @@ tr:nth-child(even) {
 
       $db = new PDO("pgsql:host=$host;port=$port;dbname=$dbname", $user, $password);
 
-
-
-      //echo '<p>FC EMPS</p>';
-      foreach ($db->query('SELECT e.firstname, d.duty, s.shift FROM employee e
-      JOIN submittedschedule su ON e.employeeid = su.employee
-      JOIN duty d ON d.dutyid = su.duty
-      JOIN shift s ON s.shiftid = su.shift
-      WHERE d.duty = \'Fitness Center\' AND s.shift = \'2PM-7PM\'') as $row)
+      function getFitnessCenterEmps($shiftid)
       {
-        //fitness center
-        array_push($FCempArray, $row['firstname']);
-        //echo '<p>' . $row['firstname'] . '</p>'; // FC
+        //echo '<p>FC EMPS</p>';
+        foreach ($db->query('SELECT e.firstname, d.duty, s.shift FROM employee e
+        JOIN submittedschedule su ON e.employeeid = su.employee
+        JOIN duty d ON d.dutyid = su.duty
+        JOIN shift s ON s.shiftid = su.shift
+        WHERE d.duty = \'Fitness Center\' AND s.shift = \'2PM-7PM\' AND s.shiftid = $shiftid') as $row)
+        {
+          //fitness center
+          array_push($FCempArray, $row['firstname']);
+          //echo '<p>' . $row['firstname'] . '</p>'; // FC
+        }
       }
 
-      //echo '<p>IC EMPS</p>';
-      foreach ($db->query('SELECT e.firstname, d.duty, s.shift FROM employee e
-      JOIN submittedschedule su ON e.employeeid = su.employee
-      JOIN duty d ON d.dutyid = su.duty
-      JOIN shift s ON s.shiftid = su.shift
-      WHERE d.duty = \'ICenter\' AND s.shift = \'2PM-7PM\'') as $row)
+      function getICenterEmps($shiftid)
       {
-        //fitness center
-        array_push($ICempArray, $row['firstname']);
-        //echo '<p>' . $row['firstname'] . '</p>'; // FC
+        //echo '<p>IC EMPS</p>';
+        foreach ($db->query('SELECT e.firstname, d.duty, s.shift FROM employee e
+        JOIN submittedschedule su ON e.employeeid = su.employee
+        JOIN duty d ON d.dutyid = su.duty
+        JOIN shift s ON s.shiftid = su.shift
+        WHERE d.duty = \'ICenter\' AND s.shift = \'2PM-7PM\' AND s.shiftid = $shiftid') as $row)
+        {
+          //fitness center
+          array_push($ICempArray, $row['firstname']);
+          //echo '<p>' . $row['firstname'] . '</p>'; // FC
+        }
       }
 
-      //echo '<p>ER EMPS</p>';
-      foreach ($db->query('SELECT e.firstname, d.duty, s.shift FROM employee e
-      JOIN submittedschedule su ON e.employeeid = su.employee
-      JOIN duty d ON d.dutyid = su.duty
-      JOIN shift s ON s.shiftid = su.shift
-      WHERE d.duty = \'Equipment Room\' AND s.shift = \'2PM-7PM\'') as $row)
+      function getEquipmentEmps($shiftid)
       {
-        //fitness center
-        array_push($ERempArray, $row['firstname']);
-        //echo '<p>' . $row['firstname'] . '</p>'; // FC
+        //echo '<p>ER EMPS</p>';
+        foreach ($db->query('SELECT e.firstname, d.duty, s.shift FROM employee e
+        JOIN submittedschedule su ON e.employeeid = su.employee
+        JOIN duty d ON d.dutyid = su.duty
+        JOIN shift s ON s.shiftid = su.shift
+        WHERE d.duty = \'Equipment Room\' AND s.shift = \'2PM-7PM\' AND s.shiftid = $shiftid') as $row)
+        {
+          //fitness center
+          array_push($ERempArray, $row['firstname']);
+          //echo '<p>' . $row['firstname'] . '</p>'; // FC
+        }
+      }
+
+      function clearAllArrays()
+      {
+        $FCempArray = array();
+        $ICempArray = array();
+        $ERempArray = array();
       }
 
     }
@@ -111,6 +125,10 @@ tr:nth-child(even) {
           echo '<td rowspan="4">' . $shiftrow['shift'] . '</td>';
           $shiftid = $shiftrow['shiftid'];
             //get duties...
+            getFitnessCenterEmps($shiftid);
+            getICenterEmps($shiftid);
+            getEquipmentEmps($shiftid);
+
 
             foreach($db->query('SELECT dutyid, duty FROM duty') as $dutyrow)
             {
@@ -168,7 +186,7 @@ tr:nth-child(even) {
                 echo '</tr>';
               }
             }
-
+            clearAllArrays();
             //end massive row
             echo '</tr>';
         }
