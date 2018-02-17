@@ -117,7 +117,7 @@ tr:nth-child(even) {
       echo '<th colspan="3">' . $row['date'] . '</th>';
     // }
     // //echo '<th>Duty</th>';
-    echo '</tr>';
+    // echo '</tr>';
 
 
 
