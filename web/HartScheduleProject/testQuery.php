@@ -42,53 +42,50 @@ tr:nth-child(even) {
 
       $db = new PDO("pgsql:host=$host;port=$port;dbname=$dbname", $user, $password);
 
-      function getFitnessCenterEmps($db, $shiftid, &$FCempArray)
+      function getFitnessCenterEmps($db, $shiftid, &$FCempArray, $datestamp)
       {
-        // echo "FUNCTION getFitnessCenterEmps has shiftifid " . $shiftid;
-        //echo '<p>FC EMPS</p>';
+
         foreach ($db->query('SELECT e.firstname, d.duty, s.shift FROM employee e
         JOIN submittedschedule su ON e.employeeid = su.employee
         JOIN duty d ON d.dutyid = su.duty
         JOIN shift s ON s.shiftid = su.shift
-        WHERE d.duty = \'Fitness Center\' AND s.shiftid = '. $shiftid .' AND su.date = \'02-17-2018\'') as $row)
+        WHERE d.duty = \'Fitness Center\' AND s.shiftid = '. $shiftid .' AND su.date = ' . $datestamp . '') as $row)
         {
           //fitness center
           array_push($FCempArray, $row['firstname']);
-          // echo '<p>' . $row['firstname'] . '</p>'; // FC
+
         }
 
-      //  echo "FUNCTION getFitnessCenterEmps BEING CALLED";
+
       }
 
-      function getICenterEmps($db, $shiftid, &$ICempArray)
+      function getICenterEmps($db, $shiftid, &$ICempArray, $datestamp)
       {
-        //echo "FUNCTION getICenterEmps has shiftifid " . $shiftid;
-        //echo '<p>IC EMPS</p>';
+
         foreach ($db->query('SELECT e.firstname, d.duty, s.shift FROM employee e
         JOIN submittedschedule su ON e.employeeid = su.employee
         JOIN duty d ON d.dutyid = su.duty
         JOIN shift s ON s.shiftid = su.shift
-        WHERE d.duty = \'ICenter\' AND s.shiftid = '. $shiftid .' AND su.date = \'02-17-2018\'') as $row)
+        WHERE d.duty = \'ICenter\' AND s.shiftid = '. $shiftid .' AND su.date = ' . $datestamp . '') as $row)
         {
           //fitness center
           array_push($ICempArray, $row['firstname']);
-          // echo '<p>' . $row['firstname'] . '</p>'; // FC
+
         }
       }
 
-      function getEquipmentEmps($db, $shiftid, &$ERempArray)
+      function getEquipmentEmps($db, $shiftid, &$ERempArray, $datestamp)
       {
-        //echo "FUNCTION getEquipmentEmps has shiftifid " . $shiftid;
-        //echo '<p>ER EMPS</p>';
+
         foreach ($db->query('SELECT e.firstname, d.duty, s.shift FROM employee e
         JOIN submittedschedule su ON e.employeeid = su.employee
         JOIN duty d ON d.dutyid = su.duty
         JOIN shift s ON s.shiftid = su.shift
-        WHERE d.duty = \'Equipment Room\' AND s.shiftid = '. $shiftid .' AND su.date = \'02-18-2018\'') as $row)
+        WHERE d.duty = \'Equipment Room\' AND s.shiftid = '. $shiftid .' AND su.date = ' . $datestamp . '') as $row)
         {
           //fitness center
           array_push($ERempArray, $row['firstname']);
-          // echo '<p>' . $row['firstname'] . '</p>'; // FC
+
         }
       }
 
@@ -106,11 +103,8 @@ tr:nth-child(even) {
     }
     $shiftid;
     $dutyid;
+    $datestamp;
 
-    // echo '<table>';
-    //table headers
-    // echo '<tr>';
-    // echo '<th>Shift</th>';
     foreach($db->query('SELECT distinct date FROM submittedschedule') as $row)
     {
       echo '<table>';
@@ -118,12 +112,7 @@ tr:nth-child(even) {
       echo '<th>Shift</th>';
       //get dates
       echo '<th colspan="3">' . $row['date'] . '</th>';
-    // }
-    //echo '<th>Duty</th>';
-    // echo '</tr>';
-
-
-
+      $datestamp = $row['date'];
 
     //Shifts
     foreach($db->query('SELECT shiftid, shift FROM shift') as $shiftrow)
@@ -134,9 +123,9 @@ tr:nth-child(even) {
           echo '<td rowspan="4">' . $shiftrow['shift'] . '</td>';
           $shiftid = $shiftrow['shiftid'];
             //get duties...
-            getFitnessCenterEmps($db, $shiftid, $FCempArray);
-            getICenterEmps($db,$shiftid, $ICempArray);
-            getEquipmentEmps($db,$shiftid, $ERempArray);
+            getFitnessCenterEmps($db, $shiftid, $FCempArray, $datestamp);
+            getICenterEmps($db,$shiftid, $ICempArray, $datestamp);
+            getEquipmentEmps($db,$shiftid, $ERempArray, $datestamp);
 
             //Get the three duties
             foreach($db->query('SELECT dutyid, duty FROM duty') as $dutyrow)
@@ -197,10 +186,9 @@ tr:nth-child(even) {
               }
             }
            clearAllArrays($FCempArray, $ICempArray, $ERempArray);
-            //end massive row
-            // echo '</tr>';
+
         }
-        //echo '<th>Duty</th>';
+
         echo '</tr>';
 
       echo '</table>';
