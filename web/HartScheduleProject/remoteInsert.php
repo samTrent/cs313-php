@@ -8,21 +8,30 @@ try {
 
   $db = new PDO("pgsql:host=$host;port=$port;dbname=$dbname", $user, $password);
 
-  // $fromAppFirstname = $_POST['firstname'];
 
+  //get employeeID
   $stmt = $db ->prepare("SELECT employeeid FROM employee WHERE firstname = :firstname");
   $stmt->bindValue(':firstname', $_POST['firstname'], PDO::PARAM_STR);
   $stmt->execute();
   $employeeID = $stmt->fetch(PDO::FETCH_NUM);
   echo 'The employeeID for '. $_POST['firstname'] . ' is :: ' . $employeeID[0] . '<br>';
-  // $stmt = $db ->prepare("INSERT INTO submittedschedule (date, employee, shift, duty) VALUES (:date, :firstname, :shift, :duty)");
+
+  //get dutyid
+  $stmt = $db ->prepare("SELECT dutyid FROM duty WHERE duty = :duty");
+  $stmt->bindValue(':duty', $_POST['duty'], PDO::PARAM_STR);
+  $stmt->execute();
+  $dutyID = $stmt->fetch(PDO::FETCH_NUM);
+  echo 'The dutyID for '. $_POST['duty'] . ' is :: ' . $dutyID[0] . '<br>';
 
 
+  $stmt = $db ->prepare("INSERT INTO submittedschedule (date, employee, shift, duty) VALUES (:date, :firstname, :shift, :duty)");
 
-  // $stmt->bindValue(':date', $_POST['date'], PDO::PARAM_STR);
-  // $stmt->bindValue(':firstname', $_POST['firstname'], PDO::PARAM_STR);
-  // $stmt->bindValue(':shift', $_POST['shift'], PDO::PARAM_STR);
-  // $stmt->bindValue(':duty', $_POST['duty'], PDO::PARAM_STR);
+  $stmt->bindValue(':date', $_POST['date'], PDO::PARAM_STR);
+  $stmt->bindValue(':firstname', $employeeID, PDO::PARAM_STR);
+  $stmt->bindValue(':shift', $_POST['shift'], PDO::PARAM_INT);
+  $stmt->bindValue(':duty', $dutyID, PDO::PARAM_INT);
+
+  $stmt->execute();
 
   // $stmt = $db ->prepare("INSERT INTO employee (firstname, lastname) VALUES (:firstname, :lastname)");
 
