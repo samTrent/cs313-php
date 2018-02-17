@@ -134,7 +134,6 @@ tr:nth-child(even) {
     WHERE d.duty = \'Fitness Center\'') as $row)
     {
       //fitness center
-
       echo '<p>' . $row['firstname'] . '</p>'; // FC
     }
 
