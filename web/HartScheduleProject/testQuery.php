@@ -42,6 +42,16 @@ tr:nth-child(even) {
 
       $db = new PDO("pgsql:host=$host;port=$port;dbname=$dbname", $user, $password);
 
+
+      function createDeleteButtonForSchedule($datestamp)
+      {
+        echo '<form action="deleteScheduleForDate.php" method="POST">';
+        echo "<input  hidden="true" type="text" name="date" value="$datestamp">"
+        echo '<input type="submit" name="" value="">'
+        echo '</form>';
+      }
+
+
       function getFitnessCenterEmps($db, $shiftid, &$FCempArray, $datestamp)
       {
         foreach ($db->query('SELECT e.firstname, d.duty, s.shift FROM employee e
@@ -123,6 +133,7 @@ tr:nth-child(even) {
     foreach($db->query('SELECT distinct submitteddate FROM submittedschedule') as $row)
     {
       echo '<table>';
+      createDeleteButtonForSchedule($row['submitteddate']);
       echo '<tr>';
       echo '<th>Shift</th>';
       //get dates
@@ -215,6 +226,7 @@ tr:nth-child(even) {
 
 
      ?>
+
 
   </body>
 </html>
