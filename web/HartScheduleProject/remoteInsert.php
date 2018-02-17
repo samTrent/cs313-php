@@ -26,9 +26,9 @@ try {
   echo 'The date is: ' . $_POST['date'] . ' <br>';
   echo 'The shift is: ' . $_POST['shift'] . ' <br>';
 
-  $finalstmt = $db ->prepare("INSERT INTO submittedschedule (date, employee, shift, duty) VALUES (:thedate, :firstname, :shift, :duty)");
+  $finalstmt = $db ->prepare("INSERT INTO submittedschedule (submitteddate, employee, shift, duty) VALUES (:submitteddate, :firstname, :shift, :duty)");
 
-  $finalstmt->bindValue(':thedate', $_POST['date'], PDO::PARAM_STR);
+  $finalstmt->bindValue(':submitteddate', $_POST['date'], PDO::PARAM_STR);
   $finalstmt->bindValue(':firstname', $employeeID, PDO::PARAM_INT);
   $finalstmt->bindValue(':shift', $_POST['shift'], PDO::PARAM_INT);
   $finalstmt->bindValue(':duty', $dutyID, PDO::PARAM_INT);
