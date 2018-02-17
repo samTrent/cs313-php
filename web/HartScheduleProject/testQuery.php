@@ -104,7 +104,8 @@ tr:nth-child(even) {
      print "<p>error: $ex </p>\n\n";
      die();
     }
-
+    $shiftid;
+    $dutyid;
 
     echo '<table>';
     //table headers
@@ -114,12 +115,11 @@ tr:nth-child(even) {
     {
       //get dates
       echo '<th colspan="3">' . $row['date'] . '</th>';
-    }
-    //echo '<th>Duty</th>';
-    echo '</tr>';
+    // }
+    // //echo '<th>Duty</th>';
+    // echo '</tr>';
 
-    $shiftid;
-    $dutyid;
+
 
 
     //Shifts
@@ -201,6 +201,9 @@ tr:nth-child(even) {
 
     echo '</table>';
 
+  }
+  //echo '<th>Duty</th>';
+  echo '</tr>';
 
 
      ?>
