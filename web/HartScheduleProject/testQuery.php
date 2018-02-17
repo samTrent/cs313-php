@@ -1,5 +1,44 @@
 <?php
 
+$FCempArray = array();
+$ICempArray = array();
+$ERempArray = array();
+
+//echo '<p>FC EMPS</p>';
+foreach ($db->query('SELECT e.firstname, d.duty, s.shift FROM employee e
+JOIN submittedschedule su ON e.employeeid = su.employee
+JOIN duty d ON d.dutyid = su.duty
+JOIN shift s ON s.shiftid = su.shift
+WHERE d.duty = \'Fitness Center\' AND s.shift = \'2PM-7PM\'') as $row)
+{
+  //fitness center
+  array_push($FCempArray, $row['firstname']);
+  //echo '<p>' . $row['firstname'] . '</p>'; // FC
+}
+
+//echo '<p>IC EMPS</p>';
+foreach ($db->query('SELECT e.firstname, d.duty, s.shift FROM employee e
+JOIN submittedschedule su ON e.employeeid = su.employee
+JOIN duty d ON d.dutyid = su.duty
+JOIN shift s ON s.shiftid = su.shift
+WHERE d.duty = \'ICenter\' AND s.shift = \'2PM-7PM\'') as $row)
+{
+  //fitness center
+  array_push($ICempArray, $row['firstname']);
+  //echo '<p>' . $row['firstname'] . '</p>'; // FC
+}
+
+//echo '<p>ER EMPS</p>';
+foreach ($db->query('SELECT e.firstname, d.duty, s.shift FROM employee e
+JOIN submittedschedule su ON e.employeeid = su.employee
+JOIN duty d ON d.dutyid = su.duty
+JOIN shift s ON s.shiftid = su.shift
+WHERE d.duty = \'Fitness Center\' AND s.shift = \'2PM-7PM\'') as $row)
+{
+  //fitness center
+  array_push($ERempArray, $row['firstname']);
+  //echo '<p>' . $row['firstname'] . '</p>'; // FC
+}
 
  ?>
 <!DOCTYPE html>
@@ -77,15 +116,13 @@ tr:nth-child(even) {
               $dutyid = $dutyrow['dutyid'];
 
             }
-            foreach ($db->query('SELECT e.firstname, d.duty FROM employee e
-            JOIN submittedschedule su ON e.employeeid = su.employee
-            JOIN duty d ON d.dutyid = su.duty WHERE d.duty = \'Fitness Center\'') as $row)
+            for ($i=0; $i < 9; $i++)
             {
               //fitness center
               echo '<tr>';
-              echo '<td>' . $row['firstname'] .':FC</td>'; // FC
-              echo '<td>' . $row['firstname'] .':IC</td>'; // IC
-              echo '<td>' . $row['firstname'] .':ER</td>'; // ER
+              echo '<td>' . $FCempArray[i] .':FC</td>'; // FC
+              echo '<td>' . $ICempArray[i] .':IC</td>'; // IC
+              echo '<td>' . $ERempArray[i] .':ER</td>'; // ER
               echo '</tr>';
             }
 
@@ -94,73 +131,9 @@ tr:nth-child(even) {
         }
 
 
-
-
-
-    // foreach ($db->query('SELECT e.firstname, sh.shiftname, d.dutyname FROM employee e
-    //    JOIN schedule s on e.employeeid = s.scheduleid
-    //    JOIN shift sh on sh.shiftid = s.scheduleid
-    //    JOIN duty d on d.dutyid = s.scheduleid') as $row)
-    // {
-    //   //start the massive rows...
-    //   echo '<tr>';
-    //   //get shift
-    //   echo '<td>' . $row['shiftname'] . '</td>';
-    //     //get duty names inside shift...
-    //     foreach($db->query('SELECT dutyname FROM duty') as $dutyrow)
-    //     {
-    //         echo '<th>' . $dutyrow['dutyname'] . '</th>';
-    //     }
-    //   //  echo '<th>' . $row['dutyname'] . '</th>';
-    //   //end massive row
-    //   echo '</tr>';
-    //
-    //   // echo '<tr>';
-    //   // echo '<td>' . $row['firstname'] . '</td>';
-    //   // echo '<td>' . $row['shiftname'] . '</td>';
-    //   // echo '<td>' . $row['dutyname'] . '</td>';
-    //   // echo '</tr>';
-    //
-    // }
-
-
     echo '</table>';
 
-    echo '<p>FC EMPS</p>';
-    foreach ($db->query('SELECT e.firstname, d.duty, s.shift FROM employee e
-    JOIN submittedschedule su ON e.employeeid = su.employee
-    JOIN duty d ON d.dutyid = su.duty
-    JOIN shift s ON s.shiftid = su.shift
-    WHERE d.duty = \'Fitness Center\' AND s.shift = \'2PM-7PM\'') as $row)
-    {
-      //fitness center
 
-      echo '<p>' . $row['firstname'] . '</p>'; // FC
-    }
-
-    echo '<p>IC EMPS</p>';
-    foreach ($db->query('SELECT e.firstname, d.duty, s.shift FROM employee e
-    JOIN submittedschedule su ON e.employeeid = su.employee
-    JOIN duty d ON d.dutyid = su.duty
-    JOIN shift s ON s.shiftid = su.shift
-    WHERE d.duty = \'ICenter\' AND s.shift = \'2PM-7PM\'') as $row)
-    {
-      //fitness center
-
-      echo '<p>' . $row['firstname'] . '</p>'; // FC
-    }
-
-    echo '<p>ER EMPS</p>';
-    foreach ($db->query('SELECT e.firstname, d.duty, s.shift FROM employee e
-    JOIN submittedschedule su ON e.employeeid = su.employee
-    JOIN duty d ON d.dutyid = su.duty
-    JOIN shift s ON s.shiftid = su.shift
-    WHERE d.duty = \'Fitness Center\' AND s.shift = \'2PM-7PM\'') as $row)
-    {
-      //fitness center
-
-      echo '<p>' . $row['firstname'] . '</p>'; // FC
-    }
 
      ?>
 
