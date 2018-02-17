@@ -28,9 +28,9 @@ try {
 
   $finalstmt = $db ->prepare("INSERT INTO submittedschedule (submitteddate, employee, shift, duty) VALUES (:submitteddate, :firstname, :shift, :duty)");
 
-  $finalstmt->bindValue(':submitteddate', $_POST['date'], PDO::PARAM_STR);
-  $finalstmt->bindValue(':firstname', $employeeID, PDO::PARAM_INT);
-  $finalstmt->bindValue(':shift', $_POST['shift'], PDO::PARAM_INT);
+  $finalstmt->bindValue(':submitteddate', $_POST['date'], PDO::PARAM_SMALLINT);
+  $finalstmt->bindValue(':firstname', $employeeID, PDO::PARAM_SMALLINT);
+  $finalstmt->bindValue(':shift', $_POST['shift'], PDO::PARAM_SMALLINT);
   $finalstmt->bindValue(':duty', $dutyID, PDO::PARAM_INT);
   echo 'submitting schedule....<br>';
   $finalstmt->execute();
