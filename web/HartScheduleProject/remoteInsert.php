@@ -28,10 +28,15 @@ try {
 
   $finalstmt = $db ->prepare('INSERT INTO submittedschedule (submitteddate, employee, shift, duty) VALUES (:submitteddate, :firstname, :shift, :duty)');
 
-  $finalstmt->bindValue(':submitteddate', $_POST['date']);
-  $finalstmt->bindValue(':firstname', $employeeID);
-  $finalstmt->bindValue(':shift', $_POST['shift']);
-  $finalstmt->bindValue(':duty', $dutyID);
+  if (!$finalstmt) {
+    echo "\nPDO::errorInfo():\n";
+    print_r($db->errorInfo());
+}
+
+  $finalstmt->bindValue(':submitteddate', $_POST['date'], PDO::PARAM_STR);
+  $finalstmt->bindValue(':firstname', $employeeID, PDO::PARAM_INT);
+  $finalstmt->bindValue(':shift', $_POST['shift'], PDO::PARAM_INT);
+  $finalstmt->bindValue(':duty', $dutyID, PDO::PARAM_INT);
   echo 'submitting schedule....<br>';
   $finalstmt->execute();
 
