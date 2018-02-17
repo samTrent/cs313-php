@@ -23,6 +23,10 @@ try {
     {
       echo "DELETING FAILED!<br>";
     }
+
+    header("Location: testQuery.php");
+    die();
+
   }
   catch (PDOException $ex) {
    print "<p>error: $ex </p>\n\n";
