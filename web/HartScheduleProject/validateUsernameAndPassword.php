@@ -20,7 +20,7 @@ try {
   $stmt->execute();
   $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-  foreach ($row in $rows)
+  foreach ($row as $rows)
   {
     echo '<p> USER: ' . $row['username'] . '</p>';
     echo '<p> PASS: ' . $row['password'] . '</p>';
