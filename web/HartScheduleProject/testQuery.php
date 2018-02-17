@@ -42,7 +42,7 @@ tr:nth-child(even) {
 
       $db = new PDO("pgsql:host=$host;port=$port;dbname=$dbname", $user, $password);
 
-      function getFitnessCenterEmps($db, $shiftid)
+      function getFitnessCenterEmps($db, $shiftid, &$FCempArray)
       {
         echo "FUNCTION getFitnessCenterEmps has shiftifid " . $shiftid;
         //echo '<p>FC EMPS</p>';
@@ -60,7 +60,7 @@ tr:nth-child(even) {
       //  echo "FUNCTION getFitnessCenterEmps BEING CALLED";
       }
 
-      function getICenterEmps($db, $shiftid)
+      function getICenterEmps($db, $shiftid, &$ICempArray)
       {
         //echo "FUNCTION getICenterEmps has shiftifid " . $shiftid;
         //echo '<p>IC EMPS</p>';
@@ -76,7 +76,7 @@ tr:nth-child(even) {
         }
       }
 
-      function getEquipmentEmps($db, $shiftid)
+      function getEquipmentEmps($db, $shiftid, &$ERempArray)
       {
         //echo "FUNCTION getEquipmentEmps has shiftifid " . $shiftid;
         //echo '<p>ER EMPS</p>';
@@ -131,9 +131,9 @@ tr:nth-child(even) {
           echo '<td rowspan="4">' . $shiftrow['shift'] . '</td>';
           $shiftid = $shiftrow['shiftid'];
             //get duties...
-            getFitnessCenterEmps($db,$shiftid);
-            getICenterEmps($db,$shiftid);
-            getEquipmentEmps($db,$shiftid);
+            getFitnessCenterEmps($db, $shiftid, $FCempArray);
+            getICenterEmps($db,$shiftid, $ICempArray);
+            getEquipmentEmps($db,$shiftid, $ERempArray);
 
 
             foreach($db->query('SELECT dutyid, duty FROM duty') as $dutyrow)
