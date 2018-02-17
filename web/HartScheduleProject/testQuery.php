@@ -197,13 +197,13 @@ tr:nth-child(even) {
             //end massive row
             echo '</tr>';
         }
-
+      }
+      //echo '<th>Duty</th>';
+      echo '</tr>';
 
     echo '</table>';
 
-  }
-  //echo '<th>Duty</th>';
-  echo '</tr>';
+
 
 
      ?>
