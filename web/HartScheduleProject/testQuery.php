@@ -132,7 +132,7 @@ tr:nth-child(even) {
     JOIN duty d ON d.dutyid = su.duty WHERE d.duty = \'Fitness Center\'') as $row)
     {
       //fitness center
-      echo '<p>FC EMPS</p>'
+      echo '<p>FC EMPS</p>';
       echo '<p>' . $row['firstname'] . '</p>'; // FC
     }
 
@@ -141,7 +141,7 @@ tr:nth-child(even) {
     JOIN duty d ON d.dutyid = su.duty WHERE d.duty = \'ICenter\'') as $row)
     {
       //fitness center
-      echo '<p>IC EMPS</p>'
+      echo '<p>IC EMPS</p>';
       echo '<p>' . $row['firstname'] . '</p>'; // FC
     }
 
@@ -150,7 +150,7 @@ tr:nth-child(even) {
     JOIN duty d ON d.dutyid = su.duty WHERE d.duty = \'Equipment Room\'') as $row)
     {
       //fitness center
-      echo '<p>ER EMPS</p>' 
+      echo '<p>ER EMPS</p>';
       echo '<p>' . $row['firstname'] . '</p>'; // FC
     }
 
