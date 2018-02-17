@@ -168,12 +168,12 @@ tr:nth-child(even) {
               {
                 //fitness center
                 echo '<tr>';
-                echo '<td>' . 'N/A' .'</td>'; // FC
-                echo '<td>' . 'N/A' .'</td>'; // IC
-                echo '<td>' . 'N/A' .'</td>'; // ER
-                // echo '<td>' . $FCempArray[$i] .'</td>'; // FC
-                // echo '<td>' . $ICempArray[$i] .'</td>'; // IC
-                // echo '<td>' . $ERempArray[$i] .'</td>'; // ER
+                // echo '<td>' . 'N/A' .'</td>'; // FC
+                // echo '<td>' . 'N/A' .'</td>'; // IC
+                // echo '<td>' . 'N/A' .'</td>'; // ER
+                echo '<td>' . $FCempArray[$i] .'</td>'; // FC
+                echo '<td>' . $ICempArray[$i] .'</td>'; // IC
+                echo '<td>' . $ERempArray[$i] .'</td>'; // ER
                 echo '</tr>';
               }
             }
