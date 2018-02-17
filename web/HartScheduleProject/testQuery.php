@@ -87,12 +87,12 @@ tr:nth-child(even) {
         }
     //  }
 
-      // function clearAllArrays()
-      // {
-      //   $FCempArray = array();
-      //   $ICempArray = array();
-      //   $ERempArray = array();
-      // }
+      function clearAllArrays()
+      {
+        $FCempArray = array();
+        $ICempArray = array();
+        $ERempArray = array();
+      }
 
     }
     catch (PDOException $ex) {
@@ -189,7 +189,7 @@ tr:nth-child(even) {
                 echo '</tr>';
               }
             }
-          //  clearAllArrays();
+           clearAllArrays();
             //end massive row
             echo '</tr>';
         }
