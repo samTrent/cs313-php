@@ -117,7 +117,7 @@ tr:nth-child(even) {
       echo '<th colspan="3">' . $row['date'] . '</th>';
     // }
     // //echo '<th>Duty</th>';
-    // echo '</tr>';
+    echo '</tr>';
 
 
 
@@ -195,11 +195,11 @@ tr:nth-child(even) {
             }
            clearAllArrays($FCempArray, $ICempArray, $ERempArray);
             //end massive row
-            echo '</tr>';
+            // echo '</tr>';
         }
       }
       //echo '<th>Duty</th>';
-      echo '</tr>';
+      // echo '</tr>';
 
     echo '</table>';
 
