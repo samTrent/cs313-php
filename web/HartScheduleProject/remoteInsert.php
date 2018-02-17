@@ -11,8 +11,11 @@ try {
 
   $stmt = $myDatabase ->prepare("INSERT INTO employee (firstname, lastname) VALUES (:firstname, :lastname)");
 
-  $stmt->bindValue(':firstname', $_POST['firstname'];, PDO::PARAM_STR);
-  $stmt->bindValue(':lastname', $_POST['lastname'];, PDO::PARAM_STR);
+  $stmt->bindValue(':firstname', $_POST['firstname'], PDO::PARAM_STR);
+  $stmt->bindValue(':lastname', $_POST['lastname'], PDO::PARAM_STR);
+
+  echo "<p>POST FIRSTNAME = " . $_POST['firstname'] . '</p>';
+  echo "<p>POST LASTNAME = " . $_POST['lastname'] . '</p>';
 
   $stmt->execute();
 
