@@ -26,6 +26,19 @@ try {
   echo 'The date is: ' . $_POST['date'] . ' <br>';
   echo 'The shift is: ' . $_POST['shift'] . ' <br>';
 
+  //Clear out old data...
+  $deletestmt = $db ->prepare('DELETE FROM submittedschedule WHERE submitteddate = :submitteddate');
+  $deletestmt->bindValue(":submitteddate", $_POST['date'], PDO::PARAM_STR);
+  if ($deletestmt->execute())
+  {
+    echo "SUECCES DELETING DATA!<br>";
+  }
+  else
+  {
+    echo "DELETING FAILED!<br>";
+  }
+
+  //insert new data...
   $finalstmt = $db ->prepare('INSERT INTO submittedschedule (submitteddate, employee, shift, duty) VALUES (:submitteddate, :firstname, :shift, :duty)');
 
   $finalstmt->bindValue(":submitteddate", $_POST['date'], PDO::PARAM_STR);
