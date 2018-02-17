@@ -44,7 +44,6 @@ tr:nth-child(even) {
 
       function getFitnessCenterEmps($db, $shiftid, &$FCempArray, $datestamp)
       {
-        echo 'date is' . $datestamp;
         foreach ($db->query('SELECT e.firstname, d.duty, s.shift FROM employee e
         JOIN submittedschedule su ON e.employeeid = su.employee
         JOIN duty d ON d.dutyid = su.duty
@@ -56,7 +55,6 @@ tr:nth-child(even) {
 
         }
 
-
       }
 
       function getICenterEmps($db, $shiftid, &$ICempArray, $datestamp)
@@ -65,7 +63,7 @@ tr:nth-child(even) {
         JOIN submittedschedule su ON e.employeeid = su.employee
         JOIN duty d ON d.dutyid = su.duty
         JOIN shift s ON s.shiftid = su.shift
-        WHERE d.duty = \'ICenter\' AND s.shiftid = '. $shiftid .' AND su.date = :datestamp');
+        WHERE d.duty = \'ICenter\' AND s.shiftid = '. $shiftid .'');
 
         $querystmt->bindValue(':datestamp', $datestamp, PDO::PARAM_STR);
         foreach ($db->query($querystmt) as $row)
@@ -73,16 +71,6 @@ tr:nth-child(even) {
           array_push($ICempArray, $row['firstname']);
         }
 
-        // foreach ($db->query('SELECT e.firstname, d.duty, s.shift FROM employee e
-        // JOIN submittedschedule su ON e.employeeid = su.employee
-        // JOIN duty d ON d.dutyid = su.duty
-        // JOIN shift s ON s.shiftid = su.shift
-        // WHERE d.duty = \'ICenter\' AND s.shiftid = '. $shiftid .' AND su.date = $datestamp') as $row)
-        // {
-        //   //fitness center
-        //   array_push($ICempArray, $row['firstname']);
-        //
-        // }
       }
 
       function getEquipmentEmps($db, $shiftid, &$ERempArray, $datestamp)
