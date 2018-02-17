@@ -131,7 +131,7 @@ tr:nth-child(even) {
     JOIN submittedschedule su ON e.employeeid = su.employee
     JOIN duty d ON d.dutyid = su.duty
     JOIN shift d ON s.shiftid = su.shift
-    WHERE d.duty = \'Fitness Center\' AND s.shift = \'2PM-7PM\'') as $row)
+    WHERE d.duty = \'Fitness Center\'') as $row)
     {
       //fitness center
 
@@ -143,7 +143,7 @@ tr:nth-child(even) {
     JOIN submittedschedule su ON e.employeeid = su.employee
     JOIN duty d ON d.dutyid = su.duty
     JOIN shift d ON s.shiftid = su.shift
-    WHERE d.duty = \'ICenter\' AND s.shift = \'2PM-7PM\'') as $row)
+    WHERE d.duty = \'ICenter\'') as $row)
     {
       //fitness center
 
@@ -155,7 +155,7 @@ tr:nth-child(even) {
     JOIN submittedschedule su ON e.employeeid = su.employee
     JOIN duty d ON d.dutyid = su.duty
     JOIN shift d ON s.shiftid = su.shift
-    WHERE d.duty = \'Equipment Room\' AND s.shift = \'2PM-7PM\'') as $row)
+    WHERE d.duty = \'Equipment Room\'') as $row)
     {
       //fitness center
 
