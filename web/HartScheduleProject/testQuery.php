@@ -42,7 +42,7 @@ tr:nth-child(even) {
 
       $db = new PDO("pgsql:host=$host;port=$port;dbname=$dbname", $user, $password);
 
-      function getFitnessCenterEmps($db)
+      function getFitnessCenterEmps($db, $shiftid)
       {
         echo "FUNCTION getFitnessCenterEmps BEING CALLED";
         //echo '<p>FC EMPS</p>';
@@ -50,7 +50,7 @@ tr:nth-child(even) {
         JOIN submittedschedule su ON e.employeeid = su.employee
         JOIN duty d ON d.dutyid = su.duty
         JOIN shift s ON s.shiftid = su.shift
-        WHERE d.duty = \'Fitness Center\' AND s.shift = \'2PM-7PM\'') as $row)
+        WHERE d.duty = \'Fitness Center\' AND s.shiftid = $shiftid') as $row)
         {
           //fitness center
           array_push($FCempArray, $row['firstname']);
@@ -60,7 +60,7 @@ tr:nth-child(even) {
         echo "FUNCTION getFitnessCenterEmps BEING CALLED";
       }
 
-      function getICenterEmps($db)
+      function getICenterEmps($db, $shiftid)
       {
         echo "FUNCTION getICenterEmps BEING CALLED";
         //echo '<p>IC EMPS</p>';
@@ -68,7 +68,7 @@ tr:nth-child(even) {
         JOIN submittedschedule su ON e.employeeid = su.employee
         JOIN duty d ON d.dutyid = su.duty
         JOIN shift s ON s.shiftid = su.shift
-        WHERE d.duty = \'ICenter\' AND s.shift = \'2PM-7PM\'') as $row)
+        WHERE d.duty = \'ICenter\' AND s.shiftid = $shiftid') as $row)
         {
           //fitness center
           array_push($ICempArray, $row['firstname']);
@@ -76,7 +76,7 @@ tr:nth-child(even) {
         }
       }
 
-      function getEquipmentEmps($db)
+      function getEquipmentEmps($db, $shiftid)
       {
         echo "FUNCTION getEquipmentEmps BEING CALLED";
         //echo '<p>ER EMPS</p>';
@@ -84,7 +84,7 @@ tr:nth-child(even) {
         JOIN submittedschedule su ON e.employeeid = su.employee
         JOIN duty d ON d.dutyid = su.duty
         JOIN shift s ON s.shiftid = su.shift
-        WHERE d.duty = \'Equipment Room\' AND s.shift = \'2PM-7PM\'') as $row)
+        WHERE d.duty = \'Equipment Room\' AND s.shiftid = $shiftid') as $row)
         {
           //fitness center
           array_push($ERempArray, $row['firstname']);
@@ -121,9 +121,7 @@ tr:nth-child(even) {
     $shiftid;
     $dutyid;
 
-    getFitnessCenterEmps($db);
-    getICenterEmps($db);
-    getEquipmentEmps($db);
+
     //Shifts
     foreach($db->query('SELECT shiftid, shift FROM shift') as $shiftrow)
     {
@@ -133,9 +131,9 @@ tr:nth-child(even) {
           echo '<td rowspan="4">' . $shiftrow['shift'] . '</td>';
           $shiftid = $shiftrow['shiftid'];
             //get duties...
-            // getFitnessCenterEmps();
-            // getICenterEmps();
-            // getEquipmentEmps();
+            getFitnessCenterEmps($db,$shiftid);
+            getICenterEmps($db,$shiftid);
+            getEquipmentEmps($db,$shiftid);
 
 
             foreach($db->query('SELECT dutyid, duty FROM duty') as $dutyrow)
