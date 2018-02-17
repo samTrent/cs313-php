@@ -34,7 +34,7 @@ try {
   $finalstmt->bindValue(":duty", $dutyID[0], PDO::PARAM_INT);
   echo 'submitting schedule....<br>';
 
-  $finalstmt->execute();
+  //$finalstmt->execute();
 
   if ($finalstmt->execute())
   {
