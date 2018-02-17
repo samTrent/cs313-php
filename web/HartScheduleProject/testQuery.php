@@ -132,9 +132,7 @@ tr:nth-child(even) {
     JOIN duty d ON d.dutyid = su.duty') as $row)
     {
       //fitness center
-
       echo '<p>' . $row['firstname'] . '</p>'; // FC
-
     }
 
      ?>
