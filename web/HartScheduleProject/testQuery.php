@@ -59,11 +59,11 @@ tr:nth-child(even) {
 
       function getICenterEmps($db, $shiftid, &$ICempArray, $datestamp)
       {
-        $querystmt = $db->prepare('SELECT e.firstname, d.duty, s.shift FROM employee e
+        $querystmt = 'SELECT e.firstname, d.duty, s.shift FROM employee e
         JOIN submittedschedule su ON e.employeeid = su.employee
         JOIN duty d ON d.dutyid = su.duty
         JOIN shift s ON s.shiftid = su.shift
-        WHERE d.duty = \'ICenter\' AND s.shiftid = '. $shiftid .'');
+        WHERE d.duty = \'ICenter\' AND s.shiftid = '. $shiftid .' AND su.date = :datestamp');
 
         $querystmt->bindValue(':datestamp', $datestamp, PDO::PARAM_STR);
         foreach ($db->query($querystmt) as $row)
