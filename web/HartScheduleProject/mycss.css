@@ -45,5 +45,29 @@ body
     background-size: cover;
     position: absolute;
     z-index: -1;
+}
 
+.loginButton
+{
+  background-color: grey;
+     border: none;
+     color: #9CD1CD;
+     padding: 15px 32px;
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 30px;
+     margin: 4px 2px;
+     cursor: pointer;
+     align-items: center;
+     text-align: center;
+     border-radius: 15px;
+}
+
+.loginButton:hover
+{
+  transition: background-color 1s, color 1s, box-shadow 0.5s;
+  background-color: #9CD1CD;
+  color: grey;
+  box-shadow: 5px 5px;
 }
