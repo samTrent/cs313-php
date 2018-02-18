@@ -145,13 +145,13 @@ $ERempArray = array();
             //Get the three duties
             foreach($db->query('SELECT dutyid, duty FROM duty') as $dutyrow)
             {
-              echo
+              echo '<p>This is duty tag: '. $dutyrow['duty']. '<p>';
 
               //make a new table head on the same row as our shiftname
               // echo '<th>' . $dutyrow['duty'] . '</th>';
               if($dutyrow['duty'] == '1')
               {
-                echo '<th class="iCenter">' . $dutyrow['duty'] . '</th>';
+                echo "<th class='iCenter'>" . $dutyrow['duty'] . "</th>";
               }
               elseif ($dutyrow['duty'] == '2')
               {
