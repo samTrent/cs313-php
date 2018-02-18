@@ -30,9 +30,10 @@ td, th {
 {
   padding: 10px;
   font-size: 13px;
-  color: lightgray;
-  border: 3px outset white;
+  color: darkgray;
+  border: 3px outset darkgray;
   background-color: darkred;
+  font-family: Helvetica;
   /* opacity: 0.4; */
 }
 
@@ -46,13 +47,14 @@ td, th {
   border: 3px solid black;
   background-color: yellow;
   border-radius: 5px;
+  font-family: Helvetica;
 }
 
 .deleteTableButton:hover
 {
   /* opacity: 1; */
   background-color: red;
-  border: 3px inset yellow;
+  border: 3px inset white;
   color: white;
 }
 
