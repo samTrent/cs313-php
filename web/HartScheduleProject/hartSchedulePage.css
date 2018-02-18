@@ -33,6 +33,14 @@ td, th {
   color: white;
 }
 
+.topTableHead
+{
+  text-align: center;
+  font-size: 25px;
+  font-family: Helvetica;
+  color: white;
+}
+
 .shiftrow
 {
   background-color: gray;
