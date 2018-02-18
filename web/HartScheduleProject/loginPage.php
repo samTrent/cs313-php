@@ -5,8 +5,9 @@
     <meta charset="utf-8">
     <title>Login</title>
   </head>
-  <body id="background">
+  <body>
 
+    <img id="backgroundImg" src="hartGym3.tiff" alt="gym">
     <div class="centerWithBorder">
 
 

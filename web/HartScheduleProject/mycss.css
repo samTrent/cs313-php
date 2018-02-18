@@ -25,20 +25,20 @@ body, html {
 }
 body
 {
-  /* The image used */
-    background-image: url("hartGym3.jpg");
-    opacity: 0.5;
-    /* Full height */
-    height: 200%;
-
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
 
 }
 
 #backgroundImg
 {
+  /* The image used */
+    background-image: url("hartGym3.jpg");
+    opacity: 0.5;
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
 }
