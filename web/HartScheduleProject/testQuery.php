@@ -14,8 +14,8 @@ $ERempArray = array();
   <body>
     <img id="backgroundImg" src="hartGym3.jpg" alt="gym">
     <!-- logout button -->
-    <form style="float: right" class="" action="loginPage.php" method="post">
-      <input class="logoutButton" onsubmit="confirmLogout()" type="submit" name="" value="Log Out">
+    <form style="float: right" onsubmit="confirmLogout()" class="" action="loginPage.php" method="post">
+      <input class="logoutButton" type="submit" name="" value="Log Out">
     </form>
 
     <!-- start php processing -->
