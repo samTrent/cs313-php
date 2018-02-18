@@ -47,6 +47,16 @@ body
     z-index: -1;
 }
 
+.floatCenter
+{
+  /*  get it centered   */
+  float: right;
+
+  position: relative;
+  left: -50%; /* or right 50% */
+  text-align: left;
+}
+
 .loginButton
 {
   background-color: grey;
