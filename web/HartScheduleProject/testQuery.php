@@ -14,8 +14,8 @@ $ERempArray = array();
   <body>
     <img id="backgroundImg" src="hartGym3.jpg" alt="gym">
     <!-- logout button -->
-    <form style="float: right" onsubmit="confirmLogout()" class="" action="loginPage.php" method="post">
-      <input class="logoutButton" type="submit" name="" value="Log Out">
+    <form style="float: right" onsubmit="return confirm('Are you sure you want to logout?');" class="" action="loginPage.php" method="post">
+      <input class="logoutButton" type="submit" name="" value="Logout">
     </form>
 
     <!-- start php processing -->
@@ -26,7 +26,7 @@ $ERempArray = array();
       //creates a button the user can press to delete a schedule...
       function createDeleteButtonForSchedule($datestamp)
       {
-        echo "<form onsubmit='confirmDeleteTable()' action='deleteScheduleForDate.php' method='POST'>";
+        echo "<form onsubmit='return confirm('Are you sure you want to delete this table?');' action='deleteScheduleForDate.php' method='POST'>";
         echo '<input  hidden="true" type="text" name="date" value="'. $datestamp .'">';
         echo '<input class="deleteTableButton" type="submit" name="" value="Delete This Table">';
         echo '</form>';
