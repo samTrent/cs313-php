@@ -7,7 +7,7 @@
   </head>
   <body>
 
-    <img id="backgroundImg" src="hartGym3.tiff" alt="gym">
+    <img id="backgroundImg" src="hartGym3.jpg" alt="gym">
     <div class="centerWithBorder">
 
 
