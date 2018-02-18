@@ -27,11 +27,17 @@ $db = getDatabaseConnection();
 
       }
       else
-      {
+      {//bad password
         $_SESSION['loginError'] = true;//there was a login error
         header("Location: loginPage.php");
         exit(); //clean redirect
       }
+    }
+    else
+    {//bad username
+      $_SESSION['loginError'] = true;//there was a login error
+      header("Location: loginPage.php");
+      exit(); //clean redirect
     }
 
 

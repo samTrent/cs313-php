@@ -11,11 +11,11 @@ td, th {
     padding: 8px;
 }
 
-.shiftrow
+body
 {
+  background-color: blue;
 
 }
-
-tr:nth-child(even) {
-    /* background-color: #dddddd; */
-}
+/* tr:nth-child(even) {
+    background-color: #dddddd;
+} */
