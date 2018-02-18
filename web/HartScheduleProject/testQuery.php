@@ -119,7 +119,7 @@ $ERempArray = array();
 
 
     //CREATE TABLES to_date('05 Dec 2000', 'DD Mon YYYY')
-    foreach($db->query("SELECT distinct to_char(submitteddate, 'DD-MON-YYYY') FROM submittedschedule") as $row)
+    foreach($db->query("SELECT distinct TO_CHAR(submitteddate, 'DD/MON/YYYY') FROM submittedschedule") as $row)
     {
       echo '<table>';
       createDeleteButtonForSchedule($row['submitteddate']);
