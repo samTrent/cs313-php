@@ -59,18 +59,21 @@ td, th {
 .ICenter{
   background-color: red;
   color: white;
+  text-align: center;
 }
 
 .fitnessCenter
 {
   background-color: purple;
   color: white;
+  text-align: center;
 }
 
 .equipmentRoom
 {
   background-color: blue;
   color: white;
+  text-align: center;
 }
 
 .employeeCell
