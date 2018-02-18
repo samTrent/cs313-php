@@ -7,7 +7,7 @@ table {
     /* border-collapse: collapse; */
     width: 50%;
     background-color: lightgray;
-    border: 3px groove black;
+    border: 3px inset black;
 }
 
 td, th {
@@ -19,8 +19,9 @@ td, th {
 .deleteTableButton
 {
   padding: 10px;
-  font-size: 20px;
+  font-size: 15px;
   color: white;
+  border: 3px inset white;
   background-color: red;
 }
 
