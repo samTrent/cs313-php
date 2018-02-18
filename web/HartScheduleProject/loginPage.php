@@ -14,7 +14,7 @@
     <h1 class="textAlignCenter">Welcome to the Hart Schedule</h1>
     <h3 class="textAlignCenter">Please sign in</h3>
 
-    <section class="floatCenter">
+    <section class="center">
 
 
     <form class="floatCenter" action="validateUsernameAndPassword.php" method="post">
