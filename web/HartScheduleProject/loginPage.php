@@ -15,8 +15,8 @@
     <h3 class="textAlignCenter">Please sign in</h3>
 
     <form class="center" action="validateUsernameAndPassword.php" method="post">
-      Username: <input class="textAlignCenter" type="text" name="username" value="" placeholder="Enter Username"><br>
-      Password: <input class="textAlignCenter" type="password" name="password" value="" placeholder="Enter Password"><br>
+      Username: <input type="text" name="username" value="" placeholder="Enter Username"><br>
+      Password: <input type="password" name="password" value="" placeholder="Enter Password"><br>
       <input class="textAlignCenter" type="submit" name="" value="Login">
     </form>
 
