@@ -30,7 +30,10 @@ $_SESSION['loginError'];
           //display error if username or password is wrong...
           if(isset($_SESSION['loginError']))
           {
-            echo "<p class='errorStyle'>Username/Password is invalid";
+            if($_SESSION['loginError'] == true)
+            {
+              echo "<p class='errorStyle'>Username/Password is invalid";
+            }
           }
          ?>
 

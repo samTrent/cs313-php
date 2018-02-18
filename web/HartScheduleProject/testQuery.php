@@ -28,6 +28,11 @@ tr:nth-child(even) {
 </style>
   </head>
   <body>
+
+  <form style="float: right" class="" action="loginPage.php" method="post">
+    <input type="submit" name="" value="Log Out">
+  </form>
+
     <?php
     require("connectToDatabase.php");
     $db = getDatabaseConnection();
