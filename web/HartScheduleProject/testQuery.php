@@ -135,7 +135,7 @@ $ERempArray = array();
       //start massive row...
       echo '<tr>';
           //get shifts default should be 4 for rowspan
-          echo '<td rowspan="4">' . $shiftrow['shift'] . '</td>';
+          echo '<td class="shiftrow" rowspan="4">' . $shiftrow['shift'] . '</td>';
           $shiftid = $shiftrow['shiftid'];
             //get duties...
             getICenterEmps($db,$shiftid, $ICempArray, $datestamp);
