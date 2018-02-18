@@ -25,6 +25,18 @@
   align-items: center;
 }
 
+.errorStyle
+{
+  font-family: Tahoma;
+  font-size: 15px;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  align-items: center;
+  color: red;
+}
+
 .textAlignCenter
 {
   opacity: 1.0;
@@ -48,7 +60,7 @@ body
     /* Full height */
     height: 100%;
     width: 100%;
-    border: 3px solid gray;
+    border: 10px solid gray;
 
     /* Center and scale the image nicely */
     background-position: center;

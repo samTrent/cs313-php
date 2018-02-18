@@ -1,4 +1,7 @@
-<?php
+<?php session_start();
+
+$_SESSION['loginError'];
+
 require("connectToDatabase.php");
 $db = getDatabaseConnection();
 
@@ -18,11 +21,13 @@ $db = getDatabaseConnection();
       //check the password
       if($_POST['password'] == $row['password'])
       {
+        $_SESSION['loginError'] = false; //there was no error
         header("Location: testQuery.php");
 
       }
       else
       {
+        $_SESSION['loginError'] = true;//there was a login error
         header("Location: loginPage.php");
       }
     }

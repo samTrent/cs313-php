@@ -1,3 +1,8 @@
+<?php session_start()
+
+$_SESSION['loginError'];
+
+ ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -20,6 +25,14 @@
 
 
       <form class="center" action="validateUsernameAndPassword.php" method="post">
+
+        <?php
+          //display error if username or password is wrong...
+          if(isset($_SESSION['loginError']))
+          {
+            echo "<p class='errorStyle'>Username/Password is invalid";
+          }
+         ?>
 
         <p class="infoStyle" align="center">Username</p>
         <input style="textAlignCenter" type="text" name="username" value="" placeholder="Enter Username" required><br>
