@@ -10,13 +10,13 @@
     <div class="centerWithBorder">
 
 
-    <h1 class="center">Welcome to the Hart Schedule</h1>
-    <h3 class="center">Please sign in</h3>
+    <h1 class="textAlignCenter">Welcome to the Hart Schedule</h1>
+    <h3 class="textAlignCenter]">Please sign in</h3>
 
     <form class="center" action="validateUsernameAndPassword.php" method="post">
-      Username: <input class="center" type="text" name="username" value="" placeholder="Enter Username"><br>
-      Password: <input class="center" type="password" name="password" value="" placeholder="Enter Password"><br>
-      <input class="center" type="submit" name="" value="Login">
+      Username: <input class="textAlignCenter" type="text" name="username" value="" placeholder="Enter Username"><br>
+      Password: <input class="textAlignCenter" type="password" name="password" value="" placeholder="Enter Password"><br>
+      <input class="textAlignCenter" type="submit" name="" value="Login">
     </form>
 
       </div>

@@ -10,3 +10,9 @@
     width: 50%;
 
 }
+
+.textAlignCenter
+{
+  text-align: center;
+  align-items: center;
+}
