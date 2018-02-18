@@ -52,8 +52,8 @@ td, th {
 {
   /* opacity: 1; */
   background-color: white;
-  border: 3px inset darkred;
-  color: darkred;
+  border: 3px inset red;
+  color: red;
 }
 
 .ICenter{
