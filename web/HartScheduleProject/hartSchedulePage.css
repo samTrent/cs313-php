@@ -6,11 +6,11 @@ table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 50%;
-    background-color: gray;
+    background-color: lightgray;
 }
 
 td, th {
-    border: 1px solid #dddddd;
+    border: 4px solid #dddddd;
     text-align: left;
     padding: 8px;
 }
@@ -37,6 +37,11 @@ td, th {
   background-color: gray;
 }
 
+.shiftrow:nth-child(even)
+{
+  background-color: #dddddd;
+}
+
 #backgroundImg
 {
   /* The image used */
@@ -53,9 +58,4 @@ td, th {
     background-size: cover;
     position: absolute;
     z-index: -1;
-}
-
-.shiftrow:nth-child(even)
-{
-    background-color: #dddddd;
 }
