@@ -63,6 +63,12 @@ body
      text-align: center;
      border-radius: 15px;
      justify-content: center;
+     /*  get it centered   */
+     float: right;
+
+     position: relative;
+     left: -50%; /* or right 50% */
+     text-align: left;
 }
 
 .loginButton:hover
