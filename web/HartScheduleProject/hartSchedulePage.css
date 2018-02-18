@@ -10,7 +10,7 @@ table {
 }
 
 td, th {
-    border: 4px solid #dddddd;
+    border: 4px solid #dedede;
     text-align: left;
     padding: 8px;
 }
@@ -35,6 +35,7 @@ td, th {
 .shiftrow
 {
   background-color: gray;
+  color: white;
 }
 
 .shiftrow:nth-child(even)
