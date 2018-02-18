@@ -23,13 +23,14 @@ td, th {
   color: white;
   border: 3px outset white;
   background-color: red;
-  opacity: 0.4;
+  /* opacity: 0.4; */
 }
 
 .deleteTableButton:hover
 {
-  opacity: 1;
+  /* opacity: 1; */
   background-color: white;
+  border: 3px inset red;
   color: red;
 }
 
