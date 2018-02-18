@@ -51,9 +51,9 @@ td, th {
 .deleteTableButton:hover
 {
   /* opacity: 1; */
-  background-color: white;
-  border: 3px inset red;
-  color: red;
+  background-color: red;
+  border: 3px inset yellow;
+  color: white;
 }
 
 .ICenter{
