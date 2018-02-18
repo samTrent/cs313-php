@@ -55,6 +55,6 @@ td, th {
     z-index: -1;
 }
 
-/* tr:nth-child(even) {
+.shiftrow:nth-child(even) {
     background-color: #dddddd;
-} */
+}
