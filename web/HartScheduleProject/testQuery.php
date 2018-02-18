@@ -1,4 +1,21 @@
-<?php
+<?php start_session();
+
+//kick user out if they are not logged in...
+if(isset($_SESSION['userIsLoggedIn']))
+{
+  if($_SESSION['userIsLoggedIn'] == false)
+  {
+    //kick them out
+    header("Location: loginPage.php");
+    exit(); //clean redirect
+  }
+}
+else {
+  //kick them out
+  header("Location: loginPage.php");
+  exit(); //clean redirect
+}
+
 $FCempArray = array();
 $ICempArray = array();
 $ERempArray = array();
@@ -13,6 +30,7 @@ $ERempArray = array();
   </head>
   <body>
     <img id="backgroundImg" src="hartGym3.jpg" alt="gym">
+
     <!-- logout button -->
     <form style="float: right" onsubmit="return confirmLogout()" class="" action="loginPage.php" method="post">
       <input class="logoutButton" type="submit" name="" value="Logout">

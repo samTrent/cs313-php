@@ -1,5 +1,5 @@
 <?php session_start();
-
+$_SESSION['userIsLoggedIn'];
 $_SESSION['loginError'];
 
 require("connectToDatabase.php");
@@ -21,6 +21,7 @@ $db = getDatabaseConnection();
       if($_POST['password'] == $row['password'])
       {
         $_SESSION['loginError'] = false; //there was no error
+        $_SESSION['userIsLoggedIn'] = true;
         header("Location: testQuery.php");
         exit();//clean redirect
 
@@ -28,6 +29,7 @@ $db = getDatabaseConnection();
       else
       {//bad password
         $_SESSION['loginError'] = true;//there was a login error
+        $_SESSION['userIsLoggedIn'] = false;
         header("Location: loginPage.php");
         exit(); //clean redirect
       }
@@ -39,6 +41,7 @@ $db = getDatabaseConnection();
   }
   //bad username
     $_SESSION['loginError'] = true;//there was a login error
+    $_SESSION['userIsLoggedIn'] = false;
     header("Location: loginPage.php");
     exit(); //clean redirect
 

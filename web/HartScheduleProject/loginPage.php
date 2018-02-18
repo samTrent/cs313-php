@@ -1,6 +1,7 @@
 <?php session_start();
 
 $_SESSION['loginError'];
+$_SESSION['userIsLoggedIn'] = false;
 
 ?>
 <!DOCTYPE html>
