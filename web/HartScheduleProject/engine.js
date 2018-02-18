@@ -1,16 +1,16 @@
 
 
-function confirmDeleteTable()
+function confirmLogout()
 {
-  if(confirm("Are you sure you want to delete this table?"))
+  if(confirm("Are you sure you want to logout?"))
   {
     //yes
-    return true;
+    return false;
   }
   else
   {
       // //no
-      // return false;
+      return true;
   }
 
 

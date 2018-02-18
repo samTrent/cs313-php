@@ -26,6 +26,16 @@ td, th {
   /* opacity: 0.4; */
 }
 
+.logoutButton
+{
+  padding: 10px;
+  font-size: 13px;
+  color: black;
+  border: 3px solid white;
+  background-color: yellow;
+  border-radius: 5px;
+}
+
 .deleteTableButton:hover
 {
   /* opacity: 1; */
