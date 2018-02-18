@@ -9,8 +9,8 @@ function confirmDeleteTable()
   }
   else
   {
-      //no
-      return false;
+      // //no
+      // return false;
   }
 
 
