@@ -11,20 +11,29 @@
     <div class="centerWithBorder">
 
 
-    <h1 class="textAlignCenter">Welcome to the Hart Schedule</h1>
+    <h1 class="textAlignCenter">Welcome to the Hart Scheduler</h1>
     <h3 class="textAlignCenter">Please sign in</h3>
 
+
+  <!-- <img class="hartIconImg" src="hartIcon.png" alt="hart"> -->
     <section class="center">
 
 
-    <form action="validateUsernameAndPassword.php" method="post">
-      Username: <input  type="text" name="username" value="" placeholder="Enter Username"><br>
-      Password: <input  type="password" name="password" value="" placeholder="Enter Password"><br>
-      <input  type="submit" name="" value="Login">
-    </form>
+      <form class="center" action="validateUsernameAndPassword.php" method="post">
+
+        <p class="infoStyle" align="center">Username</p>
+        <input style="textAlignCenter" type="text" name="username" value="" placeholder="Enter Username" required><br>
+        <p class="infoStyle" align="center">Password</p>
+        <input style="textAlignCenter" type="password" name="password" value="" placeholder="Enter Password" required><br>
+        <img class="hartIconImg" src="hartIcon.png" alt="hart">
+        <input class="loginButton" type="submit" name="" value="Login">
+
+      </form>
+
+
     </section>
 
-      </div>
+    </div>
 
   </body>
 </html>

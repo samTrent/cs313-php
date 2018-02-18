@@ -3,7 +3,7 @@
     background-color: lightgray;
     margin: auto;
     width: 50%;
-    border: 3px solid blue;
+    border: 10px double gray;
     padding: 10px;
 }
 
@@ -12,6 +12,17 @@
     width: 50%;
     opacity: 1.0;
 
+}
+
+.infoStyle
+{
+  font-family: Tahoma;
+  font-size: 15px;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  align-items: center;
 }
 
 .textAlignCenter
@@ -57,34 +68,40 @@ body
   text-align: left;
 }
 
+.hartIconImg
+{
+   float: left;
+  /* position: absolute; top: 100px; left: 500px; */
+  /* text-align: left; */
+  height: 150px;
+  width: 150px;
+
+}
+
 .loginButton
 {
-  background-color: grey;
-     border: none;
-     color: lightblue;
-     padding: 7px 16px;
-     text-align: center;
-     text-decoration: none;
-     display: inline-block;
+    background-color: gray;
+    border: 1px solid black;
+    color: black;
+    padding: 7px 50px;
+     /* text-align: center; */
+     /* text-decoration: none; */
+     /* display: inline-block; */
      font-size: 15px;
-     margin: 4px 2px;
+     /* margin: 4px 2px; */
      cursor: pointer;
-     align-items: center;
-     text-align: center;
-     border-radius: 15px;
-     justify-content: center;
-     /*  get it centered   */
-     float: right;
 
-     position: relative;
-     left: -50%; /* or right 50% */
-     text-align: left;
+     border-radius: 15px;
+
+     /* position: relative; */
+     /* left: -50%; /* or right 50% */
+
 }
 
 .loginButton:hover
 {
   transition: background-color 1s, color 1s, box-shadow 0.5s;
-  background-color: lightgray;
-  color: blue;
-  box-shadow: 5px 5px;
+  background-color: black;
+  color: white;
+  box-shadow: 4px 4px;
 }
