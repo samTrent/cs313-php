@@ -8,14 +8,14 @@ $ERempArray = array();
   <head>
     <link rel="stylesheet" href="hartSchedulePage.css">
     <meta charset="utf-8">
-
+    <script src="engine.js" ></script>
     <title>Hart Schedules</title>
   </head>
   <body>
     <img id="backgroundImg" src="hartGym3.jpg" alt="gym">
     <!-- logout button -->
     <form style="float: right" class="" action="loginPage.php" method="post">
-      <input type="submit" name="" value="Log Out">
+      <input onclick="confirmDeleteTable()" type="submit" name="" value="Log Out">
     </form>
 
     <!-- start php processing -->
