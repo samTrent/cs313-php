@@ -7,32 +7,17 @@ $ERempArray = array();
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
-
-    <style>
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 50%;
-}
-
-td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-}
-
-tr:nth-child(even) {
-    background-color: #dddddd;
-}
-</style>
+    <link rel="stylesheet" href="hartSchedulePage.css">
+    <title>Hart Schedules</title>
   </head>
   <body>
 
+    <!-- logout button -->
   <form style="float: right" class="" action="loginPage.php" method="post">
     <input type="submit" name="" value="Log Out">
   </form>
 
+    <!-- start php processing -->
     <?php
     require("connectToDatabase.php");
     $db = getDatabaseConnection();
