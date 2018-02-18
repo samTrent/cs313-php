@@ -151,7 +151,7 @@ $ERempArray = array();
               // echo '<th>' . $dutyrow['duty'] . '</th>';
               if($dutyrow['duty'] == 'ICenter')
               {
-                echo "<th class='iCenter'>" . $dutyrow['duty'] . "</th>";
+                echo "<th class='ICenter'>" . $dutyrow['duty'] . "</th>";
               }
               elseif ($dutyrow['duty'] == 'Equipment Room')
               {

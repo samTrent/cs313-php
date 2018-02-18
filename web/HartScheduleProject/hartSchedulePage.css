@@ -17,16 +17,19 @@ td, th {
 
 .ICenter{
   background-color: red;
+  color: white;
 }
 
 .fitnessCenter
 {
   background-color: purple;
+  color: white;
 }
 
 .equipmentRoom
 {
   background-color: blue;
+  color: white;
 }
 
 .shiftrow
