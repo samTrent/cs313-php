@@ -11,11 +11,13 @@
 .center{
     margin: auto;
     width: 50%;
+    opacity: 1.0;
 
 }
 
 .textAlignCenter
 {
+  opacity: 1.0;
   text-align: center;
   align-items: center;
 }
