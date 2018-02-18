@@ -6,7 +6,7 @@ $_SESSION['loginError'];
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="mycss.css">
+    <link rel="stylesheet" href="loginPage.css">
     <meta charset="utf-8">
     <title>Login</title>
   </head>

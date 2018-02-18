@@ -6,8 +6,9 @@ $ERempArray = array();
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
     <link rel="stylesheet" href="hartSchedulePage.css">
+    <meta charset="utf-8">
+
     <title>Hart Schedules</title>
   </head>
   <body>
