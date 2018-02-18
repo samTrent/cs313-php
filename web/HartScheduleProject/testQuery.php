@@ -28,7 +28,7 @@ $ERempArray = array();
       {
         echo '<form action="deleteScheduleForDate.php" method="POST">';
         echo '<input  hidden="true" type="text" name="date" value="'. $datestamp .'">';
-        echo '<input type="submit" name="" value="Delete This Table">';
+        echo '<input class="deleteTableButton" type="submit" name="" value="Delete This Table">';
         echo '</form>';
       }
 
