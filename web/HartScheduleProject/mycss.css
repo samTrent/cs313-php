@@ -62,6 +62,7 @@ body
      align-items: center;
      text-align: center;
      border-radius: 15px;
+     justify-content: center;
 }
 
 .loginButton:hover
