@@ -14,10 +14,10 @@ $db = getDatabaseConnection();
   foreach ($db->query('SELECT username, password FROM users') as $row)
   {
     //check if user exsists
-    if($incomingUsername == $row['username'])
+    if($_POST['username'] == $row['username'])
     {
       //check the password
-      if($incomingPassword == $row['password'])
+      if($_POST['password'] == $row['password'])
       {
         $_SESSION['loginError'] = false; //there was no error
         $_SESSION['userIsLoggedIn'] = true;
