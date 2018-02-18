@@ -119,14 +119,16 @@ $ERempArray = array();
 
 
     //CREATE TABLES to_date('05 Dec 2000', 'DD Mon YYYY')
-    foreach($db->query("SELECT distinct TO_CHAR(submitteddate, 'DD/MON/YYYY') FROM submittedschedule") as $row)
+    foreach($db->query("SELECT distinct submitteddate FROM submittedschedule") as $row)
     {
       echo '<table>';
       createDeleteButtonForSchedule($row['submitteddate']);
       echo '<tr>';
       echo '<th>Shift</th>';
       //get dates
-      echo '<th colspan="3">' . $row['submitteddate'] . '</th>';
+      $date = new DateTime($row['submitteddate']);
+      // echo '<th colspan="3">' . $row['submitteddate'] . '</th>';
+      echo '<th colspan="3">' . $date->format('d-m-Y') . '</th>';
       $datestamp = $row['submitteddate'];
 
     //Shifts
