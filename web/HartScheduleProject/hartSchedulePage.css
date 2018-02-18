@@ -33,6 +33,14 @@ td, th {
   color: white;
 }
 
+.employeeCell
+{
+  text-align: center;
+  font-size: 10px;
+  font-family: Helvetica;
+  color: black;
+}
+
 .topTableHead
 {
   text-align: center;
@@ -43,6 +51,9 @@ td, th {
 
 .shiftrow
 {
+  text-align: center;
+  font-size: 10px;
+  font-family: Helvetica;
   background-color: gray;
   color: white;
 }

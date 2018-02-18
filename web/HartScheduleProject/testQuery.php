@@ -174,9 +174,9 @@ $ERempArray = array();
               {
                 //out put employees (left to right)
                 echo '<tr>';
-                echo '<td>' . $ICempArray[$i] .'</td>'; // IC
-                echo '<td>' . $ERempArray[$i] .'</td>'; // ER
-                echo '<td>' . $FCempArray[$i] .'</td>'; // FC
+                echo "<td class='employeeCell'>" . $ICempArray[$i] .'</td>'; // IC
+                echo "<td class='employeeCell'>" . $ERempArray[$i] .'</td>'; // ER
+                echo "<td class='employeeCell'>" . $FCempArray[$i] .'</td>'; // FC
                 echo '</tr>';
               }
             }
@@ -186,9 +186,9 @@ $ERempArray = array();
               {
                   //out put employees (left to right)
                 echo '<tr>';
-                echo '<td>' . $ICempArray[$i] .'</td>'; // IC
-                echo '<td>' . $ERempArray[$i] .'</td>'; // ER
-                echo '<td>' . $FCempArray[$i] .'</td>'; // FC
+                echo "<td class='employeeCell'>" . $ICempArray[$i] .'</td>'; // IC
+                echo "<td class='employeeCell'>" . $ERempArray[$i] .'</td>'; // ER
+                echo "<td class='employeeCell'>" . $FCempArray[$i] .'</td>'; // FC
                 echo '</tr>';
               }
             }
@@ -198,9 +198,9 @@ $ERempArray = array();
               {
                   //out put employees (left to right)
                 echo '<tr>';
-                echo '<td>' . $ICempArray[$i] .'</td>'; // IC
-                echo '<td>' . $ERempArray[$i] .'</td>'; // ER
-                echo '<td>' . $FCempArray[$i] .'</td>'; // FC
+                echo "<td class='employeeCell'>" . $ICempArray[$i] .'</td>'; // IC
+                echo "<td class='employeeCell'>" . $ERempArray[$i] .'</td>'; // ER
+                echo "<td class='employeeCell'>" . $FCempArray[$i] .'</td>'; // FC
                 echo '</tr>';
               }
             }
@@ -210,9 +210,9 @@ $ERempArray = array();
               {
                 //out put employees (left to right)
                 echo '<tr>';
-                echo '<td>' . $ICempArray[$i] .'</td>'; // IC
-                echo '<td>' . $ERempArray[$i] .'</td>'; // ER
-                echo '<td>' . $FCempArray[$i] .'</td>'; // FC
+                echo "<td class='employeeCell'>" . $ICempArray[$i] .'</td>'; // IC
+                echo "<td class='employeeCell'>" . $ERempArray[$i] .'</td>'; // ER
+                echo "<td class='employeeCell'>" . $FCempArray[$i] .'</td>'; // FC
                 echo '</tr>';
               }
             }
