@@ -16,3 +16,14 @@
   text-align: center;
   align-items: center;
 }
+
+#background
+{
+  background-image: url("hartGym.png");
+  opacity: 0.5; 
+}
+
+#backgroundImg
+{
+
+}
