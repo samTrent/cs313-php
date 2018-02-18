@@ -32,7 +32,7 @@ td, th {
   font-size: 13px;
   color: white;
   border: 3px outset white;
-  background-color: red;
+  background-color: darkred;
   /* opacity: 0.4; */
 }
 
@@ -52,8 +52,8 @@ td, th {
 {
   /* opacity: 1; */
   background-color: white;
-  border: 3px inset red;
-  color: red;
+  border: 3px inset darkred;
+  color: darkred;
 }
 
 .ICenter{
