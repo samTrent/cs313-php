@@ -30,7 +30,7 @@ td, th {
 {
   padding: 10px;
   font-size: 13px;
-  color: white;
+  color: lightgray;
   border: 3px outset white;
   background-color: darkred;
   /* opacity: 0.4; */
