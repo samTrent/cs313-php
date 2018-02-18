@@ -37,6 +37,7 @@ body
     /* Full height */
     height: 100%;
     width: 100%;
+    border: 3px solid gray;
 
     /* Center and scale the image nicely */
     background-position: center;
