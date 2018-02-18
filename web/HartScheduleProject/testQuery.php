@@ -26,7 +26,7 @@ $ERempArray = array();
       //creates a button the user can press to delete a schedule...
       function createDeleteButtonForSchedule($datestamp)
       {
-        echo "<form onsubmit='return confirm('Are you sure you want to logout?');' action='deleteScheduleForDate.php' method='POST'>";
+        echo "<form onsubmit='confirmDeleteTable()' action='deleteScheduleForDate.php' method='POST'>";
         echo '<input  hidden="true" type="text" name="date" value="'. $datestamp .'">';
         echo '<input class="deleteTableButton" type="submit" name="" value="Delete This Table">';
         echo '</form>';
