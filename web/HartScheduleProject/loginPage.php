@@ -1,8 +1,8 @@
-<?php session_start()
+<?php session_start();
 
 $_SESSION['loginError'];
 
- ?>
+?>
 <!DOCTYPE html>
 <html>
   <head>

@@ -23,12 +23,14 @@ $db = getDatabaseConnection();
       {
         $_SESSION['loginError'] = false; //there was no error
         header("Location: testQuery.php");
+        exit();//clean redirect
 
       }
       else
       {
         $_SESSION['loginError'] = true;//there was a login error
         header("Location: loginPage.php");
+        exit(); //clean redirect
       }
     }
 
