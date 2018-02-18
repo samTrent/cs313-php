@@ -14,7 +14,6 @@ $db = getDatabaseConnection();
   //search database to see if the given username and password exsist.
   foreach ($db->query('SELECT username, password FROM users') as $row)
   {
-
     //check if user exsists
     if($_POST['username'] == $row['username'])
     {
@@ -34,16 +33,14 @@ $db = getDatabaseConnection();
       }
     }
     else
-    {//bad username
-      $_SESSION['loginError'] = true;//there was a login error
-      header("Location: loginPage.php");
-      exit(); //clean redirect
+    {
     }
 
-
-
-
   }
+  //bad username
+    $_SESSION['loginError'] = true;//there was a login error
+    header("Location: loginPage.php");
+    exit(); //clean redirect
 
 
  ?>
