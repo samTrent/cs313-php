@@ -1,4 +1,7 @@
-
+body, html {
+    height: 100%;
+    width: 100%;
+}
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
@@ -11,11 +14,24 @@ td, th {
     padding: 8px;
 }
 
-body
+#backgroundImg
 {
-  background-color: blue;
+  /* The image used */
+    /* background-image: url("hartGym3.jpg"); */
+    opacity: 0.5;
+    /* Full height */
+    height: 100%;
+    width: 100%;
+    border: 10px solid gray;
 
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    z-index: -1;
 }
+
 /* tr:nth-child(even) {
     background-color: #dddddd;
 } */

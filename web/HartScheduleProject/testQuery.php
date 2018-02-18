@@ -12,11 +12,11 @@ $ERempArray = array();
     <title>Hart Schedules</title>
   </head>
   <body>
-
+    <img id="backgroundImg" src="hartGym3.jpg" alt="gym">
     <!-- logout button -->
-  <form style="float: right" class="" action="loginPage.php" method="post">
-    <input type="submit" name="" value="Log Out">
-  </form>
+    <form style="float: right" class="" action="loginPage.php" method="post">
+      <input type="submit" name="" value="Log Out">
+    </form>
 
     <!-- start php processing -->
     <?php
