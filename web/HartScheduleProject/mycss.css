@@ -3,7 +3,7 @@
     background-color: lightgray;
     margin: auto;
     width: 50%;
-    border: 3px solid green;
+    border: 3px solid blue;
     padding: 10px;
 }
 
@@ -69,6 +69,6 @@ body
 {
   transition: background-color 1s, color 1s, box-shadow 0.5s;
   background-color: lightgray;
-  color: lightblue;
+  color: blue;
   box-shadow: 5px 5px;
 }
