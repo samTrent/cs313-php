@@ -6,13 +6,27 @@ table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 50%;
-    background-color: lightgray;
+    background-color: gray;
 }
 
 td, th {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
+}
+
+.ICenter{
+  background-color: red;
+}
+
+.fitnessCenter
+{
+  background-color: purple;
+}
+
+.equipmentRoom
+{
+  background-color: blue;
 }
 
 .shiftrow

@@ -147,7 +147,18 @@ $ERempArray = array();
             {
 
               //make a new table head on the same row as our shiftname
-              echo '<th>' . $dutyrow['duty'] . '</th>';
+              if($dutyrow['duty'] == 1)
+              {
+                echo '<th class="iCenter">' . $dutyrow['duty'] . '</th>';
+              }
+              elseif ($dutyrow['duty'] == 2)
+              {
+                echo '<th class="equipmentRoom">' . $dutyrow['duty'] . '</th>';
+              }
+              elseif ($dutyrow['duty'] == 3)
+              {
+                echo '<th class="fitnessCenter">' . $dutyrow['duty'] . '</th>';
+              }
               $dutyid = $dutyrow['dutyid'];
 
             }
