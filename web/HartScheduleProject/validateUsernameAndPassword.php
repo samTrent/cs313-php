@@ -14,10 +14,10 @@ $db = getDatabaseConnection();
   foreach ($db->query('SELECT username, password FROM users') as $row)
   {
     //check if user exsists
-    if($_POST['username'] == $row['username'])
+    if($incomingUsername == $row['username'])
     {
       //check the password
-      if($_POST['password'] == $row['password'])
+      if($incomingPassword == $row['password'])
       {
         $_SESSION['loginError'] = false; //there was no error
         $_SESSION['userIsLoggedIn'] = true;
@@ -26,7 +26,8 @@ $db = getDatabaseConnection();
 
       }
       else
-      {//bad password
+      {
+        //bad password
         $_SESSION['loginError'] = true;//there was a login error
         $_SESSION['userIsLoggedIn'] = false;
         header("Location: loginPage.php");
@@ -38,7 +39,7 @@ $db = getDatabaseConnection();
     }
 
   }
-  //bad username
+    //bad username
     $_SESSION['loginError'] = true;//there was a login error
     $_SESSION['userIsLoggedIn'] = false;
     header("Location: loginPage.php");
