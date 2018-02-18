@@ -22,6 +22,7 @@
 }
 body, html {
     height: 100%;
+    width: 100%;
 }
 body
 {
@@ -31,10 +32,11 @@ body
 #backgroundImg
 {
   /* The image used */
-    background-image: url("hartGym3.jpg");
+    /* background-image: url("hartGym3.jpg"); */
     opacity: 0.5;
     /* Full height */
     height: 100%;
+    width: 100%;
 
     /* Center and scale the image nicely */
     background-position: center;
