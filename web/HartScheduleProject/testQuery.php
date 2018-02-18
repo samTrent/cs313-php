@@ -145,17 +145,19 @@ $ERempArray = array();
             //Get the three duties
             foreach($db->query('SELECT dutyid, duty FROM duty') as $dutyrow)
             {
+              echo
 
               //make a new table head on the same row as our shiftname
-              if($dutyrow['duty'] == 1)
+              // echo '<th>' . $dutyrow['duty'] . '</th>';
+              if($dutyrow['duty'] == '1')
               {
                 echo '<th class="iCenter">' . $dutyrow['duty'] . '</th>';
               }
-              elseif ($dutyrow['duty'] == 2)
+              elseif ($dutyrow['duty'] == '2')
               {
                 echo '<th class="equipmentRoom">' . $dutyrow['duty'] . '</th>';
               }
-              elseif ($dutyrow['duty'] == 3)
+              elseif ($dutyrow['duty'] == '3')
               {
                 echo '<th class="fitnessCenter">' . $dutyrow['duty'] . '</th>';
               }
