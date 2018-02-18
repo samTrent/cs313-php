@@ -1,13 +1,14 @@
 <?php
-try {
-  $host = "ec2-107-21-236-219.compute-1.amazonaws.com";
-  $dbname = "dcupbm4rvpsqb2";
-  $user = "zaqfmlhepcfhlm";
-  $password = "c9c64abec3d5de71334d351d883347b9e63e6a8b3a2d7fab5bbd3551f20112f4";
-  $port = "5432";
-
-  $db = new PDO("pgsql:host=$host;port=$port;dbname=$dbname", $user, $password);
-
+// try {
+//   $host = "ec2-107-21-236-219.compute-1.amazonaws.com";
+//   $dbname = "dcupbm4rvpsqb2";
+//   $user = "zaqfmlhepcfhlm";
+//   $password = "c9c64abec3d5de71334d351d883347b9e63e6a8b3a2d7fab5bbd3551f20112f4";
+//   $port = "5432";
+//
+//   $db = new PDO("pgsql:host=$host;port=$port;dbname=$dbname", $user, $password);
+require("connectToDatabase.php");
+$db = getDatabaseConnection();
 
   //get employeeID
   $stmt = $db ->prepare("SELECT employeeid FROM employee WHERE firstname = :firstname");
@@ -26,7 +27,7 @@ try {
   echo 'The date is: ' . $_POST['date'] . ' <br>';
   echo 'The shift is: ' . $_POST['shift'] . ' <br>';
 
-  
+
 
   //insert new data...
   $finalstmt = $db ->prepare('INSERT INTO submittedschedule (submitteddate, employee, shift, duty) VALUES (:submitteddate, :firstname, :shift, :duty)');
@@ -60,12 +61,12 @@ try {
   // echo "<p>POST LASTNAME = " . $_POST['lastname'] . '</p>';
 
   // $stmt->execute();
-}
-catch (PDOException $ex)
- {
- print "<p>error: $ex </p>\n\n";
- die();
-}
+// }
+// catch (PDOException $ex)
+//  {
+//  print "<p>error: $ex </p>\n\n";
+//  die();
+// }
 
  ?>
  <!DOCTYPE html>
