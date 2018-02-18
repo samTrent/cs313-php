@@ -5,12 +5,12 @@ function confirmLogout()
   if(confirm("Are you sure you want to logout?"))
   {
     //yes
-    return false;
+    return true;
   }
   else
   {
       // //no
-      return true;
+    return false;
   }
 
 
