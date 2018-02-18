@@ -14,11 +14,15 @@
     <h1 class="textAlignCenter">Welcome to the Hart Schedule</h1>
     <h3 class="textAlignCenter">Please sign in</h3>
 
+    <section class="floatCenter">
+
+
     <form class="floatCenter" action="validateUsernameAndPassword.php" method="post">
-      Username: <input class="floatCenter" type="text" name="username" value="" placeholder="Enter Username"><br>
-      Password: <input class="floatCenter" type="password" name="password" value="" placeholder="Enter Password"><br>
-      <input class="loginButton" type="submit" name="" value="Login">
+      Username: <input  type="text" name="username" value="" placeholder="Enter Username"><br>
+      Password: <input  type="password" name="password" value="" placeholder="Enter Password"><br>
+      <input  type="submit" name="" value="Login">
     </form>
+    </section>
 
       </div>
 
