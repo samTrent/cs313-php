@@ -124,12 +124,12 @@ $ERempArray = array();
       echo '<table>';
       createDeleteButtonForSchedule($row['submitteddate']);
       echo '<tr>';
-      echo '<th>Shift</th>';
-      
+      echo '<th>Shifts</th>';
+
       //get dates
       $date = new DateTime($row['submitteddate']);
       //formate date
-      echo '<th colspan="3">' . $date->format('F j, Y') . '</th>';
+      echo '<th style="text-align: center" colspan="3">' . $date->format('F j, Y') . '</th>';
       $datestamp = $row['submitteddate'];
 
     //Shifts
