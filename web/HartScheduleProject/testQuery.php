@@ -128,7 +128,7 @@ $ERempArray = array();
       //get dates
       $date = new DateTime($row['submitteddate']);
       // echo '<th colspan="3">' . $row['submitteddate'] . '</th>';
-      echo '<th colspan="3">' . $date->format('d-m-Y') . '</th>';
+      echo '<th colspan="3">' . $date->format('mon-d-Y') . '</th>';
       $datestamp = $row['submitteddate'];
 
     //Shifts
