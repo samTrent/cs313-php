@@ -1,8 +1,5 @@
 <?php session_start();
 require('checkIfUserHasLoggedIn.php');
-require('connectToDatabase.php');
-
-$db = getDatabaseConnection();
 
  ?>
 
@@ -13,11 +10,12 @@ $db = getDatabaseConnection();
      <meta charset="utf-8">
      <title></title>
    </head>
+   <h1>Add User To Database</h1>
    <p id="error"></p>
    <body>
-     <form class="" onsubmit="return checkBothPasswordsMatch()" action="index.html" method="post">
-       Username: <input type="text" name="" value="" required><br>
-       Password: <input id="passwordFirst" type="text" name="" value="" required><br>
+     <form class="" onsubmit="return checkBothPasswordsMatch()" action="remoteUserAddDatabase.php" method="post">
+       Username: <input type="text" name="username" value="" required><br>
+       Password: <input id="passwordFirst" type="text" name="password" value="" required><br>
        Confirm Password <input id="passwordSecond" type="text" name="" value="" required><br>
        <input type="submit" name="" value="Add User"><br>
      </form>
