@@ -23,7 +23,7 @@ require('getScheduleTables.php');
     <!-- start php processing -->
     <?php
 
-    getSchedules();
+    // getSchedules();
 
     // require("connectToDatabase.php");
     // $db = getDatabaseConnection();
