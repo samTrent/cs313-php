@@ -14,7 +14,7 @@ $db = getDatabaseConnection();
   foreach ($db->query('SELECT username, password FROM users') as $row)
   {
     //check if user exsists
-    if($incomingUsername == $row['username'])
+    if(strtolower($incomingUsername) == $row['username'])
     {
       //check the password using hash
       if(password_verify($incomingPassword, $row['password']))

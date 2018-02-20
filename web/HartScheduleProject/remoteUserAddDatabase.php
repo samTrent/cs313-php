@@ -4,7 +4,7 @@ require('connectToDatabase.php');
 $db = getDatabaseConnection();
 
 //sanitize input
-$username = htmlspecialchars($_POST['username']);
+$username = strtolower(htmlspecialchars($_POST['username']));
 $password = htmlspecialchars($_POST['password']);
 
 //hash the password
