@@ -3,10 +3,6 @@
 require('checkIfUserHasLoggedIn.php');
 require('getScheduleTables.php');
 
-
-$FCempArray = array();
-$ICempArray = array();
-$ERempArray = array();
  ?>
 <!DOCTYPE html>
 <html>
