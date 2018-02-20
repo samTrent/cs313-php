@@ -69,8 +69,8 @@ $ERempArray = array();
     $ERempArray = array();
   }
 
-// function getSchedules()
-// {
+function getSchedules()
+{
 
   $shiftid;  //lets us get shiftid
   $dutyid;   //lets us get dutyid
@@ -195,5 +195,5 @@ $ERempArray = array();
     echo '</table>';
     echo '<br>';
     }
-// }
+}
  ?>
