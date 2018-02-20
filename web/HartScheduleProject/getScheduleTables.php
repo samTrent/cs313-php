@@ -74,8 +74,8 @@ $datestamp;//lets us get datestamp
     $ERempArray = array();
   }
 
-function getSchedules()
-{
+// function getSchedules()
+// {
   //first lets check to see if there is anything in our table...
   $count = 0;
   foreach ($db->query('SELECT * FROM submittedschedule') as $row)
@@ -196,7 +196,7 @@ function getSchedules()
     echo '<br>';
     }
 
-}
+// }
 
 // getSchedules();
  ?>
