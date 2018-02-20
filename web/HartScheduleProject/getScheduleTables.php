@@ -195,6 +195,8 @@ function getSchedules()
     echo '</table>';
     echo '<br>';
     }
+
+    return;
 }
 
 // getSchedules();

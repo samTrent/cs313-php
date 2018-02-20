@@ -1,9 +1,8 @@
 <?php
-
 //establish connection to postgres database...
 function getDatabaseConnection()
 {
-  try 
+  try
   {
     $host = "ec2-107-21-236-219.compute-1.amazonaws.com";
     $dbname = "dcupbm4rvpsqb2";
@@ -18,11 +17,6 @@ function getDatabaseConnection()
     print "<p>error: $ex </p>\n\n";
     die();
   }
-
-
    return $db;
-
 }
-
-
  ?>
