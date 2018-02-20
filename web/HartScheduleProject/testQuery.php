@@ -27,7 +27,7 @@ $ERempArray = array();
     <!-- start php processing -->
     <?php
 
-    
+    getSchedules();
 
     // require("connectToDatabase.php");
     // $db = getDatabaseConnection();
