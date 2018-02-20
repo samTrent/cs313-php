@@ -70,8 +70,8 @@ $ERempArray = array();
 
   function getEmployeesForShift($shiftid)
   {
-    if($shiftid == 1)
-    {
+    // if($shiftid == 1)
+    // {
       for ($i=0; $i < 3; $i++)
       {
         //out put employees (left to right)
@@ -81,7 +81,7 @@ $ERempArray = array();
         echo "<td class='employeeCell'>" . $FCempArray[$i] .'</td>'; // FC
         echo '</tr>';
       }
-    }
+    // }
   }
 
 
