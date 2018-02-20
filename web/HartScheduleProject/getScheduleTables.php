@@ -1,7 +1,6 @@
 <?php
-//dont let user acess this page...
-header("Location: loginPage.php");
-die();
+//dont let user access this without being logged in...
+require('checkIfUserHasLoggedIn.php');
 
 require("connectToDatabase.php");
 $db = getDatabaseConnection();
