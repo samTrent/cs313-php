@@ -92,8 +92,8 @@ $ERempArray = array();
     $ERempArray = array();
   }
 
-// function getSchedules()
-// {
+function getSchedules()
+{
   $db = getDatabaseConnection();
   $shiftid;  //lets us get shiftid
   $dutyid;   //lets us get dutyid
@@ -220,7 +220,7 @@ $ERempArray = array();
       echo '<br>';
     }
 
-// }
+}
 
 // getSchedules();
  ?>
