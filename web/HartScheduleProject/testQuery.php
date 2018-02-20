@@ -1,5 +1,5 @@
 <?php session_start();
-
+//kick user out if they are not logged in
 require('checkIfUserHasLoggedIn.php');
 
 
@@ -22,8 +22,8 @@ require('checkIfUserHasLoggedIn.php');
 
     <!-- start php processing -->
     <?php
-    include 'getScheduleTables.php';
-    getSchedules();
+    require('getScheduleTables.php');
+    file_put_contents('php://stderr', print_r(getSchedules(), TRUE));
 
      ?>
 
