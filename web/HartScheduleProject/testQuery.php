@@ -23,7 +23,7 @@ require('checkIfUserHasLoggedIn.php');
     <!-- start php processing -->
     <?php
     require('getScheduleTables.php');
-    file_put_contents('php://stderr', print_r(getSchedules(), TRUE));
+    echo file_put_contents('php://stderr', print_r(getSchedules(), TRUE));
 
      ?>
 
