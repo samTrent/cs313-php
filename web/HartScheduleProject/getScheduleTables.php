@@ -11,9 +11,6 @@ $FCempArray = array();
 $ICempArray = array();
 $ERempArray = array();
 
-$shiftid;  //lets us get shiftid
-$dutyid;   //lets us get dutyid
-$datestamp;//lets us get datestamp
 
   //creates a button the user can press to delete a schedule...
   function createDeleteButtonForSchedule($datestamp)
@@ -80,6 +77,10 @@ $datestamp;//lets us get datestamp
 function getSchedules()
 {
   $db = getDatabaseConnection();
+  $shiftid;  //lets us get shiftid
+  $dutyid;   //lets us get dutyid
+  $datestamp;//lets us get datestamp
+
   //first lets check to see if there is anything in our table...
   $count = 0;
   foreach ($db->query('SELECT * FROM submittedschedule') as $row)
