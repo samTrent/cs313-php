@@ -67,6 +67,24 @@ $ERempArray = array();
     }
   }
 
+
+  function getEmployeesForShift($shiftid)
+  {
+    if($shiftid == 1)
+    {
+      for ($i=0; $i < 3; $i++)
+      {
+        //out put employees (left to right)
+        echo '<tr>';
+        echo "<td class='employeeCell'>" . $ICempArray[$i] .'</td>'; // IC
+        echo "<td class='employeeCell'>" . $ERempArray[$i] .'</td>'; // ER
+        echo "<td class='employeeCell'>" . $FCempArray[$i] .'</td>'; // FC
+        echo '</tr>';
+      }
+    }
+  }
+
+
   function clearAllArrays(&$FCempArray, &$ICempArray, &$ERempArray)
   {
     $FCempArray = array();
@@ -140,54 +158,55 @@ function getSchedules()
 
             }
             //get all employees for each shift id.
-            if($shiftid == 1)
-            {
-              for ($i=0; $i < 3; $i++)
-              {
-                //out put employees (left to right)
-                echo '<tr>';
-                echo "<td class='employeeCell'>" . $ICempArray[$i] .'</td>'; // IC
-                echo "<td class='employeeCell'>" . $ERempArray[$i] .'</td>'; // ER
-                echo "<td class='employeeCell'>" . $FCempArray[$i] .'</td>'; // FC
-                echo '</tr>';
-              }
-            }
-            if($shiftid == 2)
-            {
-              for ($i=0; $i < 3; $i++)
-              {
-                  //out put employees (left to right)
-                echo '<tr>';
-                echo "<td class='employeeCell'>" . $ICempArray[$i] .'</td>'; // IC
-                echo "<td class='employeeCell'>" . $ERempArray[$i] .'</td>'; // ER
-                echo "<td class='employeeCell'>" . $FCempArray[$i] .'</td>'; // FC
-                echo '</tr>';
-              }
-            }
-            if($shiftid == 3)
-            {
-              for ($i=0; $i < 3; $i++)
-              {
-                  //out put employees (left to right)
-                echo '<tr>';
-                echo "<td class='employeeCell'>" . $ICempArray[$i] .'</td>'; // IC
-                echo "<td class='employeeCell'>" . $ERempArray[$i] .'</td>'; // ER
-                echo "<td class='employeeCell'>" . $FCempArray[$i] .'</td>'; // FC
-                echo '</tr>';
-              }
-            }
-            if($shiftid == 4)
-            {
-              for ($i=0; $i < 3; $i++)
-              {
-                //out put employees (left to right)
-                echo '<tr>';
-                echo "<td class='employeeCell'>" . $ICempArray[$i] .'</td>'; // IC
-                echo "<td class='employeeCell'>" . $ERempArray[$i] .'</td>'; // ER
-                echo "<td class='employeeCell'>" . $FCempArray[$i] .'</td>'; // FC
-                echo '</tr>';
-              }
-            }
+            getEmployeesForShift($shiftid);
+            // if($shiftid == 1)
+            // {
+            //   for ($i=0; $i < 3; $i++)
+            //   {
+            //     //out put employees (left to right)
+            //     echo '<tr>';
+            //     echo "<td class='employeeCell'>" . $ICempArray[$i] .'</td>'; // IC
+            //     echo "<td class='employeeCell'>" . $ERempArray[$i] .'</td>'; // ER
+            //     echo "<td class='employeeCell'>" . $FCempArray[$i] .'</td>'; // FC
+            //     echo '</tr>';
+            //   }
+            // }
+            // if($shiftid == 2)
+            // {
+            //   for ($i=0; $i < 3; $i++)
+            //   {
+            //       //out put employees (left to right)
+            //     echo '<tr>';
+            //     echo "<td class='employeeCell'>" . $ICempArray[$i] .'</td>'; // IC
+            //     echo "<td class='employeeCell'>" . $ERempArray[$i] .'</td>'; // ER
+            //     echo "<td class='employeeCell'>" . $FCempArray[$i] .'</td>'; // FC
+            //     echo '</tr>';
+            //   }
+            // }
+            // if($shiftid == 3)
+            // {
+            //   for ($i=0; $i < 3; $i++)
+            //   {
+            //       //out put employees (left to right)
+            //     echo '<tr>';
+            //     echo "<td class='employeeCell'>" . $ICempArray[$i] .'</td>'; // IC
+            //     echo "<td class='employeeCell'>" . $ERempArray[$i] .'</td>'; // ER
+            //     echo "<td class='employeeCell'>" . $FCempArray[$i] .'</td>'; // FC
+            //     echo '</tr>';
+            //   }
+            // }
+            // if($shiftid == 4)
+            // {
+            //   for ($i=0; $i < 3; $i++)
+            //   {
+            //     //out put employees (left to right)
+            //     echo '<tr>';
+            //     echo "<td class='employeeCell'>" . $ICempArray[$i] .'</td>'; // IC
+            //     echo "<td class='employeeCell'>" . $ERempArray[$i] .'</td>'; // ER
+            //     echo "<td class='employeeCell'>" . $FCempArray[$i] .'</td>'; // FC
+            //     echo '</tr>';
+            //   }
+            // }
            clearAllArrays($FCempArray, $ICempArray, $ERempArray);
 
         }
