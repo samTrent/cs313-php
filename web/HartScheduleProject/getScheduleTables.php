@@ -74,8 +74,8 @@ $datestamp;//lets us get datestamp
     $ERempArray = array();
   }
 
-// function getSchedules()
-// {
+function getSchedules()
+{
   //first lets check to see if there is anything in our table...
   $count = 0;
   foreach ($db->query('SELECT * FROM submittedschedule') as $row)
@@ -96,7 +96,7 @@ $datestamp;//lets us get datestamp
     echo '<tr>';
     echo "<th class='topTableHead'>Shifts</th>";
 
-    //get dates
+    //get date and prepare to formate
     $date = new DateTime($row['submitteddate']);
     //formate date
     echo "<th class='topTableHead' colspan='3'>" . $date->format('F j, Y') . '</th>';
@@ -118,10 +118,7 @@ $datestamp;//lets us get datestamp
           //Get the three duties
           foreach($db->query('SELECT dutyid, duty FROM duty') as $dutyrow)
           {
-            // echo '<p>This is duty tag: '. $dutyrow['duty']. '<p>';
-
             //make a new table head on the same row as our shiftname
-            // echo '<th>' . $dutyrow['duty'] . '</th>';
             if($dutyrow['duty'] == 'ICenter')
             {
               echo "<th class='ICenter'>" . $dutyrow['duty'] . "</th>";
@@ -196,7 +193,7 @@ $datestamp;//lets us get datestamp
     echo '<br>';
     }
 
-// }
+}
 
 // getSchedules();
  ?>
