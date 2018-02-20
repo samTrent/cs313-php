@@ -12,8 +12,8 @@ $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
 $stmt = $db ->prepare('INSERT INTO users (username, password) VALUES (:username, :password)');
 
-$stmt = bindValue(':username', $username, PDO::PARAM_STR);
-$stmt = bindValue(':password', $hashedPassword, PDO::PARAM_STR);
+$stmt->bindValue(":username", $username, PDO::PARAM_STR);
+$stmt->bindValue(":password", $hashedPassword, PDO::PARAM_STR);
 
 if ($stmt->execute())
 {
