@@ -1,7 +1,7 @@
 <?php session_start();
 
 require('checkIfUserHasLoggedIn.php');
-require('getScheduleTables.php');
+
 
  ?>
 <!DOCTYPE html>
@@ -22,6 +22,8 @@ require('getScheduleTables.php');
 
     <!-- start php processing -->
     <?php
+    require('getScheduleTables.php');
+    getSchedules();
 
     // getSchedules();
 
