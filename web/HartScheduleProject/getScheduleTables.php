@@ -197,5 +197,5 @@ function getSchedules()
     }
 }
 
-getSchedules();
+// getSchedules();
  ?>
