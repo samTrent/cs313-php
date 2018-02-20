@@ -6,10 +6,10 @@ require("connectToDatabase.php");
 $db = getDatabaseConnection();
 
 //---GOBAL VARS ----
-//arrays for storing employees to display on the table
-$FCempArray = array();
-$ICempArray = array();
-$ERempArray = array();
+// //arrays for storing employees to display on the table
+// $FCempArray = array();
+// $ICempArray = array();
+// $ERempArray = array();
 
 
   //creates a button the user can press to delete a schedule...
@@ -95,6 +95,12 @@ $ERempArray = array();
 function getSchedules()
 {
   $db = getDatabaseConnection();
+
+  //arrays for storing employees to display on the table
+  $FCempArray = array();
+  $ICempArray = array();
+  $ERempArray = array();
+
   $shiftid;  //lets us get shiftid
   $dutyid;   //lets us get dutyid
   $datestamp;//lets us get datestamp
