@@ -1,6 +1,4 @@
 <?php session_start();
-require("connectToDatabase.php");
-$db = getDatabaseConnection();
 //kick user out if they are not logged in
 require('checkIfUserHasLoggedIn.php');
 
