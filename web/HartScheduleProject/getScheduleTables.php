@@ -2,10 +2,7 @@
 require("connectToDatabase.php");
 $db = getDatabaseConnection();
 
-//arrays for storing employees to display on the table
-$FCempArray = array();
-$ICempArray = array();
-$ERempArray = array();
+
 
   //creates a button the user can press to delete a schedule...
   function createDeleteButtonForSchedule($datestamp)
@@ -71,6 +68,10 @@ $ERempArray = array();
 
 function getSchedules()
 {
+  //arrays for storing employees to display on the table
+  $FCempArray = array();
+  $ICempArray = array();
+  $ERempArray = array();
 
   $shiftid;  //lets us get shiftid
   $dutyid;   //lets us get dutyid
