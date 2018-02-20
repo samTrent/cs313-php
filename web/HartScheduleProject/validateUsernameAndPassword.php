@@ -16,8 +16,8 @@ $db = getDatabaseConnection();
     //check if user exsists
     if($incomingUsername == $row['username'])
     {
-      //check the password
-      if($incomingPassword == $row['password'])
+      //check the password using hash
+      if(password_verify($incomingPassword, $row['password']))
       {
         $_SESSION['loginError'] = false; //there was no error
         $_SESSION['userIsLoggedIn'] = true;
