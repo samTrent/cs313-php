@@ -3,6 +3,79 @@
 require('checkIfUserHasLoggedIn.php');
 
 
+
+//---GOBAL VARS ----
+//arrays for storing employees to display on the table
+$FCempArray = array();
+$ICempArray = array();
+$ERempArray = array();
+
+$shiftid;  //lets us get shiftid
+$dutyid;   //lets us get dutyid
+$datestamp;//lets us get datestamp
+
+  //creates a button the user can press to delete a schedule...
+  function createDeleteButtonForSchedule($datestamp)
+  {
+    echo "<form onsubmit='return confirmDeleteTable()' action='deleteScheduleForDate.php' method='post'>";
+    echo '<input  hidden="true" type="text" name="date" value="'. $datestamp .'">';
+    echo '<input class="deleteTableButton" type="submit" name="" value="Delete This Table">';
+    echo '</form>';
+  }
+
+
+  function getFitnessCenterEmps($db, $shiftid, &$FCempArray, $datestamp)
+  {
+    foreach ($db->query('SELECT e.firstname, d.duty, s.shift FROM employee e
+    JOIN submittedschedule su ON e.employeeid = su.employee
+    JOIN duty d ON d.dutyid = su.duty
+    JOIN shift s ON s.shiftid = su.shift
+    WHERE d.duty = \'Fitness Center\' AND s.shiftid = '. $shiftid .' AND su.submitteddate = \''. $datestamp .'\'') as $row)
+    {
+      //fitness center
+      array_push($FCempArray, $row['firstname']);
+
+    }
+
+  }
+
+  function getICenterEmps($db, $shiftid, &$ICempArray, $datestamp)
+  {
+    foreach ($db->query('SELECT e.firstname, d.duty, s.shift FROM employee e
+    JOIN submittedschedule su ON e.employeeid = su.employee
+    JOIN duty d ON d.dutyid = su.duty
+    JOIN shift s ON s.shiftid = su.shift
+    WHERE d.duty = \'ICenter\' AND s.shiftid = '. $shiftid .' AND su.submitteddate = \''. $datestamp .'\'') as $row)
+    {
+      //fitness center
+      array_push($ICempArray, $row['firstname']);
+
+    }
+
+  }
+
+  function getEquipmentEmps($db, $shiftid, &$ERempArray, $datestamp)
+  {
+
+    foreach ($db->query('SELECT e.firstname, d.duty, s.shift FROM employee e
+    JOIN submittedschedule su ON e.employeeid = su.employee
+    JOIN duty d ON d.dutyid = su.duty
+    JOIN shift s ON s.shiftid = su.shift
+    WHERE d.duty = \'Equipment Room\' AND s.shiftid = '. $shiftid .' AND su.submitteddate = \''. $datestamp .'\'') as $row)
+    {
+      //fitness center
+      array_push($ERempArray, $row['firstname']);
+
+    }
+  }
+
+  function clearAllArrays(&$FCempArray, &$ICempArray, &$ERempArray)
+  {
+    $FCempArray = array();
+    $ICempArray = array();
+    $ERempArray = array();
+  }
+
  ?>
 <!DOCTYPE html>
 <html>
