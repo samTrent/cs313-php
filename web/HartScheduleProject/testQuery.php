@@ -2,7 +2,7 @@
 //kick user out if they are not logged in
 require('checkIfUserHasLoggedIn.php');
 
-require('getScheduleTables.php');
+// require('getScheduleTables.php');
 
  ?>
 <!DOCTYPE html>
@@ -23,7 +23,8 @@ require('getScheduleTables.php');
 
     <!-- start php processing -->
     <?php
-    getSchedules();
+    // getSchedules();
+    require('getScheduleTables.php');
 
      ?>
 
