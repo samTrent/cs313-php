@@ -15,7 +15,7 @@ $stmt = $db ->prepare('INSERT INTO users (username, password) VALUES (:username,
 $stmt = bindValue(':username', $username, PDO::PARAM_STR);
 $stmt = bindValue(':password', $hashedPassword, PDO::PARAM_STR);
 
-if ($deletestmt->execute())
+if ($stmt->execute())
 {
   echo "SUECCES ADDING USER<br>";
 }
