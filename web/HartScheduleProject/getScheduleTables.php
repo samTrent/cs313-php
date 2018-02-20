@@ -196,7 +196,6 @@ function getSchedules()
     echo '<br>';
     }
 
-    return;
 }
 
 // getSchedules();

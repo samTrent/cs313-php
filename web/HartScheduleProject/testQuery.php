@@ -23,7 +23,7 @@ require('checkIfUserHasLoggedIn.php');
     <!-- start php processing -->
     <?php
     require('getScheduleTables.php');
-    getSchedules();
+    // getSchedules();
 
     // getSchedules();
 
