@@ -19,8 +19,6 @@ $db = getDatabaseConnection();
   echo 'The date is: ' . $_POST['date'] . ' <br>';
   echo 'The shift is: ' . $_POST['shift'] . ' <br>';
 
-
-
   //insert new data...
   $finalstmt = $db ->prepare('INSERT INTO submittedschedule (submitteddate, employee, shift, duty) VALUES (:submitteddate, :firstname, :shift, :duty)');
 
