@@ -25,7 +25,7 @@ require('getScheduleTables.php');
 
     <!-- add user button -->
     <form style="float: right" class="" action="addUserToDatabase.php" method="post">
-      <input class="addUser" type="submit" name="" value="Create New User">
+      <input class="createUser" type="submit" name="" value="Create New User">
     </form>
 
     <!-- start php processing -->
