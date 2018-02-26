@@ -6,6 +6,7 @@ require('checkIfUserHasLoggedIn.php');
  <!DOCTYPE html>
  <html>
    <head>
+     <link rel="stylesheet" href="hartSchedulePageLook.css">
      <script src="engine.js"></script>
      <meta charset="utf-8">
      <title></title>
@@ -13,6 +14,9 @@ require('checkIfUserHasLoggedIn.php');
    <h1>Add User To Database</h1>
    <p id="error"></p>
    <body>
+
+     <img id="backgroundImg" src="hartGym3.jpg" alt="gym">
+
      <form class="" onsubmit="return checkBothPasswordsMatch()" action="remoteUserAddDatabase.php" method="post">
        Username: <input type="text" name="username" value="" required><br>
        Password: <input id="passwordFirst" type="text" name="password" value="" required><br>
