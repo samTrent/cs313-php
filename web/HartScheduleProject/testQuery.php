@@ -21,7 +21,7 @@ require('getScheduleTables.php');
       <input class="logoutButton" type="submit" name="" value="Logout">
     </form>
 
-    <br><br><br><br>
+    <br><br><br><br><br><br>
 
     <!-- add user button -->
     <form style="float: right" class="" action="addUserToDatabase.php" method="post">
