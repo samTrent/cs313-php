@@ -37,11 +37,11 @@ $_SESSION['userAlreadyExsists'];
 
 
        <p class="infoStyle" align="center">Username</p>
-       <input class="infoStyle" type="text" name="username" value="" required><br>
+       <input class="infoStyle" type="text" name="username" value="" placeholder="Enter a Username" required><br>
        <p class="infoStyle" align="center">Password</p>
-       <input class="infoStyle" id="passwordFirst" type="text" name="password" value="" required><br>
+       <input class="infoStyle" id="passwordFirst" type="text" name="password" value="" placeholder="Enter a Password" required><br>
        <p class="infoStyle" align="center">Confirm Password</p>
-       <input class="infoStyle" id="passwordSecond" type="text" name="" value="" required><br>
+       <input class="infoStyle" id="passwordSecond" type="text" name="" value="" placeholder="Confirm Password" required><br>
        <input class="loginButton" type="submit" name="" value="Add User"><br>
      </form>
 
