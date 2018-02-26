@@ -8,7 +8,7 @@ require('getScheduleTables.php');
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="hartSchedulePage.css">
+    <link rel="stylesheet" href="hartSchedulePageLook.css">
     <meta charset="utf-8">
     <script src="engine.js" ></script>
     <title>Hart Schedules</title>
