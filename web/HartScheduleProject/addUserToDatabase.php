@@ -13,7 +13,7 @@ $_SESSION['userAlreadyExsists'];
      <meta charset="utf-8">
      <title></title>
    </head>
-   <p id="error"></p>
+
    <body>
 
      <img id="backgroundImg" src="hartGym3.jpg" alt="gym">
@@ -33,15 +33,16 @@ $_SESSION['userAlreadyExsists'];
              echo "<p class='errorStyle'>This user already exsits, enter a different name.";
            }
          }
+         echo "<p id='error' class='errorStyle'></p>"
         ?>
 
 
        <p class="infoStyle" align="center">Username</p>
-       <input class="infoStyle" type="text" name="username" value="" placeholder="Enter a Username" required><br>
+       <input type="text" name="username" value="" placeholder="Enter a Username" required><br>
        <p class="infoStyle" align="center">Password</p>
-       <input class="infoStyle" id="passwordFirst" type="text" name="password" value="" placeholder="Enter a Password" required><br>
+       <input  id="passwordFirst" type="password" name="password" value="" placeholder="Enter a Password" required><br>
        <p class="infoStyle" align="center">Confirm Password</p>
-       <input class="infoStyle" id="passwordSecond" type="text" name="" value="" placeholder="Confirm Password" required><br>
+       <input  id="passwordSecond" type="password" name="" value="" placeholder="Confirm Password" required><br>
        <input class="loginButton" type="submit" name="" value="Add User"><br>
      </form>
 
