@@ -1,6 +1,8 @@
 <?php session_start();
 require('checkIfUserHasLoggedIn.php');
 
+$_SESSION['userAlreadyExsists'];
+
  ?>
 
  <!DOCTYPE html>
@@ -21,6 +23,19 @@ require('checkIfUserHasLoggedIn.php');
 
 
      <form class="center" onsubmit="return checkBothPasswordsMatch()" action="remoteUserAddDatabase.php" method="post">
+
+       <?php
+         //display error if username or password is wrong...
+         if(isset($_SESSION['userAlreadyExsists']))
+         {
+           if($_SESSION['userAlreadyExsists'] == true)
+           {
+             echo "<p class='errorStyle'>This user already exsits, enter a different name.";
+           }
+         }
+        ?>
+
+
        <p class="infoStyle" align="center">Username</p>
        <input class="infoStyle" type="text" name="username" value="" required><br>
        <p class="infoStyle" align="center">Password</p>

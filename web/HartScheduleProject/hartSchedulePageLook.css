@@ -27,6 +27,18 @@ td, th {
   align-items: center;
 }
 
+.errorStyle
+{
+  font-family: Tahoma;
+  font-size: 12px;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  align-items: center;
+  color: red;
+}
+
 .textAlignCenter
 {
   opacity: 1.0;
