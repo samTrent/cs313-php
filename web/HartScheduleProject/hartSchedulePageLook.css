@@ -16,6 +16,53 @@ td, th {
     padding: 8px;
 }
 
+.infoStyle
+{
+  font-family: Tahoma;
+  font-size: 15px;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  align-items: center;
+}
+
+.centerWithBorder
+{
+    background-color: lightgray;
+    margin: auto;
+    width: 50%;
+    border: 10px double gray;
+    padding: 10px;
+}
+
+.center{
+    margin: auto;
+    width: 50%;
+    opacity: 1.0;
+
+}
+
+.loginButton
+{
+    background-color: gray;
+    border: 1px solid black;
+    color: black;
+    padding: 7px 50px;
+     /* text-align: center; */
+     /* text-decoration: none; */
+     /* display: inline-block; */
+     font-size: 15px;
+     /* margin: 4px 2px; */
+     cursor: pointer;
+
+     border-radius: 15px;
+
+     /* position: relative; */
+     /* left: -50%; /* or right 50% */
+
+}
+
 .noTablesInDatabaseAlert
 {
   font-size: 35px;
