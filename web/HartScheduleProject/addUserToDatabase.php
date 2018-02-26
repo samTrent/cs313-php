@@ -17,7 +17,7 @@ require('checkIfUserHasLoggedIn.php');
      <img id="backgroundImg" src="hartGym3.jpg" alt="gym">
       <div class="centerWithBorder">
      <section class="center">
-     <h1>Add User To Database</h1>
+     <h1 class="center">Add User To Database</h1>
 
 
      <form class="center" onsubmit="return checkBothPasswordsMatch()" action="remoteUserAddDatabase.php" method="post">
