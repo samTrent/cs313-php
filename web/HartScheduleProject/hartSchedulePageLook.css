@@ -27,6 +27,13 @@ td, th {
   align-items: center;
 }
 
+.textAlignCenter
+{
+  opacity: 1.0;
+  text-align: center;
+  align-items: center;
+}
+
 .centerWithBorder
 {
     background-color: lightgray;
