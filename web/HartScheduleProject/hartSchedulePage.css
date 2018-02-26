@@ -50,7 +50,7 @@ td, th {
   font-family: Helvetica;
 }
 
-#addUserButton
+.addUserButton
 {
   padding: 10px;
   font-size: 20px;
